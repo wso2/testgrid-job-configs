@@ -1,0 +1,57 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+     - CentOS
+     - mysql
+     - ORACLE_JDK8
+  provisioners:
+    - name: prod-wso2-ei-scenario-deployment
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'prod-wso2-ei-scenario-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deployment/ei-single-node.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            region: us-east-1
+            DBPassword: "DB_Password"
+            DBClass: "db.m4.large"
+            EC2KeyPair: "deployment-prod"
+            ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
+            ProductName: "wso2ei"
+            ProductVersion: "6.4.0"
+            KeyPairName: "deployment-prod"
+            AWSAccessKeyId: "AKIAI4OIL76WSL3ETHAQ"
+            AWSAccessKeySecret: "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"
+            CertificateName: "self-signed-cert"
+            DBUsername: "testgrid"
+            DBEngine: MySQL_5.7
+            JDKVersion: Oracle_JDK_8
+            
+scenarioConfig:
+  testType: INTEGRATION
+  scenarios:
+    -
+      name: "1.1.1-payload-mediator"
+      description: "1.1.1-payload-mediator"
+      dir: 01-systems-with-heterogenous-msg-format/01.1-soap-to-json/1.1.1-soap-to-json-w-PLF
+
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'integration-tests'
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deployment/deploy.sh
+          inputParameters:
+            parseInfrastructureScript: false
