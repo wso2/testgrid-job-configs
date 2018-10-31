@@ -1,0 +1,47 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+    - ORACLE_JDK8
+    - CentOS
+    - mysql
+  provisioners:
+    - name: prod-wso2is-scenario-deployment
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'prod-wso2is-scenario-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            EC2KeyPair: "deployment-prod"
+            ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
+            ProductName: "wso2is"
+            ProductVersion: "5.7.0"
+
+scenarioConfig:
+  testType: INTEGRATION
+  scenarios:
+    -
+      name: integration-tests
+      description: "integration tests"
+      dir: integration-tests
+
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'integration-tests'
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deploy.sh
+          inputParameters:
+            parseInfrastructureScript: false
