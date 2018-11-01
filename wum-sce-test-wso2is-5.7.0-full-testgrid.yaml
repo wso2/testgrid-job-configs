@@ -9,7 +9,7 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
     - ORACLE_JDK8
-    - Ubuntu
+    - UBUNTU
     - mysql
   provisioners:
     - name: prod-wso2is-scenarios-deployment
