@@ -29,9 +29,9 @@ scenarioConfig:
   testType: INTEGRATION
   scenarios:
     -
-      name: "1.1.1-payload-mediator"
-      description: "1.1.1-payload-mediator"
-      dir: 01-systems-with-heterogenous-msg-format/01.1-soap-to-json/1.1.1-soap-to-json-w-PLF
+      name: "1-communicate-in-heterogeneous-message-formats"
+      description: "1-communicate-in-heterogeneous-message-formats"
+      dir: product-scenarios/1-communicate-in-heterogeneous-message-formats
 
 deploymentConfig:
   deploymentPatterns:
