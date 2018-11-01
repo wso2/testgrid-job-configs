@@ -24,6 +24,7 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             CertificateName: "self-signed-cert"
             DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
 scenarioConfig:
   testType: INTEGRATION
   scenarios:
