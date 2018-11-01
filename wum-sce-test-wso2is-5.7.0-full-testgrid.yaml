@@ -9,39 +9,39 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
     - ORACLE_JDK8
-    - CentOS
+    - Ubuntu
     - mysql
   provisioners:
-    - name: prod-wso2is-scenario-deployment
+    - name: prod-wso2is-scenarios-deployment
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'prod-wso2is-scenario-deployment'
+        - name: 'prod-wso2is-scenarios-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
+          file: scalable-is/scalable-is.yaml
           inputParameters:
             parseInfrastructureScript: false
-            EC2KeyPair: "deployment-prod"
-            ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
-            ProductName: "wso2is"
-            ProductVersion: "5.7.0"
+            DBPassword: "DB_Password"
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2cert"
+            DBUsername: "wso2carbon"
 
 scenarioConfig:
   testType: INTEGRATION
   scenarios:
     -
-      name: integration-tests
-      description: "integration tests"
-      dir: integration-tests
+      name: "1.1.1-provision-single-user-with-SCIM2"
+      description: "1.1.1-provision-single-user-with-SCIM2"
+      dir: 01-provision-single-user-using-SCIM2-API/01.1-user-registration-with-web-application-itself/1.1.1-provision-single-user-with-SCIM2
 
 deploymentConfig:
   deploymentPatterns:
-    - name: 'integration-tests'
+    - name: 'two-node-deployment'
       description: 'dummy'
       dir: .
       scripts:
         - name: 'default'
           type: SHELL
-          file: deploy.sh
+          file: deployment/deploy.sh
           inputParameters:
             parseInfrastructureScript: false
