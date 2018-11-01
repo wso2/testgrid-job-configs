@@ -1,0 +1,47 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+     - CentOS
+     - mysql
+     - ORACLE_JDK8
+  provisioners:
+    - name: prod-wso2-apim-scenario-deployment
+      description: Provision Infra for running scenario tests
+      scripts:
+        - name: 'prod-wso2-apim-scenario-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deployment/apim-two-node.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            KeyPairName: "deployment-prod"
+            CertificateName: "self-signed-cert"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+
+scenarioConfig:
+  testType: INTEGRATION
+  scenarios:
+    -
+      name: "1.1.1-api-create-subscribe"
+      description: "1.1.1-api-create-subscribe"
+      dir: 01-apim-sample-scenarios/01.1-api-development/1.1.1-api-create-subscribe
+
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'two-node-deployment'
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deployment/deploy.sh
+          inputParameters:
+            parseInfrastructureScript: false
