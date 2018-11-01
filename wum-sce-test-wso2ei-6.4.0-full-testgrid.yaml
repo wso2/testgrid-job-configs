@@ -18,7 +18,7 @@ infrastructureConfig:
         - name: 'prod-wso2-ei-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: deployment/ei-single-node.yaml
+          file: CF_script/integrator-ha.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
