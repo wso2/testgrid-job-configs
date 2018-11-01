@@ -18,7 +18,7 @@ infrastructureConfig:
         - name: 'prod-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: pattern-1/pattern-1.yaml
+          file: pattern-0/pattern-0.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
@@ -36,7 +36,7 @@ scenarioConfig:
 
 deploymentConfig:
   deploymentPatterns:
-    - name: 'two-node-deployment'
+    - name: 'single-node-deployment'
       description: 'dummy'
       dir: .
       scripts:
