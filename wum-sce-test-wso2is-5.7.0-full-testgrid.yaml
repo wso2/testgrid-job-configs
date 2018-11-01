@@ -36,7 +36,7 @@ scenarioConfig:
 
 deploymentConfig:
   deploymentPatterns:
-    - name: 'two-node-deployment'
+    - name: 'single-node-deployment'
       description: 'dummy'
       dir: .
       scripts:
