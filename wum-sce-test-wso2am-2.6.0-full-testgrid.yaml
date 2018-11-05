@@ -30,9 +30,9 @@ scenarioConfig:
   testType: INTEGRATION
   scenarios:
     -
-      name: "1.1.1-api-create-subscribe"
-      description: "1.1.1-api-create-subscribe"
-      dir: 01-apim-sample-scenarios/01.1-api-development/1.1.1-api-create-subscribe
+      name: "1-api-updates-using-new-versions"
+      description: "1-api-updates-using-new-versions"
+      dir: product-scenarios/1-api-updates-using-new-versions
 
 deploymentConfig:
   deploymentPatterns:
