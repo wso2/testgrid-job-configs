@@ -1,6 +1,7 @@
 # TestGrid Test Configuration Parameters
 # TODO use dash as the separator instead of camelCase.
 version: '0.9'
+emailToList: "yasassri@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
@@ -13,6 +14,7 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
+      remoteRepository: "-b minimum-HA https://github.com/vimukthiperera/aws-ei.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2-ei-scenario-deployment'
@@ -27,6 +29,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
 scenarioConfig:
   testType: INTEGRATION
+  remoteRepository: "https://github.com/tharindu1992/wso2-ei-scenarios.git"
   scenarios:
     -
       name: "1.1.1-payload-mediator"
@@ -36,6 +39,7 @@ scenarioConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'two-node-deployment'
+      remoteRepository: "https://github.com/tharindu1992/wso2-ei-scenarios"
       description: 'dummy'
       dir: .
       scripts:
