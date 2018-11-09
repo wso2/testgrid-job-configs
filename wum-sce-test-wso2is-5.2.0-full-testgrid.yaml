@@ -14,7 +14,7 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-is-scenario-deployment
-      remoteRepository: "-b minimum-HA https://github.com/VimukthiPerera/aws-is.git"
+      remoteRepository: "-b minimum-HA https://github.com/azinneera/aws-is.git"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-is-scenario-deployment'
