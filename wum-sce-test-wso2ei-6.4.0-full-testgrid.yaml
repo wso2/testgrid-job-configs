@@ -14,13 +14,13 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "-b minimum-HA https://github.com/vimukthiperera/aws-ei.git"
+      remoteRepository: "-b 6.4.0 https://${USER_NAME}:${USER_NAME}@github.com/wso2-support/aws-ei.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2-ei-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: CF_script/integrator-ha.yaml
+          file: integrator/Minimum-HA/integrator-ha.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
