@@ -30,8 +30,8 @@ scenarioConfig:
   testType: INTEGRATION
   scenarios:
     -
-      name: "1.1.1-provision-user-using-SCIM2"
-      description: "1.1.1-provision-user-using-SCIM2"
+      name: "1-user-self-registration-to-an-application"
+      description: "1-user-self-registration-to-an-application"
       dir: product-scenarios/1-user-self-registration-to-an-application/
 deploymentConfig:
   deploymentPatterns:
