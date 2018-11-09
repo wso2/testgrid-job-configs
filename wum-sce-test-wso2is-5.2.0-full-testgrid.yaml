@@ -1,0 +1,51 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+emailToList: "asmaj@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+     - UBUNTU
+     - mysql
+     - ORACLE_JDK8
+  provisioners:
+    - name: prod-wso2-is-scenario-deployment
+      remoteRepository: "-b minimum-HA https://github.com/VimukthiPerera/aws-is.git"
+      description: Provision Infra for running scenario tests
+      scripts:
+        - name: 'prod-wso2-is-scenario-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: CFn scripts/is520cf.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2cert"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+
+scenarioConfig:
+  testType: INTEGRATION
+  remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
+  scenarios:
+    -
+      name: "1-api-updates-using-new-versions"
+      description: "1-api-updates-using-new-versions"
+      dir: product-scenarios/1-api-updates-using-new-versions
+
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'single-node-deployment'
+      remoteRepository: "https://github.com/tharindu1992/wso2-is-scenarios"
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deployment/deploy.sh
+          inputParameters:
+            parseInfrastructureScript: false
