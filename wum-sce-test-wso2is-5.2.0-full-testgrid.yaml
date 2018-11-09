@@ -33,9 +33,9 @@ scenarioConfig:
   remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
   scenarios:
     -
-      name: "1-api-updates-using-new-versions"
-      description: "1-api-updates-using-new-versions"
-      dir: product-scenarios/1-api-updates-using-new-versions
+      name: "1.1.1-provision-user-using-SCIM2"
+      description: "1.1.1-provision-user-using-SCIM2"
+      dir: product-scenarios/1-user-self-registration-to-an-application/
 
 deploymentConfig:
   deploymentPatterns:
