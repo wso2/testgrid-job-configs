@@ -30,7 +30,7 @@ infrastructureConfig:
 
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "https://github.com/tharindu1992/wso2-apim-scenarios"
+  remoteRepository: "-b product-scenarios https://github.com/wso2/product-apim.git"
   scenarios:
     -
       name: "1-api-updates-using-new-versions"
@@ -40,7 +40,7 @@ scenarioConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'single-node-deployment'
-      remoteRepository: "-b product-scenarios https://github.com/wso2/product-apim.git"
+      remoteRepository: "https://github.com/tharindu1992/wso2-apim-scenarios"
       description: 'dummy'
       dir: .
       scripts:
