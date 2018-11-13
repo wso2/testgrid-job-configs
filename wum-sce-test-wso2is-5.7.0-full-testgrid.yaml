@@ -14,10 +14,10 @@ infrastructureConfig:
     - mysql
   provisioners:
     - name: prod-wso2is-scenarios-deployment
+      remoteRepository: "-b tg-resources https://github.com/nihlaakram/aws-is.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-scenarios-deployment'
-          remoteRepository: "-b tg-resources https://github.com/nihlaakram/aws-is.git"
           description: ''
           type: CLOUDFORMATION
           file: scalable-is/scalable-is.yaml
