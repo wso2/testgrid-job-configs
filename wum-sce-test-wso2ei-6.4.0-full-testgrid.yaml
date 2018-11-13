@@ -14,7 +14,8 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "-b 6.4.0 git@github.com:wso2-support/aws-ei.git"
+      remoteRepository: "git@github.com:wso2-support/aws-ei.git"
+      remoteBranch: "6.4.0"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2-ei-scenario-deployment'
@@ -30,6 +31,7 @@ infrastructureConfig:
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "-b product-scenarios https://github.com/wso2/product-ei.git"
+  remoteBranch: "master"
   scenarios:
     -
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
@@ -40,6 +42,7 @@ deploymentConfig:
   deploymentPatterns:
     - name: 'two-node-deployment'
       remoteRepository: "https://github.com/tharindu1992/wso2-ei-scenarios"
+      remoteBranch: master
       description: 'dummy'
       dir: .
       scripts:
