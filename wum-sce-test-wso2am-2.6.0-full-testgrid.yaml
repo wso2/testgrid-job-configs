@@ -32,6 +32,7 @@ infrastructureConfig:
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "-b product-scenarios https://github.com/wso2/product-apim.git"
+  remoteBranch: "product-scenarios"
   scenarios:
     -
       name: "1-api-updates-using-new-versions"
