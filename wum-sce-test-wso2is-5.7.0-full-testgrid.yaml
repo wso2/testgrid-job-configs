@@ -35,9 +35,9 @@ scenarioConfig:
   remoteBranch: "product-scenarios"
   scenarios:
     -
-      name: "1-user-self-registration-to-an-application"
-      description: "1-user-self-registration-to-an-application"
-      dir: product-scenarios/1-user-self-registration-to-an-application/
+      name: "1-manage-users-roles"
+      description: "1-manage-users-roles"
+      dir: product-scenarios/1-manage-users-roles/
 deploymentConfig:
   deploymentPatterns:
     - name: 'two-node-deployment'
