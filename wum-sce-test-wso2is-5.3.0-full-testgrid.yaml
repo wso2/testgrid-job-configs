@@ -15,6 +15,7 @@ infrastructureConfig:
   provisioners:
     - name: prod-wso2-is-scenario-deployment
       remoteRepository: "-b minimum-HA https://github.com/VimukthiPerera/aws-is.git"
+      remoteBranch: "minimum-HA"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-is-scenario-deployment'
@@ -31,6 +32,7 @@ infrastructureConfig:
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
+  remoteBranch: "product-scenarios"
   scenarios:
     -
       name: "1.1.1-provision-user-using-SCIM2"
