@@ -15,6 +15,7 @@ infrastructureConfig:
   provisioners:
     - name: prod-wso2is-scenarios-deployment
       remoteRepository: "-b tg-resources https://github.com/nihlaakram/aws-is.git"
+      remoteBranch: "tg-resources"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-scenarios-deployment'
@@ -31,6 +32,7 @@ infrastructureConfig:
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
+  remoteBranch: "product-scenarios"
   scenarios:
     -
       name: "1-user-self-registration-to-an-application"
