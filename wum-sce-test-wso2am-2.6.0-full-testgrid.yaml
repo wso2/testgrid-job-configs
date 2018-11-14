@@ -15,6 +15,7 @@ infrastructureConfig:
   provisioners:
     - name: prod-wso2-apim-scenario-deployment
       remoteRepository: "-b aws-apim https://github.com/VimukthiPerera/aws-apim.git"
+      remoteBranch: "aws-apim"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
