@@ -31,7 +31,7 @@ infrastructureConfig:
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "-b product-scenarios https://github.com/wso2/product-ei.git"
-  remoteBranch: "master"
+  remoteBranch: "product-scenarios"
   scenarios:
     -
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
