@@ -35,9 +35,9 @@ scenarioConfig:
   remoteBranch: "product-scenarios"
   scenarios:
     -
-      name: "1.1.1-provision-user-using-SCIM2"
-      description: "1.1.1-provision-user-using-SCIM2"
-      dir: product-scenarios/1-user-self-registration-to-an-application/
+      name: "1-manage-users-roles"
+      description: "1-manage-users-roles"
+      dir: product-scenarios/1-manage-users-roles/
 
 deploymentConfig:
   deploymentPatterns:
