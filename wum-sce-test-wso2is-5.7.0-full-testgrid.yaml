@@ -1,7 +1,7 @@
 # TestGrid Test Configuration Parameters
 # TODO use dash as the separator instead of camelCase.
 version: '0.9'
-emailToList: "tharindusa@wso2.com,kasung@wso2.com,isura@wso2.com"
+emailToList: "tharindusa@wso2.com,kasung@wso2.com,isura@wso2.com,janak@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
@@ -35,9 +35,9 @@ scenarioConfig:
   remoteBranch: "product-scenarios"
   scenarios:
     -
-      name: "1-manage-users-roles"
-      description: "1-manage-users-roles"
-      dir: product-scenarios/1-manage-users-roles/
+      name: "2-single-sign-on"
+      description: "2-single-sign-on"
+      dir: product-scenarios/2-single-sign-on/
 deploymentConfig:
   deploymentPatterns:
     - name: 'two-node-deployment'
