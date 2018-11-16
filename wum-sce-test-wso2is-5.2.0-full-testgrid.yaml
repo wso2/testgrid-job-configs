@@ -14,14 +14,14 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-is-scenario-deployment
-      remoteRepository: "-b minimum-HA https://github.com/VimukthiPerera/aws-is.git"
-      remoteBranch: "minimum-HA"
+      remoteRepository: "git@github.com:wso2-support/aws-is.git"
+      remoteBranch: "5.2.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-is-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: CFn scripts/is520cf.yaml
+          file: "is/Minimum-HA/identity.yaml"
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
