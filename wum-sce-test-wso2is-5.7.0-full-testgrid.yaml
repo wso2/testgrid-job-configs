@@ -14,7 +14,7 @@ infrastructureConfig:
     - mysql
   provisioners:
     - name: prod-wso2is-scenarios-deployment
-      remoteRepository: "https://github.com/wso2-support/aws-is.git"
+      remoteRepository: "git@github.com:wso2-support/aws-is.git"
       remoteBranch: "5.7.0"
       description: Provision Infra for running intg tests
       scripts:
