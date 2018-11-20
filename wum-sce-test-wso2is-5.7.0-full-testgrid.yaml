@@ -21,7 +21,7 @@ infrastructureConfig:
         - name: 'prod-wso2is-scenarios-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: scalable-is/scalable-is.yaml
+          file: is/Minimum-HA/identity.yaml
           inputParameters:
             parseInfrastructureScript: false
             DBPassword: "DB_Password"
