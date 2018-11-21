@@ -38,15 +38,3 @@ scenarioConfig:
       name: "2-single-sign-on"
       description: "2-single-sign-on"
       dir: product-scenarios/2-single-sign-on/
-deploymentConfig:
-  deploymentPatterns:
-    - name: 'two-node-deployment'
-      remoteRepository: "https://github.com/tharindu1992/wso2-is-scenarios"
-      description: 'dummy'
-      dir: .
-      scripts:
-        - name: 'default'
-          type: SHELL
-          file: deployment/deploy.sh
-          inputParameters:
-            parseInfrastructureScript: false
