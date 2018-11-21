@@ -22,7 +22,7 @@ infrastructureConfig:
           type: CLOUDFORMATION
           file: integrator/integrator-ha.yaml
           inputParameters:
-            parseInfrastructureScript: false
+            parseInfrastructureScript: false1
             KeyPairName: "deployment-prod"
             CertificateName: "self-signed-cert"
             DBUsername: "wso2carbon"
@@ -36,4 +36,4 @@ scenarioConfig:
     -
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
       description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
-      dir: product-scenarios/1-integrating-systems-that-communicate-in-heterogeneous-message-formats
+      dir: product-scenarios
