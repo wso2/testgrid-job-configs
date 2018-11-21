@@ -28,6 +28,13 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
+        - name: 'prod-wso2is-samples-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: product-scenarios/intg-test-resources/test-is-samples.yml
+          inputParameters:
+            AMI: "ami-7b50601e"
+            KeyPairName: "deployment-prod"
 
 scenarioConfig:
   testType: INTEGRATION
