@@ -38,16 +38,3 @@ scenarioConfig:
       name: "1-manage-users-roles"
       description: "1-manage-users-roles"
       dir: product-scenarios/1-manage-users-roles/
-
-deploymentConfig:
-  deploymentPatterns:
-    - name: 'single-node-deployment'
-      remoteRepository: "https://github.com/tharindu1992/wso2-is-scenarios"
-      description: 'dummy'
-      dir: .
-      scripts:
-        - name: 'default'
-          type: SHELL
-          file: deployment/deploy.sh
-          inputParameters:
-            parseInfrastructureScript: false
