@@ -38,16 +38,3 @@ scenarioConfig:
       name: "1-api-updates-using-new-versions"
       description: "1-api-updates-using-new-versions"
       dir: product-scenarios/1-api-updates-using-new-versions
-
-deploymentConfig:
-  deploymentPatterns:
-    - name: 'single-node-deployment'
-      remoteRepository: "https://github.com/tharindu1992/wso2-apim-scenarios"
-      description: 'dummy'
-      dir: .
-      scripts:
-        - name: 'default'
-          type: SHELL
-          file: deployment/deploy.sh
-          inputParameters:
-            parseInfrastructureScript: false
