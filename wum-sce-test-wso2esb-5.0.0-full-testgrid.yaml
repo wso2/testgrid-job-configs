@@ -37,17 +37,3 @@ scenarioConfig:
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
       description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
       dir: product-scenarios/1-integrating-systems-that-communicate-in-heterogeneous-message-formats
-
-deploymentConfig:
-  deploymentPatterns:
-    - name: 'two-node-deployment'
-      remoteRepository: "https://github.com/tharindu1992/wso2-ei-scenarios"
-      remoteBranch: master
-      description: 'dummy'
-      dir: .
-      scripts:
-        - name: 'default'
-          type: SHELL
-          file: deployment/deploy.sh
-          inputParameters:
-            parseInfrastructureScript: false
