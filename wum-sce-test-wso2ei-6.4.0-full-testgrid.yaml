@@ -49,5 +49,3 @@ deploymentConfig:
         - name: 'default'
           type: SHELL
           file: deployment/deploy.sh
-          inputParameters:
-            parseInfrastructureScript: false
