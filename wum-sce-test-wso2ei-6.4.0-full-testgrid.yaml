@@ -36,4 +36,4 @@ scenarioConfig:
     -
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
       description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
-      dir: product-scenarios/1-integrating-systems-that-communicate-in-heterogeneous-message-formats
+      dir: product-scenarios
