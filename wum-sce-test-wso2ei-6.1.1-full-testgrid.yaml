@@ -14,8 +14,7 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-ei.git"
-      remoteBranch: "6.1.1"
+      remoteRepository: "git@github.com:wso2/aws-ei.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2-ei-scenario-deployment'
@@ -28,6 +27,7 @@ infrastructureConfig:
             CertificateName: "self-signed-cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
+            ProductVersion: "6.1.1"
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "https://github.com/wso2/product-ei.git"
