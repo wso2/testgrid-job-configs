@@ -37,4 +37,4 @@ scenarioConfig:
     -
       name: "2-single-sign-on"
       description: "2-single-sign-on"
-      dir: product-scenarios/2-single-sign-on/
+      dir: product-scenarios
