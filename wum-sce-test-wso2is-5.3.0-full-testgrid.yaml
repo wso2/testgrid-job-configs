@@ -37,4 +37,4 @@ scenarioConfig:
     -
       name: "1-manage-users-roles"
       description: "1-manage-users-roles"
-      dir: product-scenarios/1-manage-users-roles/
+      dir: product-scenarios
