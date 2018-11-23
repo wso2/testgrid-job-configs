@@ -14,8 +14,7 @@ infrastructureConfig:
     - mysql
   provisioners:
     - name: prod-wso2is-scenarios-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-is.git"
-      remoteBranch: "5.7.0"
+      remoteRepository: "https://github.com/wso2/aws-is.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-scenarios-deployment'
@@ -28,10 +27,11 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
-
+            ProductVersion: "5.7.0"
+            InternalPrepareForTest: "True"
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
+  remoteRepository: "https://github.com/wso2/product-is.git"
   remoteBranch: "product-scenarios"
   scenarios:
     -
