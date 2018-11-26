@@ -28,6 +28,7 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             ProductVersion: "6.4.0"
+            InternalPrepareForTest: "True"
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "https://github.com/wso2/product-ei.git"
@@ -36,4 +37,4 @@ scenarioConfig:
     -
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
       description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
-      dir: product-scenarios/1-integrating-systems-that-communicate-in-heterogeneous-message-formats
+      dir: product-scenarios

@@ -14,27 +14,26 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-is-scenario-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-is.git"
-      remoteBranch: "5.2.0"
+      remoteRepository: "https://github.com/wso2/aws-is.git"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-is-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: "is/Minimum-HA/identity.yaml"
+          file: "scalable-is/scalable-is.yaml"
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
-
+            InternalPrepareForTest: "True"
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
+  remoteRepository: "https://github.com/wso2/product-is.git"
   remoteBranch: "product-scenarios"
   scenarios:
     -
       name: "1-manage-users-roles"
       description: "1-manage-users-roles"
-      dir: product-scenarios/1-manage-users-roles/
+      dir: product-scenarios

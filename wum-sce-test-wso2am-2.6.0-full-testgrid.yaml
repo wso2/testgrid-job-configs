@@ -14,27 +14,26 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-apim-scenario-deployment
-      remoteRepository: "-b aws-apim https://github.com/VimukthiPerera/aws-apim.git"
-      remoteBranch: "aws-apim"
+      remoteRepository: "git@github.com:wso2-support/aws-apim.git"
+      remoteBranch: "2.6.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: pattern-0/pattern-0.yaml
+          file: apim/Minimum-HA/apim.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
-
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "-b product-scenarios https://github.com/wso2/product-apim.git"
+  remoteRepository: "https://github.com/wso2/product-apim.git"
   remoteBranch: "product-scenarios"
   scenarios:
     -
-      name: "1-api-updates-using-new-versions"
-      description: "1-api-updates-using-new-versions"
-      dir: product-scenarios/1-api-updates-using-new-versions
+      name: "apim-scenarios"
+      description: "apim-scenarios"
+      dir: product-scenarios

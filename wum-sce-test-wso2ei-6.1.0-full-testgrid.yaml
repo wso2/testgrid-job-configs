@@ -14,20 +14,21 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-ei.git"
-      remoteBranch: "6.1.0"
-      description: Provision Infra for running intg tests
+      remoteRepository: "git@github.com:wso2/aws-ei.git"
+      description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-ei-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: integrator/Minimum-HA/integrator-ha.yaml
+          file: integrator/integrator-ha.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
             CertificateName: "self-signed-cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
+            ProductVersion: "6.1.0"
+            InternalPrepareForTest: "True"
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "https://github.com/wso2/product-ei.git"
@@ -36,18 +37,4 @@ scenarioConfig:
     -
       name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
       description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
-      dir: product-scenarios/1-integrating-systems-that-communicate-in-heterogeneous-message-formats
-
-deploymentConfig:
-  deploymentPatterns:
-    - name: 'two-node-deployment'
-      remoteRepository: "https://github.com/tharindu1992/wso2-ei-scenarios"
-      remoteBranch: master
-      description: 'dummy'
-      dir: .
-      scripts:
-        - name: 'default'
-          type: SHELL
-          file: deployment/deploy.sh
-          inputParameters:
-            parseInfrastructureScript: false
+      dir: product-scenarios

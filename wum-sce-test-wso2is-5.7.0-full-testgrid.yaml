@@ -14,20 +14,21 @@ infrastructureConfig:
     - mysql
   provisioners:
     - name: prod-wso2is-scenarios-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-is.git"
-      remoteBranch: "5.7.0"
+      remoteRepository: "https://github.com/wso2/aws-is.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-scenarios-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: is/Minimum-HA/identity.yaml
+          file: scalable-is/scalable-is.yaml
           inputParameters:
             parseInfrastructureScript: false
             DBPassword: "DB_Password"
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
+            ProductVersion: "5.7.0"
+            InternalPrepareForTest: "True"
         - name: 'prod-wso2is-samples-deployment'
           description: ''
           type: CLOUDFORMATION
@@ -38,10 +39,10 @@ infrastructureConfig:
 
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "-b product-scenarios https://github.com/wso2/product-is.git"
+  remoteRepository: "https://github.com/wso2/product-is.git"
   remoteBranch: "product-scenarios"
   scenarios:
     -
       name: "2-single-sign-on"
       description: "2-single-sign-on"
-      dir: product-scenarios/2-single-sign-on/
+      dir: product-scenarios
