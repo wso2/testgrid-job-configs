@@ -13,7 +13,7 @@ infrastructureConfig:
      - mysql
      - ORACLE_JDK8
   provisioners:
-    - name: prod-wso2-ei-scenario-deployment
+    - name: single-node-deployment
       remoteRepository: "git@github.com:wso2/aws-ei.git"
       description: Provision Infra for running intg tests
       scripts:
@@ -35,6 +35,6 @@ scenarioConfig:
   remoteBranch: "product-scenarios"
   scenarios:
     -
-      name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
-      description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
+      name: "ei-scenarios"
+      description: "ei-scenarios"
       dir: product-scenarios
