@@ -34,6 +34,6 @@ scenarioConfig:
   remoteBranch: "product-scenarios"
   scenarios:
     -
-      name: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
-      description: "1-integrating-systems-that-communicate-in-heterogeneous-message-formats"
+      name: "esb-scenarios"
+      description: "esb-scenarios"
       dir: product-scenarios
