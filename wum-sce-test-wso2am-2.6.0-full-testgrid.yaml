@@ -13,7 +13,7 @@ infrastructureConfig:
      - mysql
      - ORACLE_JDK8
   provisioners:
-    - name: prod-wso2-apim-scenario-deployment
+    - name: single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
       remoteBranch: "2.6.0"
       description: Provision Infra for running scenario tests
