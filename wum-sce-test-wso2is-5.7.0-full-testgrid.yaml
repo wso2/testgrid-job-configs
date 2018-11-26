@@ -34,7 +34,7 @@ infrastructureConfig:
           type: CLOUDFORMATION
           file: is-samples/test-is-samples.yml
           inputParameters:
-            AMI: "ami-7b50601e"
+            AMI: "ami-01b72d1b13ca0b4bc"
             KeyPairName: "deployment-prod"
 
 scenarioConfig:
