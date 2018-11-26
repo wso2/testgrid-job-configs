@@ -32,7 +32,7 @@ infrastructureConfig:
         - name: 'prod-wso2is-samples-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: product-scenarios/intg-test-resources/test-is-samples.yml
+          file: is-samples/test-is-samples.yml
           inputParameters:
             AMI: "ami-7b50601e"
             KeyPairName: "deployment-prod"
