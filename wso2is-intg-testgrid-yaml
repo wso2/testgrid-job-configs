@@ -31,7 +31,6 @@ infrastructureConfig:
             ProductName: "wso2-is"
 scenarioConfig:
   remoteRepository: "https://github.com/wso2/identity-test-integration.git"
-  remoteBranch: "props"
   testType: INTEGRATION
   scenarios:
     -
