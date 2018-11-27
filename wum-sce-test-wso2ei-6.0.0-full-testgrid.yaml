@@ -25,7 +25,7 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "self-signed-cert"
+            CertificateName: "wso2-testgrid"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             ProductVersion: "6.0.0"
