@@ -29,6 +29,14 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             ProductVersion: "5.7.0"
             InternalPrepareForTest: "True"
+        - name: 'prod-wso2is-samples-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: is-samples/test-is-samples.yml
+          inputParameters:
+            AMI: "ami-01b72d1b13ca0b4bc"
+            KeyPairName: "deployment-prod"
+
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "https://github.com/wso2/product-is.git"
