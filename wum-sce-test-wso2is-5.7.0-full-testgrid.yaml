@@ -13,7 +13,7 @@ infrastructureConfig:
     - UBUNTU
     - mysql
   provisioners:
-    - name: prod-wso2is-scenarios-deployment
+    - name: two-node-deployment
       remoteRepository: "https://github.com/wso2/aws-is.git"
       description: Provision Infra for running intg tests
       scripts:
