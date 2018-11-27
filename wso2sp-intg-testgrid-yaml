@@ -1,0 +1,51 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+infrastructureConfig:
+  iacProvider: TERRAFORM
+  infrastructureProvider: SHELL
+  containerOrchestrationEngine: K8S
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+    - CentOS
+    - mysql
+    - ORACLE_JDK8
+    - OPEN_JDK8
+  excludes:
+    - UBUNTU
+  provisioners:       
+  - name: prod-wso2sp-intg-deployment
+    description: creates infrastructure for sp intg tests
+    scripts:
+      - name: prod-wso2sp-intg-deployment
+        description: Creates Kubernetes infrastructure for a IS-pattern1.
+        type: SHELL
+        phase: CREATE
+        file: infra.sh
+        inputParameters:
+          kubernetes_master: https://52C56E9C6F652EB571889DFAAAE3EB69.sk1.us-east-1.eks.amazonaws.com
+      - name: destroy
+        file: cluster-destroy.sh
+        type: SHELL
+        phase: DESTROY
+   
+scenarioConfig:
+  testType: INTEGRATION
+  scenarios:
+    -
+      name: integration-tests
+      description: "integration tests"
+      dir: integration-tests
+
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'integration-tests'
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deploy.sh
+          inputParameters:
+            parseInfrastructureScript: false
