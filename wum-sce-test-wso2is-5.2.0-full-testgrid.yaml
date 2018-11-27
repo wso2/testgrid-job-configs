@@ -13,7 +13,7 @@ infrastructureConfig:
      - mysql
      - ORACLE_JDK8
   provisioners:
-    - name: prod-wso2-is-scenario-deployment
+    - name: two-node-deployment
       remoteRepository: "https://github.com/wso2/aws-is.git"
       description: Provision Infra for running scenario tests
       scripts:
