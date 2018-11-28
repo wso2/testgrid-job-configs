@@ -31,7 +31,7 @@ infrastructureConfig:
             InternalPrepareForTest: "True"
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "git@github.com:wso2/product-is.git"
+  remoteRepository: "git@github.com:wso2-support/product-is.git"
   remoteBranch: "support-5.3.0"
   scenarios:
     -
