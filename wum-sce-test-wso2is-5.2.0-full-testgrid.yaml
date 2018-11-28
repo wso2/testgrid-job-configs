@@ -30,8 +30,8 @@ infrastructureConfig:
             InternalPrepareForTest: "True"
 scenarioConfig:
   testType: INTEGRATION
-  remoteRepository: "https://github.com/wso2/product-is.git"
-  remoteBranch: "product-scenarios"
+  remoteRepository: "git@github.com:wso2-support/product-is.git"
+  remoteBranch: "support-5.2.0"
   scenarios:
     -
       name: "1-manage-users-roles"
