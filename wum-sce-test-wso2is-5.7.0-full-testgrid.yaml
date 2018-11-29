@@ -14,14 +14,13 @@ infrastructureConfig:
     - mysql
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-is.git"
-      remoteBranch: "5.7.0"
+      remoteRepository: "https://github.com/wso2/aws-is.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-scenarios-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: is/Minimum-HA/identity.yaml
+          file: scalable-is/scalable-is.yaml
           inputParameters:
             parseInfrastructureScript: false
             DBPassword: "DB_Password"
