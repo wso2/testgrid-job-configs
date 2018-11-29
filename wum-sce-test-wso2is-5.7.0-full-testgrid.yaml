@@ -37,7 +37,7 @@ infrastructureConfig:
           inputParameters:
             AMI: "ami-01b72d1b13ca0b4bc"
             KeyPairName: "deployment-prod"
-
+            ProductVersion: "5.7.0"
 scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "https://github.com/wso2/product-is.git"
