@@ -28,7 +28,8 @@ infrastructureConfig:
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
-scenarioConfig:
+scenarioConfigs:
+  -
   testType: TESTNG
   remoteRepository: "https://github.com/wso2/product-apim.git"
   remoteBranch: "product-scenarios"

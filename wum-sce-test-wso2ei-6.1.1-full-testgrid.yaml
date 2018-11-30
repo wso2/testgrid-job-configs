@@ -29,7 +29,8 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "6.1.1"
             InternalPrepareForTest: "True"
-scenarioConfig:
+scenarioConfigs:
+  -
   testType: TESTNG
   remoteRepository: "https://github.com/wso2/product-ei.git"
   remoteBranch: "product-scenarios"

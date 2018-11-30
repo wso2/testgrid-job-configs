@@ -37,7 +37,8 @@ infrastructureConfig:
             AMI: "ami-01b72d1b13ca0b4bc"
             KeyPairName: "deployment-prod"
             ProductVersion: "5.3.0"
-scenarioConfig:
+scenarioConfigs:
+  -
   testType: TESTNG
   remoteRepository: "git@github.com:wso2-support/product-is.git"
   remoteBranch: "support-5.3.0"

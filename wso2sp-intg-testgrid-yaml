@@ -30,13 +30,14 @@ infrastructureConfig:
         type: SHELL
         phase: DESTROY
    
-scenarioConfig:
+scenarioConfigs:
+  -
   testType: TESTNG
   name: integration-tests
   description: "integration tests"
   file: integration-tests/run-scenario.sh
 
-deploymentConfig:
+deploymentConfigs:
   deploymentPatterns:
     - name: 'integration-tests'
       description: 'dummy'
