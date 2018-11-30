@@ -30,7 +30,8 @@ infrastructureConfig:
         type: SHELL
         phase: DESTROY
    
-scenarioConfig:
+scenarioConfigs:
+  -
   testType: TESTNG
   name: integration-tests
   description: "integration tests"

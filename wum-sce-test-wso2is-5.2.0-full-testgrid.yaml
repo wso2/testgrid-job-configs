@@ -29,7 +29,8 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "5.2.0"
             InternalPrepareForTest: "True"
-scenarioConfig:
+scenarioConfigs:
+  -
   testType: TESTNG
   remoteRepository: "git@github.com:wso2-support/product-is.git"
   remoteBranch: "support-5.2.0"

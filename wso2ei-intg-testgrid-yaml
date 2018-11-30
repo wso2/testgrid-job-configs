@@ -30,7 +30,8 @@ infrastructureConfig:
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2-ei"
 
-scenarioConfig:
+scenarioConfigs:
+  -
   remoteRepository: "https://github.com/wso2/ei-test-integration.git"
   testType: TESTNG
   name: integration-tests
