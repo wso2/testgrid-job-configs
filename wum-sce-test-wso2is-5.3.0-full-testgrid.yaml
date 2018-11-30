@@ -38,11 +38,9 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             ProductVersion: "5.3.0"
 scenarioConfig:
-  testType: INTEGRATION
+  testType: TESTNG
   remoteRepository: "git@github.com:wso2-support/product-is.git"
   remoteBranch: "support-5.3.0"
-  scenarios:
-    -
-      name: "1-manage-users-roles"
-      description: "1-manage-users-roles"
-      dir: product-scenarios
+  name: "1-manage-users-roles"
+  description: "1-manage-users-roles"
+  file: product-scenarios/test.sh
