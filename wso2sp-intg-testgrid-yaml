@@ -37,7 +37,7 @@ scenarioConfigs:
   description: "integration tests"
   file: integration-tests/run-scenario.sh
 
-deploymentConfigs:
+deploymentConfig:
   deploymentPatterns:
     - name: 'integration-tests'
       description: 'dummy'
