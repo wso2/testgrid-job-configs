@@ -14,20 +14,20 @@ infrastructureConfig:
      - ORACLE_JDK8
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "https://github.com/wso2/aws-is.git"
+      remoteRepository: "git@github.com:wso2-support/aws-is.git"
+      remoteBranch: "5.3.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-is-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: "scalable-is/scalable-is.yaml"
+          file: /is/Minimum-HA/identity.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
-            ProductVersion: "5.2.0"
             InternalPrepareForTest: "True"
 scenarioConfigs:
   - testType: TESTNG
