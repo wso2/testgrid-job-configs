@@ -31,12 +31,10 @@ infrastructureConfig:
         phase: DESTROY
    
 scenarioConfig:
-  testType: INTEGRATION
-  scenarios:
-    -
-      name: integration-tests
-      description: "integration tests"
-      dir: integration-tests
+  testType: TESTNG
+  name: integration-tests
+  description: "integration tests"
+  file: integration-tests/run-scenario.sh
 
 deploymentConfig:
   deploymentPatterns:
