@@ -44,7 +44,7 @@ scenarioConfig:
         PRODUCT_GIT_BRANCH: master
         PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
         INFRA_LOCATION: workspace/testgrid
-        TEST_MODE: RELEASE
+        TEST_MODE: SNAPSHOT
         SCENARIOS_LOCATION: workspace/identity-test-integration
         REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
         REMOTE_WORKSPACE_DIR_WINDOWS: c:/testgrid/workspace
