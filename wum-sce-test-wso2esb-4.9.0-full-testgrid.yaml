@@ -29,10 +29,10 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
 scenarioConfigs:
-  -
-  testType: TESTNG
-  remoteRepository: "https://github.com/wso2/product-ei.git"
-  remoteBranch: "product-scenarios"
-  name: "esb-scenarios"
-  description: "esb-scenarios"
-  file: product-scenarios/test.sh
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-ei.git"
+    remoteBranch: "product-scenarios"
+    name: "esb-scenarios"
+    description: "esb-scenarios"
+    file: product-scenarios/test.sh
+

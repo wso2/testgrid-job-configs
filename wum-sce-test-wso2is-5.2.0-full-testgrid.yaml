@@ -30,10 +30,10 @@ infrastructureConfig:
             ProductVersion: "5.2.0"
             InternalPrepareForTest: "True"
 scenarioConfigs:
-  -
-  testType: TESTNG
-  remoteRepository: "git@github.com:wso2-support/product-is.git"
-  remoteBranch: "support-5.2.0"
-  name: "1-manage-users-roles"
-  description: "1-manage-users-roles"
-  file: product-scenarios/test.sh
+  - testType: TESTNG
+    remoteRepository: "git@github.com:wso2-support/product-is.git"
+    remoteBranch: "support-5.2.0"
+    name: "1-manage-users-roles"
+    description: "1-manage-users-roles"
+    file: product-scenarios/test.sh
+
