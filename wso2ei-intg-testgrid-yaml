@@ -31,31 +31,30 @@ infrastructureConfig:
             ProductName: "wso2-ei"
 
 scenarioConfigs:
-  -
-  remoteRepository: "https://github.com/wso2/ei-test-integration.git"
-  testType: TESTNG
-  name: integration-tests
-  description: "integration tests"
-  file: integration-tests/run-scenario.sh
-  inputParameters:
-    PRODUCT_CODE: wso2ei
-    PRODUCT_GIT_URL: https://github.com/wso2/product-ei
-    INFRA_LOCATION: workspace/testgrid
-    DEPLOYMENT_LOCATION: workspace/testgrid
-    SCENARIOS_LOCATION: workspace/ei-test-integration
-    REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
-    REMOTE_WORKSPACE_DIR_WINDOWS: c:/testgrid/workspace
-    SQL_DRIVERS_LOCATION_UNIX: /opt/testgrid/sql-drivers/
-    SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
-    DBUsername: wso2carbon
-    TEST_MODE: RELEASE
-    PRODUCT_GIT_BRANCH: master
-    LATEST_PRODUCT_RELEASE_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
-    LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-ei/lastStableBuild/mavenArtifacts/api/
-    USE_CUSTOM_TESTNG: FALSE
-    WUM_CHANNEL: full
-    WUM_PRODUCT_VERSION: 2.5.0
-    PRODUCT_DIST_DOWNLOAD_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
-    productDistDownloadApi: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
-    keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
+  - remoteRepository: "https://github.com/wso2/ei-test-integration.git"
+    testType: TESTNG
+    name: integration-tests
+    description: "integration tests"
+    file: integration-tests/run-scenario.sh
+    inputParameters:
+      PRODUCT_CODE: wso2ei
+      PRODUCT_GIT_URL: https://github.com/wso2/product-ei
+      INFRA_LOCATION: workspace/testgrid
+      DEPLOYMENT_LOCATION: workspace/testgrid
+      SCENARIOS_LOCATION: workspace/ei-test-integration
+      REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
+      REMOTE_WORKSPACE_DIR_WINDOWS: c:/testgrid/workspace
+      SQL_DRIVERS_LOCATION_UNIX: /opt/testgrid/sql-drivers/
+      SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
+      DBUsername: wso2carbon
+      TEST_MODE: RELEASE
+      PRODUCT_GIT_BRANCH: master
+      LATEST_PRODUCT_RELEASE_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
+      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-ei/lastStableBuild/mavenArtifacts/api/
+      USE_CUSTOM_TESTNG: FALSE
+      WUM_CHANNEL: full
+      WUM_PRODUCT_VERSION: 2.5.0
+      PRODUCT_DIST_DOWNLOAD_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
+      productDistDownloadApi: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
+      keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
 

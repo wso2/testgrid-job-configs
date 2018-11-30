@@ -28,10 +28,9 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
 scenarioConfigs:
-  -
-  testType: TESTNG
-  remoteRepository: "https://github.com/wso2/product-apim.git"
-  remoteBranch: "product-scenarios"
-  name: "apim-scenarios"
-  description: "apim-scenarios"
-  file: product-scenarios/test.sh
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-apim.git"
+    remoteBranch: "product-scenarios"
+    name: "apim-scenarios"
+    description: "apim-scenarios"
+    file: product-scenarios/test.sh

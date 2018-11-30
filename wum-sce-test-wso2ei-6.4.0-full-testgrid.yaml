@@ -31,10 +31,10 @@ infrastructureConfig:
             ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com/"
             InternalPrepareForTest: "True"
 scenarioConfigs:
-  -
-  testType: TESTNG
-  remoteRepository: "https://github.com/wso2/product-ei.git"
-  remoteBranch: "product-scenarios"
-  name: "ei-scenarios"
-  description: "ei-scenarios"
-  file: product-scenarios/test.sh
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-ei.git"
+    remoteBranch: "product-scenarios"
+    name: "ei-scenarios"
+    description: "ei-scenarios"
+    file: product-scenarios/test.sh
+
