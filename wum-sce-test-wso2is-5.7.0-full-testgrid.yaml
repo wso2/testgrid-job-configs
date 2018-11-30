@@ -27,7 +27,6 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             CertificateName: "wso2cert"
             DBUsername: "wso2carbon"
-            ProductVersion: "5.7.0"
             InternalPrepareForTest: "True"
         - name: 'prod-wso2is-samples-deployment'
           description: ''
