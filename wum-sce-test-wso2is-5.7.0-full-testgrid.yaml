@@ -41,8 +41,6 @@ scenarioConfig:
   testType: INTEGRATION
   remoteRepository: "https://github.com/wso2/product-is.git"
   remoteBranch: "product-scenarios"
-  scenarios:
-    -
-      name: "2-single-sign-on"
-      description: "2-single-sign-on"
-      dir: product-scenarios
+  name: "2-single-sign-on"
+  description: "2-single-sign-on"
+  file: product-scenarios/test.sh
