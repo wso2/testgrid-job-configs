@@ -9,9 +9,9 @@ infrastructureConfig:
   parameters:
     - JDK : ORACLE_JDK8
   includes:
-    - ORACLE_JDK8
-    - UBUNTU
-    - mysql
+     - Ubuntu-18.04
+     - MySQL-5.7
+     - OracleJDK-8
   provisioners:
     - name: two-node-deployment
       remoteRepository: "https://github.com/wso2/aws-is.git"
