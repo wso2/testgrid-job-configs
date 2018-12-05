@@ -29,6 +29,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "6.1.0"
             InternalPrepareForTest: "True"
+            ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-ei.git"
