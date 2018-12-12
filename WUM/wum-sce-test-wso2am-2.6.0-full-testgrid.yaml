@@ -1,5 +1,5 @@
-# TestGrid Test Configuration Parameters
-# TODO use dash as the separator instead of camelCase.
+# TestGrid job configuration
+
 version: '0.9'
 emailToList: "builder@wso2.org,sanjeewa@wso2.com,krishanw@wso2.com,fazlann@wso2.com,chaminda@wso2.com,malithm@wso2.com,kasung@wso2.com,kavitha@wso2.com"
 infrastructureConfig:
