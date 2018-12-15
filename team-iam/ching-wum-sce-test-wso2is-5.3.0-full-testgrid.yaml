@@ -39,7 +39,7 @@ infrastructureConfig:
             ProductVersion: "5.3.0"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:maneeshaheshan/product-is-1.git"
+    remoteRepository: "git@github.com:kasunbg/product-is-1.git"
     remoteBranch: "support-5.3.0"
     name: "1-manage-users-roles"
     description: "1-manage-users-roles"
