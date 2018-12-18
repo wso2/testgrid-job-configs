@@ -10,7 +10,7 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
      - Ubuntu-18.04
-     - Postgres-10.5
+     - Oracle-SE2-12.1
      - OracleJDK-8
   provisioners:
     - name: two-node-deployment
