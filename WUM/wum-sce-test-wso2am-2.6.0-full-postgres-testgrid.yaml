@@ -15,7 +15,7 @@ infrastructureConfig:
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:KosalaHerath/aws-apim.git"
-      remoteBranch: "postgres-db"
+      remoteBranch: "db-paramas"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
