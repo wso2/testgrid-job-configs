@@ -14,13 +14,14 @@ infrastructureConfig:
      - OracleJDK-8
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "https://github.com/wso2/aws-is.git"
+      remoteRepository: "git@github.com:wso2-support/aws-is.git"
+      remoteBranch: "5.7.0"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-scenarios-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: scalable-is/scalable-is.yaml
+          file: /is/Minimum-HA/identity.yaml
           inputParameters:
             parseInfrastructureScript: false
             DBPassword: "DB_Password"
