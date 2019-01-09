@@ -1,7 +1,7 @@
 # TestGrid Test Configuration Parameters
 # TODO use dash as the separator instead of camelCase.
 version: '0.9'
-emailToList: "yasassri@wso2.com"
+emailToList: "pasinduj@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
@@ -9,15 +9,17 @@ infrastructureConfig:
   parameters:
     - JDK : ORACLE_JDK8
   includes:
-    - OpenJDK-8
+    - ADOPT_OPEN_JDK8
     - CentOS-7.5
     - MySQL-5.7
+    - SQLServer-SE-13.00
+    - Oracle-SE2-12.1
   provisioners:
-    - name: prod-wso2is-intg-deployment
+    - name: dev-wso2is-intg-deployment
       remoteRepository: "git@github.com:wso2/testgrid.git"
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'prod-wso2is-intg-deployment'
+        - name: 'dev-wso2is-intg-deployment'
           description: ''
           type: CLOUDFORMATION
           file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
@@ -26,7 +28,7 @@ infrastructureConfig:
             region: us-east-1
             DBPassword: "DB_Password"
             DBClass: "db.m4.large"
-            EC2KeyPair: "deployment-prod"
+            EC2KeyPair: "deployment-dev"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2-is"
 scenarioConfigs:
@@ -36,12 +38,12 @@ scenarioConfigs:
     description: "integration tests"
     file: integration-tests/run-scenario.sh
     inputParameters:
-      DEPLOYMENT_LOCATION: workspace/testgrid
       PRODUCT_CODE: wso2is
       PRODUCT_GIT_URL: https://github.com/wso2/product-is
       PRODUCT_GIT_BRANCH: master
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid
+      DEPLOYMENT_LOCATION: workspace/testgrid
       TEST_MODE: SNAPSHOT
       SCENARIOS_LOCATION: workspace/identity-test-integration
       REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
@@ -56,6 +58,3 @@ scenarioConfigs:
       WUM_CHANNEL: full
       WUM_PRODUCT_VERSION: 2.5.0
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-
-
-
