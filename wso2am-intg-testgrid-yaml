@@ -34,10 +34,10 @@ infrastructureConfig:
             ProductName: "wso2-apim"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/apim-test-integration.git"
-    name: integration-tests
+    remoteRepository: "https://github.com/pasindujw/apim-test-integration.git"
+    name: integrationtests
     description: "integration tests"
-    file: integration-tests/run-scenario.sh
+    file: integrationtests/run-scenario.sh
     inputParameters:
       PRODUCT_CODE: wso2am
       PRODUCT_GIT_URL: "https://github.com/wso2/product-apim"
