@@ -13,14 +13,12 @@ infrastructureConfig:
     - OracleJDK-8
     - CentOS-7.5
     - MySQL-5.7
-    - SQLServer-SE-13.00
-    - Oracle-SE2-12.1
   provisioners:
-    - name: prod-wso2am-intg-deployment
+    - name: dev-wso2am-intg-deployment
       remoteRepository: "https://github.com/wso2/testgrid"
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'prod-wso2am-intg-deployment'
+        - name: 'dev-wso2am-intg-deployment'
           description: ''
           type: CLOUDFORMATION
           file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
@@ -51,7 +49,7 @@ scenarioConfigs:
       SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
       DBUsername: wso2carbon
       TEST_MODE: RELEASE
-      USE_CUSTOM_TESTNG: "FALSE"
+      USE_CUSTOM_TESTNG: "TRUE"
       WUM_PRODUCT_VERSION: 2.6
       WUM_CHANNEL: full
       PRODUCT_GIT_BRANCH: "2.x"
