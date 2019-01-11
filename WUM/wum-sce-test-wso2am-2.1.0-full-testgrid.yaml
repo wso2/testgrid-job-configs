@@ -1,7 +1,7 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "builder@wso2.org,krishanw@wso2.com,fazlann@wso2.com,chaminda@wso2.com,kasung@wso2.com,kavitha@wso2.com"
+emailToList: 'ching@wso2.com,kasung@wso2.com'
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
