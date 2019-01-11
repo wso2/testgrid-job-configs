@@ -6,12 +6,19 @@ infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
-  parameters:
-    - JDK : ORACLE_JDK8
   includes:
      - Ubuntu-18.04
+     - CentOS-7.5
+     - MySQL-5.6
      - MySQL-5.7
+  #   - Oracle-SE2-11.1
+     - Oracle-SE2-12.1
+     - SQLServer-SE-13.00
+     - SQLServer-SE-14.00
+     - Postgres-9.6
+     - Postgres-10.5
      - OracleJDK-8
+  #   - OPEN_JDK8
   provisioners:
     - name: single-node-deployment
       remoteRepository: "git@github.com:wso2/aws-apim.git"
