@@ -14,13 +14,14 @@ infrastructureConfig:
      - OracleJDK-8
   provisioners:
     - name: single-node-deployment
-      remoteRepository: "git@github.com:wso2/aws-ei.git"
+      remoteRepository: "git@github.com:wso2-support/aws-ei.git"
+      remoteBranch: "6.1.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-ei-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: integrator/integrator-ha.yaml
+          file: integrator/Minimum-HA/integrator-ha.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
