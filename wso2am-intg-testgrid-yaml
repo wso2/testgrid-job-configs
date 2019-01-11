@@ -49,7 +49,7 @@ scenarioConfigs:
       SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
       DBUsername: wso2carbon
       TEST_MODE: RELEASE
-      USE_CUSTOM_TESTNG: "TRUE"
+      USE_CUSTOM_TESTNG: "FALSE"
       WUM_PRODUCT_VERSION: 2.6
       WUM_CHANNEL: full
       PRODUCT_GIT_BRANCH: "2.x"
