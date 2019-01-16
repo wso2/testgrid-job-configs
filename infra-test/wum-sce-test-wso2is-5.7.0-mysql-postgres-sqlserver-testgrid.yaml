@@ -10,7 +10,7 @@ infrastructureConfig:
      - Ubuntu-18.04
   #   - CentOS-7.5
   #   - MySQL-5.6
-     - MySQL-5.7
+  #   - MySQL-5.7
   #   - Oracle-SE2-11.1
   #   - Oracle-SE2-12.1
      - SQLServer-SE-13.00
