@@ -12,8 +12,6 @@ infrastructureConfig:
     - ADOPT_OPEN_JDK8
     - CentOS-7.5
     - MySQL-5.7
-    - SQLServer-SE-13.00
-    - Oracle-SE2-12.1
   provisioners:
     - name: dev-wso2am-intg-deployment
       remoteRepository: "https://github.com/wso2/testgrid"
