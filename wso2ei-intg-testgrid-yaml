@@ -40,7 +40,7 @@ scenarioConfigs:
     file: integration-tests/run-scenario.sh
     inputParameters:
       PRODUCT_CODE: wso2ei
-      PRODUCT_GIT_URL: https://github.com/pasindujw/product-ei
+      PRODUCT_GIT_URL: https://github.com/wso2/product-ei
       INFRA_LOCATION: workspace/testgrid
       DEPLOYMENT_LOCATION: workspace/testgrid
       SCENARIOS_LOCATION: workspace/ei-test-integration
