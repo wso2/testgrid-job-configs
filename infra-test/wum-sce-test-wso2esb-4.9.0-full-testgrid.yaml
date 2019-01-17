@@ -18,7 +18,7 @@ infrastructureConfig:
      - Postgres-9.6
      - Postgres-10.5
      - OracleJDK-8
-  #   - OPEN_JDK8
+     - OPEN_JDK8
   provisioners:
     - name: single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-esb.git"
