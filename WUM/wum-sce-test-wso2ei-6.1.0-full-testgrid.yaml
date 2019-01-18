@@ -39,5 +39,5 @@ scenarioConfigs:
     description: "ei-scenarios"
     file: product-scenarios/test.sh
     inputParameters:
-      ProductVersion: "6.1.0"
+      ProductVersion: "EI-6.1.0"
 
