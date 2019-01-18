@@ -41,3 +41,4 @@ scenarioConfigs:
     name: "apim-scenarios"
     description: "apim-scenarios"
     file: product-scenarios/test.sh
+
