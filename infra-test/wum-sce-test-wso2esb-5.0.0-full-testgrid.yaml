@@ -42,3 +42,4 @@ scenarioConfigs:
     name: "esb-scenarios"
     description: "esb-scenarios"
     file: product-scenarios/test.sh
+
