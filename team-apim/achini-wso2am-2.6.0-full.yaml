@@ -30,7 +30,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
 scenarioConfigs:
   - testType: TESTNG
-     remoteRepository: "https://github.com/aaujayasena/product-apim.git"
+    remoteRepository: "https://github.com/aaujayasena/product-apim.git"
     remoteBranch: "product-scenarios-dev"
     name: "apim-scenarios"
     description: "apim-scenarios"
