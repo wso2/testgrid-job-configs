@@ -33,7 +33,7 @@ infrastructureConfig:
             ProductName: "wso2-ei"
 
 scenarioConfigs:
-  - remoteRepository: "https://github.com/pasindujw/ei-test-integration.git"
+  - remoteRepository: "https://github.com/wso2/ei-test-integration.git"
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
