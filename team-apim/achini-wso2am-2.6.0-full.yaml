@@ -1,5 +1,5 @@
-# TestGrid job configuration
-
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
 version: '0.9'
 emailToList: "achinij@wso2.com"
 infrastructureConfig:
@@ -10,15 +10,15 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
      - Ubuntu-18.04
-     - Oracle-SE2-12.1
+     - MySQL-5.7
      - OracleJDK-8
   provisioners:
-    - name: two-node-deployment
+    - name: single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
       remoteBranch: "2.6.0"
       description: Provision Infra for running scenario tests
       scripts:
-        - name: 'dev-wso2-apim-scenario-deployment'
+        - name: 'prod-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
           file: apim/Minimum-HA/apim.yaml
@@ -33,5 +33,6 @@ scenarioConfigs:
     remoteRepository: "https://github.com/aaujayasena/product-apim.git"
     remoteBranch: "product-scenarios-dev"
     name: "apim-scenarios"
-    description: "apim-scenarios"
+    description: "apim-scenarios-devtest"
     file: product-scenarios/test.sh
+
