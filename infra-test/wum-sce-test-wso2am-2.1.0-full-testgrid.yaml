@@ -28,7 +28,7 @@ infrastructureConfig:
         - name: 'prod-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: apim-ha.yaml
+          file: apim.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
