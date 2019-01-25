@@ -38,9 +38,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-apim.git"
-    remoteBranch: "product-scenarios"
+    remoteBranch: "product-scenarios-dev"
     name: "apim-scenarios"
     description: "apim-scenarios"
     file: product-scenarios/test.sh
-
-
