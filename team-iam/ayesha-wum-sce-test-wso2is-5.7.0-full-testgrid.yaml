@@ -40,7 +40,7 @@ infrastructureConfig:
             ProductVersion: "5.7.0"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteRepository: "https://github.com/ayshsandu/product-is.git"
     remoteBranch: "product-scenarios"
     name: "2-single-sign-on"
     description: "2-single-sign-on"
