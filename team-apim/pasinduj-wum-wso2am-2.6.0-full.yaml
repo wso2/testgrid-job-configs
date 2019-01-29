@@ -14,8 +14,7 @@ infrastructureConfig:
      - OracleJDK-8
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "git@github.com:KosalaHerath/test-log-archive.git"
-      remoteBranch: "master"
+      remoteRepository: "https://github.com/KosalaHerath/test-log-archiver"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'pasindu-wso2-apim-scenario-deployment'
