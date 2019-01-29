@@ -14,14 +14,14 @@ infrastructureConfig:
      - OracleJDK-8
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-apim.git"
-      remoteBranch: "2.6.0"
+      remoteRepository: "git@github.com:KosalaHerath/test-log-archive.git"
+      remoteBranch: "master"
       description: Provision Infra for running scenario tests
       scripts:
-        - name: 'prod-wso2-apim-scenario-deployment'
+        - name: 'pasindu-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: apim/Minimum-HA/apim.yaml
+          file: apim.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
