@@ -16,13 +16,15 @@ infrastructureConfig:
     - OPEN_JDK8
   provisioners:
     - name: single-node-deployment
+      remoteRepository: "git@github.com:wso2-support/aws-apim.git"
+      remoteBranch: 2.1.0
       remoteRepository: "git@github.com:wso2/aws-apim.git"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: apim-ha.yaml
+          file: apim/Minimum-HA/apim.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
