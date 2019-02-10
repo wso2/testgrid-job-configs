@@ -42,5 +42,7 @@ scenarioConfigs:
     name: "apim-scenarios"
     description: "apim-scenarios"
     file: product-scenarios/test.sh
+    inputParameters:
+      ProductVersion: "2.6.0"
 
 
