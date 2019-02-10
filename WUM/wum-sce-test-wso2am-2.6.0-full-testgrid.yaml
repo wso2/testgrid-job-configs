@@ -37,4 +37,6 @@ scenarioConfigs:
     name: "apim-scenarios"
     description: "apim-scenarios"
     file: product-scenarios/test.sh
+    inputParameters:
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
 
