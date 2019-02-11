@@ -21,7 +21,7 @@ infrastructureConfig:
         - name: 'pasindu-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: apim.yaml
+          file: apim/Minimum-HA/apim.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
