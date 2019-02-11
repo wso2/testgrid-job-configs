@@ -36,4 +36,4 @@ scenarioConfigs:
     file: product-scenarios/test.sh
     inputParameters:
       ProductVersion: "2.6.0"
-
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
