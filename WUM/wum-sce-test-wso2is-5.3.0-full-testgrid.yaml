@@ -12,7 +12,6 @@ infrastructureConfig:
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
     - Postgres-10.5
-    - OracleJDK-8
     - OPEN_JDK8
   provisioners:
     - name: two-node-deployment
