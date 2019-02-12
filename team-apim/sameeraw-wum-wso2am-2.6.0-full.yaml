@@ -17,7 +17,7 @@ infrastructureConfig:
       remoteBranch: "2.6.0"
       description: Provision Infra for running scenario tests
       scripts:
-        - name: 'pasindu-wso2-apim-scenario-deployment'
+        - name: 'sameeraw-wso2-apim-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
           file: apim/Minimum-HA/apim.yaml
