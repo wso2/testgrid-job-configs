@@ -30,7 +30,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-apim.git"
+    remoteRepository: "https://github.com/pasindujw/product-apim.git"
     remoteBranch: "product-scenarios"
     name: "apim-scenarios"
     description: "apim-scenarios"
