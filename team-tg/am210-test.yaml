@@ -10,7 +10,7 @@ infrastructureConfig:
     - CentOS-7.5
     - MySQL-5.7
     - Oracle-SE2-12.1
-    - OPEN_JDK8
+    - ORACLE_JDK8
   provisioners:
     - name: single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
