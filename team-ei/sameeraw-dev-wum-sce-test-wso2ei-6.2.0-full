@@ -9,7 +9,6 @@ infrastructureConfig:
   includes:
   - Ubuntu-18.04
   - MySQL-5.7
-  - Oracle-SE2-12.1
   - OpenJDK-8
   provisioners:
   - name: single-node-deployment
