@@ -7,7 +7,7 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-  - CentOS-7.5
+  - Ubuntu-18.04
   - MySQL-5.7
   - Oracle-SE2-12.1
   - SQLServer-SE-14.00
