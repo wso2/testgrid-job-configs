@@ -21,13 +21,13 @@ infrastructureConfig:
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2-ei-scenario-vfs-be-deployment'
-            description: ''
-            type: CLOUDFORMATION
-            file: integrator/Sample-Backends/vfs-be.yaml
-            inputParameters:
-              KeyPairName: "deployment-prod"
-              FTPUserName: "wso2user"
-              FTPUserPassword: "FTPUserPassword"
+          description: ''
+          type: CLOUDFORMATION
+          file: integrator/Sample-Backends/vfs-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
+            FTPUserName: "wso2user"
+            FTPUserPassword: "FTPUserPassword"
         - name: 'prod-wso2-ei-scenario-activemq-be-deployment'
           description: ''
           type: CLOUDFORMATION
