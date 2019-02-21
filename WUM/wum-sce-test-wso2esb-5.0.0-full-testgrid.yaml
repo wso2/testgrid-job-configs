@@ -1,7 +1,8 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "builder@wso2.org,kasung@wso2.com,chaminda@wso2.com,isuruu@wso2.com,nandika@wso2.com,milindap@wso2.com,dulanjali@wso2.com,sasikala@wso2.com,isuruuy@wso2.com,chalitha@wso2.com"
+emailToList: "builder@wso2.org,kasung@wso2.com,chaminda@wso2.com,isuruu@wso2.com,nandika@wso2.com,
+              milindap@wso2.com,dulanjali@wso2.com,sasikala@wso2.com,isuruuy@wso2.com,ridmi@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
@@ -18,6 +19,20 @@ infrastructureConfig:
       remoteBranch: "5.0.0"
       description: Provision Infra for running intg tests
       scripts:
+        - name: 'prod-wso2-ei-scenario-vfs-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: esb/Sample-Backends/vfs-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
+            FTPUserName: "wso2user"
+            FTPUserPassword: "FTPUserPassword"
+        - name: 'prod-wso2-ei-scenario-activemq-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: esb/Sample-Backends/activemq-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
         - name: 'prod-wso2-ei-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
