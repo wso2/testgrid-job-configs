@@ -29,7 +29,7 @@ infrastructureConfig:
         ProductVersion: "6.2.0"
         ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
         InternalPrepareForTest: "True"
-        region: "us-east-2"
+        region: "us-west-1"
 scenarioConfigs:
 - testType: TESTNG
   remoteRepository: "https://github.com/wso2/product-ei.git"
