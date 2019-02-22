@@ -26,11 +26,11 @@ infrastructureConfig:
             parseInfrastructureScript: false
             DBPassword: "DB_Password"
             KeyPairName: "deployment-prod"
-            CertificateName: "wso2cert"
+            CertificateName: "wso2cert_us_east_2"
             DBUsername: "wso2carbon"
             ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
             InternalPrepareForTest: "True"
-            region: "us-east-1"
+            region: "us-east-2"
         - name: 'prod-wso2is-samples-deployment'
           description: ''
           type: CLOUDFORMATION
