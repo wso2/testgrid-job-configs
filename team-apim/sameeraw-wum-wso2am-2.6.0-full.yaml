@@ -24,7 +24,7 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "wso2cert_san"
+            CertificateName: "wso2cert_us_east_2"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             region: "us-east-2"
