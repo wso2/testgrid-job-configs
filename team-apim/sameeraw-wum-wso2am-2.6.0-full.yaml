@@ -9,12 +9,12 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
      - Ubuntu-18.04
-     - Oracle-SE2-12.1
+     - MySQL-5.7
      - OracleJDK-8
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
-      remoteBranch: "2.1.0"
+      remoteBranch: "2.6.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'sameeraw-wso2-apim-scenario-deployment'
@@ -24,7 +24,7 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "wso2cert_new"
+            CertificateName: "wso2cert_san"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             region: "us-east-2"
