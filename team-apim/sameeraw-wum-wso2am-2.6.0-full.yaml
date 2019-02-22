@@ -24,10 +24,10 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "wso2cert_us_east_2"
+            CertificateName: "wso2cert_us_west_1"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
-            region: "us-east-2"
+            region: "us-west-1"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/sameerawickramasekara/product-apim.git"
