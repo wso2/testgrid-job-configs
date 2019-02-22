@@ -30,8 +30,11 @@ infrastructureConfig:
             region: "us-west-1"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/sameerawickramasekara/product-apim.git"
-    remoteBranch: "product-scenarios"
+    remoteRepository: "https://github.com/wso2/product-apim.git"
+    remoteBranch: "product-scenarios-dev"
     name: "apim-scenarios"
     description: "apim-scenarios"
     file: product-scenarios/test.sh
+    inputParameters:
+      ProductVersion: "2.6.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"    
