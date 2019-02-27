@@ -9,6 +9,7 @@ infrastructureConfig:
     - JDK : CORRETTO_JDK8
   includes:
      - Ubuntu-18.04
+     - CentOS-7.5
      - MySQL-5.7
      - CorrettoJDK-8
   provisioners:
