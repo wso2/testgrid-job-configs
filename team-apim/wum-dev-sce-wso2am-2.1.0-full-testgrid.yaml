@@ -1,0 +1,39 @@
+# TestGrid Test Configuration Parameters
+version: '0.9'
+emailToList: "praminda@wso2.com,samitha@swo2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+     - Ubuntu-18.04
+     - MySQL-5.7
+     - OracleJDK-8
+  provisioners:
+    - name: two-node-deployment
+      remoteRepository: "git@github.com:wso2-support/aws-apim.git"
+      remoteBranch: "2.1.0"
+      description: Provision Infra for running scenario tests
+      scripts:
+        - name: 'prod-wso2-apim-scenario-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: apim/Minimum-HA/apim.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2cert"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-apim.git"
+    remoteBranch: "product-scenarios-dev"
+    name: "apim-scenarios"
+    description: "apim-scenarios-devtest"
+    file: product-scenarios/test.sh
+    inputParameters:
+      ProductVersion: "2.1.0"
+
