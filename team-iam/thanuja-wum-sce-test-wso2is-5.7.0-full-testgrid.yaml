@@ -11,10 +11,10 @@ infrastructureConfig:
   includes:
      - Ubuntu-18.04
      - MySQL-5.7
-     - OracleJDK-8
+     - CorrettoJDK-8
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "git@github.com:thanujalk/aws-is.git"
+      remoteRepository: "git@github.com:wso2-support/aws-is.git"
       remoteBranch: "5.7.0"
       description: Provision Infra for running intg tests
       scripts:
