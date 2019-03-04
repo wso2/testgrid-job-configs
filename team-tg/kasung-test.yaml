@@ -14,7 +14,8 @@ infrastructureConfig:
      - OracleJDK-8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "git@github.com:kasunbg/testgrid.git"
+      remoteBranch: testgrid-job
       description: Provision Infra for running intg tests
       scripts:
         - name: 'Test-Phase-1-Deployment'
@@ -29,7 +30,8 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "git@github.com:kasunbg/testgrid.git"
+      remoteBranch: testgrid-job
       description: 'dummy'
       dir: .
       scripts:
@@ -38,7 +40,8 @@ deploymentConfig:
           file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:wso2/testgrid.git"
+    remoteRepository: "git@github.com:kasunbg/testgrid.git"
+    remoteBranch: testgrid-job
     name: "Test-Phase-1"
     description: "Test-Phase-1"
     file: test/integration-tests/src/test/resources/test-phase1/test.sh
