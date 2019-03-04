@@ -38,6 +38,9 @@ deploymentConfig:
         - name: 'default'
           type: SHELL
           file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
+          inputParameters:
+            DEPLOY123: true
+            test: "success"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:kasunbg/testgrid.git"
