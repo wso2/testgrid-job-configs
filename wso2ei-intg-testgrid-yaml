@@ -6,14 +6,13 @@ infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
-  parameters:
-    - JDK : OPEN_JDK8
   includes:
     - ADOPT_OPEN_JDK8
+#    - OracleJDK-8
     - CentOS-7.5
     - MySQL-5.7
-    - SQLServer-SE-13.00
-    - Oracle-SE2-12.1
+#    - SQLServer-SE-13.00
+#    - Oracle-SE2-12.1
   provisioners:
     - name: prod-wso2ei-intg-deployment
       remoteRepository: "https://github.com/wso2/testgrid"
