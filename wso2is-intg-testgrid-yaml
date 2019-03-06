@@ -10,12 +10,12 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
     - OpenJDK-8
-    - OracleJDK-8
-    - ADOPT_OPEN_JDK8
+#    - OracleJDK-8
+#    - ADOPT_OPEN_JDK8
     - CentOS-7.5
     - MySQL-5.7
-    - SQLServer-SE-13.00
-    - Oracle-SE2-12.1
+#    - SQLServer-SE-13.00
+#    - Oracle-SE2-12.1
   provisioners:
     - name: prod-wso2is-intg-deployment
       remoteRepository: "git@github.com:wso2/testgrid.git"
