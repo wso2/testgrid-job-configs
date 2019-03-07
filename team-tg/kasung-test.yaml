@@ -39,7 +39,7 @@ deploymentConfig:
           type: SHELL
           file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
           inputParameters:
-            Testing: "success"
+            MyInputParam: "Param Value 1"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:kasunbg/testgrid.git"
