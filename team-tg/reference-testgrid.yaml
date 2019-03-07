@@ -47,4 +47,7 @@ scenarioConfigs:
     name: "Test-Phase-1"
     description: "Test-Phase-1"
     file: test/integration-tests/src/test/resources/test-phase1/test.sh
+    inputParameters:
+      ProductVersion: "ei-6.4.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0"
 
