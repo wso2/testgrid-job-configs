@@ -23,6 +23,9 @@ infrastructureConfig:
           type: SHELL
           phase: CREATE
           file: test/integration-tests/src/test/resources/test-phase1/infra.sh
+          inputParameters:
+            SampleInfraParam: "Infra Param 1"
+            FTPUserName: "wso2user"          
         - name: destroy
           file: test/integration-tests/src/test/resources/test-phase1/destroy.sh
           type: SHELL
@@ -39,7 +42,7 @@ deploymentConfig:
           type: SHELL
           file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
           inputParameters:
-            MyInputParam: "Param Value 1"
+            MyInputParam: "Deploy Param 1"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:kasunbg/testgrid.git"
