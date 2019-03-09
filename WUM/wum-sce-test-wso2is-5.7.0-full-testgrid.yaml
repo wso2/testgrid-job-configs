@@ -13,7 +13,6 @@ infrastructureConfig:
     - SQLServer-SE-14.00
     - Postgres-10.5
     - OPEN_JDK8
-    - OracleJDK-8
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-is.git"
