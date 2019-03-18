@@ -1,1 +1,1 @@
-testgridYamlURL: https://raw.githubusercontent.com/ballerina-platform/ballerina-lang/ballerina-scenarios-cleaned/.testgrid-bbg-data.yaml
+testgridYamlURL: https://raw.githubusercontent.com/ballerina-platform/ballerina-scenario-tests/scenario-tests/.testgrid-bbg-data.yaml
