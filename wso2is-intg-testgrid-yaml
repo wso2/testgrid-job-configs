@@ -34,7 +34,7 @@ scenarioConfigs:
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
-    file: integration-tests/run-scenario.sh
+    file: integration-tests/test.sh
     inputParameters:
       PRODUCT_CODE: wso2is
       PRODUCT_GIT_URL: https://github.com/wso2/product-is
