@@ -27,7 +27,7 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             ProductVersion: "6.4.0"
-            ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
+            ElasticSearchEndpoint: "https://search-testgrid-dev-uyzu33zahmcxtuhjzcti76lc2m.us-east-1.es.amazonaws.com"
             InternalPrepareForTest: "True"
 scenarioConfigs:
   - testType: TESTNG
