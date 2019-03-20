@@ -7,8 +7,10 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
+     - CentOS-7.5
      - SUSE-Linux-12
      - Postgres-9.4.12
+     - MySQL-5.7
      - OPEN_JDK8
   provisioners:
     - name: two-node-deployment
