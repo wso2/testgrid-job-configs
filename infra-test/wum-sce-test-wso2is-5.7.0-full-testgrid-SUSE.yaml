@@ -1,15 +1,17 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "kosala@wso2.com,ching@wso2.com,kasung@wso2.com"
+emailToList: "kosala@wso2.com,ching@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
   includes:
      - SUSE-Linux-12
      - Postgres-9.4.12
-     - OPEN_JDK8
+     - CorrettoJDK-8
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-is.git"
@@ -38,7 +40,7 @@ infrastructureConfig:
             ProductVersion: "5.7.0"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteRepository: "https://github.com/thanujalk/product-is.git"
     remoteBranch: "product-scenarios"
     name: "2-single-sign-on"
     description: "2-single-sign-on"
