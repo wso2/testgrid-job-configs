@@ -9,9 +9,11 @@ infrastructureConfig:
   parameters:
     - JDK : ORACLE_JDK8
   includes:
+     - CentOS-7.5
      - SUSE-Linux-12
      - Postgres-9.4.12
-     - CorrettoJDK-8
+     - MySQL-5.7
+     - OPEN_JDK8
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-is.git"
