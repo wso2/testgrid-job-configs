@@ -10,7 +10,7 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
     - ADOPT_OPEN_JDK8
-    - Ubuntu-18.04
+    - CentOS-7.4
     - SQLServer-SE-13.00
   provisioners:
     - name: dev-wso2is-intg-deployment
