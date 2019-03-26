@@ -31,7 +31,7 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
             InternalPrepareForTest: "True"
-            ProductLocation: "https://github.com/wso2/product-is/releases/download/v5.8.0-m26/wso2is-5.8.0-m26.zip"
+            ProductLocation: "https://github.com/wso2/product-is/releases/download/v5.8.0-alpha2/wso2is-5.8.0-alpha2.zip"
             region: "us-east-2"
         - name: 'prod-wso2is-samples-deployment'
           description: ''
