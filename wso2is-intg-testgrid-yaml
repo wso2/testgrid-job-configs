@@ -38,7 +38,7 @@ scenarioConfigs:
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
-    file: integration-tests/run-scenario.sh
+    file: integration-tests/test.sh
     inputParameters:
       DEPLOYMENT_LOCATION: workspace/testgrid
       PRODUCT_CODE: wso2is
