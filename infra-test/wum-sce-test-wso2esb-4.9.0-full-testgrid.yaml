@@ -40,7 +40,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-ei.git"
-    remoteBranch: "product-scenarios"
+    remoteBranch: "master"
     name: "esb-scenarios"
     description: "esb-scenarios"
     file: product-scenarios/test.sh
