@@ -10,7 +10,7 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
     - ADOPT_OPEN_JDK8
-    - CentOS-7.5
+    - Windows-2016
     - MySQL-5.7
   provisioners:
     - name: dev-wso2is-intg-deployment
