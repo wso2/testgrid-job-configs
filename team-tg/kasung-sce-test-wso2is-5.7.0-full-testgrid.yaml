@@ -12,7 +12,7 @@ infrastructureConfig:
     - OPEN_JDK8
   provisioners:
     - name: two-node-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-is.git"
+      remoteRepository: "git@github.com:kasunbg/aws-is.git"
       remoteBranch: "5.7.0"
       description: Provision Infra for running intg tests
       scripts:
