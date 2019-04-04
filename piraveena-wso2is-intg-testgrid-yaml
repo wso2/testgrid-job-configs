@@ -14,7 +14,7 @@ infrastructureConfig:
     - MySQL-5.7
   provisioners:
     - name: dev-wso2is-intg-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "git@github.com:piraveena/testgrid.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'dev-wso2is-intg-deployment'
