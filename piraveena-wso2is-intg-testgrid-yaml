@@ -14,7 +14,7 @@ infrastructureConfig:
     - MySQL-5.7
   provisioners:
     - name: dev-wso2is-intg-deployment
-      remoteRepository: "git@github.com:piraveena/testgrid.git"
+      remoteRepository: "git@github.com:wso2/testgrid.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'dev-wso2is-intg-deployment'
@@ -31,7 +31,7 @@ infrastructureConfig:
             ProductName: "wso2-is"
             WSO2InstanceType: "c3.4xlarge"
 scenarioConfigs:
-  - remoteRepository: "git@github.com:wso2/identity-test-integration.git"
+  - remoteRepository: "git@github.com:piraveena/identity-test-integration.git"
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
