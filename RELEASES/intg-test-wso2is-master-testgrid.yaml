@@ -8,7 +8,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
-#    - Windows-2016
+    - Windows-2016
 #    - RHEL-7.4
 #    - Ubuntu-18.04
 #    - SUSE-Linux-12
@@ -39,6 +39,7 @@ infrastructureConfig:
             EC2KeyPair: "deployment-prod"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2-is"
+            WSO2InstanceType: "c3.4xlarge"
 scenarioConfigs:
   - remoteRepository: "git@github.com:wso2/identity-test-integration.git"
     testType: TESTNG
