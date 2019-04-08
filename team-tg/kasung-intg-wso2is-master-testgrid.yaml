@@ -18,8 +18,8 @@ infrastructureConfig:
 #    - SQLServer-SE-14.00
     - Postgres-10.5
 #    - Postgres-9.6
-#    - ADOPT_OPEN_JDK8
-    - CorrettoJDK-8
+    - ADOPT_OPEN_JDK8
+#    - CorrettoJDK-8
 #    - OracleJDK-8
  #   - OPEN_JDK8
   provisioners:
