@@ -21,7 +21,7 @@ infrastructureConfig:
     - ADOPT_OPEN_JDK8
     - CorrettoJDK-8
     - OracleJDK-8
-    - OPEN_JDK8
+ #   - OPEN_JDK8
   provisioners:
     - name: prod-wso2is-intg-deployment
       remoteRepository: "git@github.com:wso2/testgrid.git"
