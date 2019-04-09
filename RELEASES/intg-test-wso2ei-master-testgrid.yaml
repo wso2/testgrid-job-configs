@@ -7,7 +7,7 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-  - CentOS-7.5
+  # CentOS-7.5
   - Windows-2016
   #  - RHEL-7.4
   # Ubuntu-18.04
