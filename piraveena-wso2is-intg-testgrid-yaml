@@ -38,8 +38,8 @@ scenarioConfigs:
     file: integration-tests/test.sh
     inputParameters:
       PRODUCT_CODE: wso2is
-      PRODUCT_GIT_URL: https://github.com/piraveena/product-is
-      PRODUCT_GIT_BRANCH: tomcatInitializerTest
+      PRODUCT_GIT_URL: https://github.com/wso2/product-is
+      PRODUCT_GIT_BRANCH: master
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid
       DEPLOYMENT_LOCATION: workspace/testgrid
