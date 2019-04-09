@@ -14,7 +14,7 @@ infrastructureConfig:
 #    - SUSE-Linux-12
     - MySQL-5.7
     - Oracle-SE2-12.1
-    - Oracle-SE2-11.2
+    - Oracle-SE1-11.2
     - SQLServer-SE-14.00
     #- Postgres-10.5
     #- Postgres-9.6
