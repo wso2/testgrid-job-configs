@@ -19,7 +19,7 @@ infrastructureConfig:
     #- Postgres-10.5
     #- Postgres-9.6
     - ADOPT_OPEN_JDK8
-    - CorrettoJDK-8
+    #- CorrettoJDK-8
     - OracleJDK-8
   provisioners:
     - name: prod-wso2is-intg-deployment
