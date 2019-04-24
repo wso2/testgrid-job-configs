@@ -1,0 +1,60 @@
+# TestGrid job configuration
+
+version: '0.9'
+emailToList: "kasung@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - Windows-2016
+    - RHEL-7.4
+    - Ubuntu-18.04
+    - SUSE-Linux-12
+    - MySQL-5.7
+    - Oracle-SE2-12.1
+#    - SQLServer-SE-14.00
+    - CorrettoJDK-8
+    - OracleJDK-8
+  provisioners:
+    - name: prod-wso2-ei-scenario-deployment
+      remoteRepository: "git@github.com:kasunbg/testgrid.git"
+      remoteBranch: testgrid-job
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: SHELL
+          phase: CREATE
+          file: test/integration-tests/src/test/resources/test-phase1/infra.sh
+          inputParameters:
+            SampleInfraParam: "Infra Param 1"
+            FTPUserName: "wso2user"          
+        - name: destroy
+          file: test/integration-tests/src/test/resources/test-phase1/destroy.sh
+          type: SHELL
+          phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:kasunbg/testgrid.git"
+      remoteBranch: testgrid-job
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
+          inputParameters:
+            MyInputParam: "Deploy Param 1"
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:kasunbg/testgrid.git"
+    remoteBranch: testgrid-job
+    name: "Test-Phase-1"
+    description: "Test-Phase-1"
+    file: test/integration-tests/src/test/resources/test-phase1/test.sh
+    inputParameters:
+      ProductVersion: "ei-6.4.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0"
