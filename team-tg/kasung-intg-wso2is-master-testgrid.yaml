@@ -24,10 +24,11 @@ infrastructureConfig:
  #   - OPEN_JDK8
   provisioners:
     - name: prod-wso2is-intg-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "https://github.com/kasunbg/testgrid.git"
+      remoteBranch: broken-cfn-test
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'prod-wso2is-intg-deployment'
+        - name: 'wso2is-intg-deployment'
           description: ''
           type: CLOUDFORMATION
           file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
