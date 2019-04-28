@@ -17,7 +17,7 @@ infrastructureConfig:
 
   provisioners:
   - name: prod-wso2ei-intg-deployment
-    remoteRepository: "https://github.com/wso2/testgrid"
+    remoteRepository: "https://github.com/RidmiR/testgrid"
     description: Provision Infra for running intg tests
     scripts:
     - name: 'prod-wso2ei-intg-deployment'
