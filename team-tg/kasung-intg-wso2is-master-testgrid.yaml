@@ -1,23 +1,34 @@
 # TestGrid Test Configuration Parameters
 # TODO use dash as the separator instead of camelCase.
 version: '0.9'
-emailToList: "piraveena@wso2.com"
+emailToList: "kasung@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
-  parameters:
-    - JDK : ORACLE_JDK8
   includes:
-    - ADOPT_OPEN_JDK8
+    - CentOS-7.5
     - Windows-2016
-    - MySQL-5.7
+#    - RHEL-7.4
+#    - Ubuntu-18.04
+#    - SUSE-Linux-12
+#    - MySQL-5.7
+#    - Oracle-SE2-12.1
+    - Oracle-SE1-11.2
+#    - SQLServer-SE-14.00
+#    - Postgres-10.5
+#    - Postgres-9.6
+    - ADOPT_OPEN_JDK8
+    - CorrettoJDK-8
+#    - OracleJDK-8
+ #   - OPEN_JDK8
   provisioners:
-    - name: dev-wso2is-intg-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+    - name: prod-wso2is-intg-deployment
+      remoteRepository: "https://github.com/kasunbg/testgrid.git"
+      remoteBranch: broken-cfn-test
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'dev-wso2is-intg-deployment'
+        - name: 'wso2is-intg-deployment'
           description: ''
           type: CLOUDFORMATION
           file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
@@ -26,23 +37,23 @@ infrastructureConfig:
             region: us-east-1
             DBPassword: "DB_Password"
             DBClass: "db.m4.large"
-            EC2KeyPair: "deployment-dev"
+            EC2KeyPair: "deployment-prod"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2-is"
             WSO2InstanceType: "c3.4xlarge"
 scenarioConfigs:
-  - remoteRepository: "git@github.com:piraveena/identity-test-integration.git"
+  - remoteRepository: "git@github.com:wso2/identity-test-integration.git"
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
     file: integration-tests/test.sh
     inputParameters:
+      DEPLOYMENT_LOCATION: workspace/testgrid
       PRODUCT_CODE: wso2is
       PRODUCT_GIT_URL: https://github.com/wso2/product-is
       PRODUCT_GIT_BRANCH: master
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid
-      DEPLOYMENT_LOCATION: workspace/testgrid
       TEST_MODE: SNAPSHOT
       SCENARIOS_LOCATION: workspace/identity-test-integration
       REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
@@ -57,3 +68,5 @@ scenarioConfigs:
       WUM_CHANNEL: full
       WUM_PRODUCT_VERSION: 2.5.0
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
+
+

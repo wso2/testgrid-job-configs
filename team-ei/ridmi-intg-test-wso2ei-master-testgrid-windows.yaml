@@ -1,0 +1,62 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+emailToList: "kasung@wso2.com, ridmi@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+    - Windows-2016
+    - MySQL-5.7
+    - Oracle-SE2-12.1
+    - SQLServer-SE-14.00
+    - ADOPT_OPEN_JDK8
+    - CorrettoJDK-8
+    - OracleJDK-8
+
+  provisioners:
+  - name: prod-wso2ei-intg-deployment
+    remoteRepository: "https://github.com/RidmiR/testgrid"
+    description: Provision Infra for running intg tests
+    scripts:
+    - name: 'prod-wso2ei-intg-deployment'
+      description: ''
+      type: CLOUDFORMATION
+      file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
+      inputParameters:
+        parseInfrastructureScript: false
+        region: us-east-1
+        DBPassword: "DB_Password"
+        DBClass: "db.m4.large"
+        EC2KeyPair: "deployment-dev"
+        ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
+        ProductName: "wso2-ei"
+
+scenarioConfigs:
+- remoteRepository: "https://github.com/wso2/ei-test-integration.git"
+  testType: TESTNG
+  name: integration-tests
+  description: "integration tests"
+  file: integration-tests/run-scenario.sh
+  inputParameters:
+    PRODUCT_CODE: wso2ei
+    PRODUCT_GIT_URL: https://github.com/wso2/product-ei
+    INFRA_LOCATION: workspace/testgrid
+    DEPLOYMENT_LOCATION: workspace/testgrid
+    SCENARIOS_LOCATION: workspace/ei-test-integration
+    REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
+    REMOTE_WORKSPACE_DIR_WINDOWS: c:/testgrid/workspace
+    SQL_DRIVERS_LOCATION_UNIX: /opt/testgrid/sql-drivers/
+    SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
+    DBUsername: wso2carbon
+    TEST_MODE: SNAPSHOT
+    PRODUCT_GIT_BRANCH: master
+    LATEST_PRODUCT_RELEASE_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
+    LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-ei/lastStableBuild/mavenArtifacts/api/
+    USE_CUSTOM_TESTNG: FALSE
+    WUM_CHANNEL: full
+    WUM_PRODUCT_VERSION: 2.5.0
+    PRODUCT_DIST_DOWNLOAD_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
+    productDistDownloadApi: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
+    keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"

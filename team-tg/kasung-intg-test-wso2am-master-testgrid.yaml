@@ -1,23 +1,32 @@
 # TestGrid Test Configuration Parameters
 # TODO use dash as the separator instead of camelCase.
 version: '0.9'
-emailToList: "piraveena@wso2.com"
+emailToList: "kasung@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
-  parameters:
-    - JDK : ORACLE_JDK8
   includes:
-    - ADOPT_OPEN_JDK8
+    - CentOS-7.5
     - Windows-2016
+#    - RHEL-7.4
+#    - Ubuntu-18.04
+#    - SUSE-Linux-12
     - MySQL-5.7
+    - Oracle-SE2-12.1
+#    - Oracle-SE2-11.2
+#    - SQLServer-SE-14.00
+#    - Postgres-10.5
+#    - Postgres-9.6
+    - ADOPT_OPEN_JDK8
+#    - CorrettoJDK-8
+#    - OracleJDK-8
   provisioners:
-    - name: dev-wso2is-intg-deployment
+    - name: wso2am-intg-deployment
       remoteRepository: "git@github.com:wso2/testgrid.git"
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'dev-wso2is-intg-deployment'
+        - name: 'prod-wso2am-intg-deployment'
           description: ''
           type: CLOUDFORMATION
           file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
@@ -28,32 +37,32 @@ infrastructureConfig:
             DBClass: "db.m4.large"
             EC2KeyPair: "deployment-dev"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
-            ProductName: "wso2-is"
+            ProductName: "wso2-apim"
             WSO2InstanceType: "c3.4xlarge"
 scenarioConfigs:
-  - remoteRepository: "git@github.com:piraveena/identity-test-integration.git"
+  - remoteRepository: "git@github.com:wso2/apim-test-integration.git"
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
-    file: integration-tests/test.sh
+    file: integrationtests/run-scenario.sh
     inputParameters:
-      PRODUCT_CODE: wso2is
-      PRODUCT_GIT_URL: https://github.com/wso2/product-is
-      PRODUCT_GIT_BRANCH: master
-      PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
+      PRODUCT_CODE: wso2am
+      PRODUCT_GIT_URL: "https://github.com/wso2/product-apim"
+      PRODUCT_GIT_BRANCH: "2.x"
+      PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid
-      DEPLOYMENT_LOCATION: workspace/testgrid
       TEST_MODE: SNAPSHOT
-      SCENARIOS_LOCATION: workspace/identity-test-integration
+      SCENARIOS_LOCATION: workspace/apim-test-integration
+      DEPLOYMENT_LOCATION: workspace/testgrid
       REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
       REMOTE_WORKSPACE_DIR_WINDOWS: c:/testgrid/workspace
       SQL_DRIVERS_LOCATION_UNIX: /opt/testgrid/sql-drivers/
       SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
       DBUsername: wso2carbon
-      PRODUCT_GIT_BRANCH: master
-      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
-      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-is/lastStableBuild/mavenArtifacts/api/
-      USE_CUSTOM_TESTNG: FALSE
-      WUM_CHANNEL: full
-      WUM_PRODUCT_VERSION: 2.5.0
+      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
+      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim_2.x/lastStableBuild/mavenArtifacts/api/
+      USE_CUSTOM_TESTNG: "FALSE"
+      WUM_PRODUCT_VERSION: 2.6
+    #  WUM_CHANNEL: full
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
+
