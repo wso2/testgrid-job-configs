@@ -9,7 +9,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
-    - SUSE-Linux-12
+#   - SUSE-Linux-12
     - MySQL-5.7
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
