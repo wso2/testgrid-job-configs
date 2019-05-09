@@ -9,10 +9,10 @@ infrastructureConfig:
   includes:
     - Windows-2016
     - MySQL-5.7
-    - Oracle-SE2-12.1
-    - SQLServer-SE-14.00
-    - ADOPT_OPEN_JDK8
-    - CorrettoJDK-8
+ #   - Oracle-SE2-12.1
+ #   - SQLServer-SE-14.00
+ #   - ADOPT_OPEN_JDK8
+ #   - CorrettoJDK-8
     - OracleJDK-8
   provisioners:
     - name: prod-wso2is-intg-deployment
