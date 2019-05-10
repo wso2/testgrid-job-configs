@@ -54,7 +54,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "6.5.0"            
             InternalPrepareForTest: "True"
-            ProductLocation: "https://github.com/wso2/product-ei/releases/download/v6.5.0-m3/wso2ei-6.5.0-m3.zip"
+            ProductLocation: "https://github.com/wso2/product-ei/releases/download/v6.5.0-m6/wso2ei-6.5.0-m6.zip"
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
