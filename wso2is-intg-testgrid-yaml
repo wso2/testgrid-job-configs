@@ -10,12 +10,13 @@ infrastructureConfig:
     - JDK : ORACLE_JDK8
   includes:
     - OpenJDK-8
-#    - OracleJDK-8
+    - OracleJDK-8
 #    - ADOPT_OPEN_JDK8
     - CentOS-7.5
+    - Windows-2016
     - MySQL-5.7
-#    - SQLServer-SE-13.00
-#    - Oracle-SE2-12.1
+    - SQLServer-SE-13.00
+    - Oracle-SE2-12.1
   provisioners:
     - name: prod-wso2is-intg-deployment
       remoteRepository: "git@github.com:wso2/testgrid.git"
@@ -47,7 +48,7 @@ scenarioConfigs:
       PRODUCT_GIT_BRANCH: master
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid
-      TEST_MODE: SNAPSHOT
+      TEST_MODE: RELEASE
       SCENARIOS_LOCATION: workspace/identity-test-integration
       REMOTE_WORKSPACE_DIR_UNIX: /opt/testgrid/workspace
       REMOTE_WORKSPACE_DIR_WINDOWS: c:/testgrid/workspace
