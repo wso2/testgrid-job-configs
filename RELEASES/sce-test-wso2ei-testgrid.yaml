@@ -10,7 +10,7 @@ infrastructureConfig:
     - CentOS-7.5
 ##    - Windows-2016
 #    - RHEL-7.4
-#     - Ubuntu-18.04
+#    - Ubuntu-18.04
 #    - SUSE-Linux-12
     - MySQL-5.7
 #    - Oracle-SE2-12.1
@@ -54,7 +54,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "6.5.0"            
             InternalPrepareForTest: "True"
-            ProductLocation: "https://github.com/wso2/product-ei/releases/download/v6.5.0-rc1/wso2ei-6.5.0-rc1.zip"	    
+            ProductLocation: "https://github.com/wso2/product-ei/releases/download/v6.5.0-rc1/wso2ei-6.5.0-rc1.zip"
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
