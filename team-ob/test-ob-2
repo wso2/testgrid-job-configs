@@ -1,0 +1,32 @@
+# TestGrid Test Configuration Parameters
+version: '0.9'
+emailToList: "malshani@wso2.com, pasinduj@wso2.com, chalitha@wso2.com"
+infrastructureConfig:
+  iacProvider: None
+  infrastructureProvider: SHELL
+  containerOrchestrationEngine: None
+  includes:
+     - Ubuntu-18.04
+     - SQLServer-SE-13.00
+     - OracleJDK-8
+  provisioners:
+    - name: single-node-deployment
+      remoteRepository: "git@github.com:pasindujw/shell-ob.git"
+      remoteBranch: "master"
+      description: Provide existing deployement details
+      scripts:
+        - name: 'dev-wso2-ob-scenario-deployment'
+          description: ''
+          type: SHELL
+          file: ob/infra-dummy.sh
+scenarioConfigs:
+  - testType: JMETER
+    remoteRepository: "git@github.com:pasindujw/financial-open-banking.git"
+    remoteBranch: "product2"
+    name: "ob-scenarios"
+    description: "ob-scenarios-devtest"
+    file: product-scenarios/test.sh
+    inputParameters:
+      ProductVersion: "1.3.0"
+      SPEC_NAME: "uk"
+      SPEC_VERSION: "v301"
