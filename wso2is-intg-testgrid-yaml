@@ -9,9 +9,9 @@ infrastructureConfig:
   parameters:
     - JDK : ORACLE_JDK8
   includes:
-    - OpenJDK-8
+   # - OpenJDK-8
     - OracleJDK-8
-#    - ADOPT_OPEN_JDK8
+    - ADOPT_OPEN_JDK8
     - CentOS-7.5
     - Windows-2016
     - MySQL-5.7
