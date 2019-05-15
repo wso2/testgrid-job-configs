@@ -9,7 +9,7 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
 ##    - Windows-2016
-#    - RHEL-7.4
+    - RHEL-7.4
 #    - Ubuntu-18.04
 #    - SUSE-Linux-12
     - MySQL-5.7
