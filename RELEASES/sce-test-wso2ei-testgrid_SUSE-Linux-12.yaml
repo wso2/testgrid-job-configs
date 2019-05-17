@@ -7,21 +7,13 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-#    - CentOS-7.5
-##    - Windows-2016
-#    - RHEL-7.4
-#    - Ubuntu-18.04
-     - SUSE-Linux-12
-     - MySQL-5.7
-#    - Oracle-SE2-12.1
-#    - Oracle-SE1-11.2
-#    - SQLServer-SE-14.00
-#    - Postgres-10.5
-#    - Postgres-9.6
-#    - ADOPT_OPEN_JDK8
-#    - CorrettoJDK-8
-#    - OracleJDK-8
-     - OPEN_JDK8
+    - SUSE-Linux-12
+    - MySQL-5.7
+    - Oracle-SE2-12.1   
+    - SQLServer-SE-14.00
+    - CorrettoJDK-8
+    - OPEN_JDK8	
+
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-ei.git"
@@ -54,7 +46,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "6.5.0"            
             InternalPrepareForTest: "True"
-            ProductLocation: "https://github.com/wso2/product-ei/releases/download/v6.5.0-m6/wso2ei-6.5.0-m6.zip"
+            ProductLocation: "https://github.com/wso2/product-ei/releases/download/v6.5.0-rc1/wso2ei-6.5.0-rc1.zip"
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
