@@ -29,7 +29,7 @@ deploymentConfig:
       scripts:
         - name: 'deploy1'
           type: SHELL
-          file: wso2am.sh
+          file: deploymentRepository/wso2am.sh
         - name: 'deploy'
           type: KUBERNETES
           inputParameters:
@@ -40,5 +40,5 @@ scenarioConfigs:
     remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
     name: "ref-scenario"
     description: "Test-Phase-1"
-    file: tests/test.sh
+    file: scenarioTestsRepository/ref-scenario/tests/test.sh
 
