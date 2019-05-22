@@ -53,7 +53,7 @@ scenarioConfigs:
     TEST_MODE: SNAPSHOT
     PRODUCT_GIT_BRANCH: master
     LATEST_PRODUCT_RELEASE_API: https://wso2.org/jenkins/job/products/job/product-ei/lastRelease/api/
-    LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-ei/lastStableBuild/mavenArtifacts/api/
+    LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-ei/677/mavenArtifacts/api/
     USE_CUSTOM_TESTNG: FALSE
     WUM_CHANNEL: full
     WUM_PRODUCT_VERSION: 2.5.0
