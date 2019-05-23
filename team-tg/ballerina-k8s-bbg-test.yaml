@@ -1,0 +1,66 @@
+# Copyright (c) 2019, WSO2 Inc. (http://wso2.org) All Rights Reserved.
+#
+# WSO2 Inc. licenses this file to you under the Apache License,
+# Version 2.0 (the "License"); you may not use this file except
+# in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+# TestGrid Test Configuration Parameters
+version: '0.9'
+emailToList: "manurip@wso2.com"
+infrastructureConfig:
+  infrastructureProvider: SHELL
+  containerOrchestrationEngine: K8S
+  includes:
+    - Ubuntu-18.04
+    - OracleJDK-8
+  provisioners:
+  - name: ballerina-deployment
+    remoteRepository: "https://github.com/kasunbg/ballerina-scenario-tests.git"
+    remoteBranch: "rc-snapshot-build-issue"
+    description: creates infrastructure for ballerina scenario tests
+    scripts:
+      - name: ballerina-deployment
+        description: Creates Kubernetes infrastructure for a database and ballerina installed instance.
+        type: SHELL
+        phase: CREATE
+        file: test-grid-scripts/common/common_infra.sh
+      - name: destroy
+        file: test-grid-scripts/common/common_cleanup.sh
+        type: SHELL
+        phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'data-backed-service'
+      description: 'data-backed-service BBG tests'
+      remoteRepository: "https://github.com/kasunbg/ballerina-scenario-tests.git"
+      remoteBranch: "rc-snapshot-build-issue"
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: test-grid-scripts/bbg/data/deployment-data-backed-service.sh
+          inputParameters:
+            #BallerinaVersionType: "LatestSnapshot" #LatestSnapshot/RC
+            BallerinaVersionType: "RC"
+            RCLocation: "https://product-dist.ballerina.io/nightly/0.992.0-m2-SNAPSHOT/ballerina-0.992.0-m2-SNAPSHOT.zip"
+            isDebugEnabled: "true"
+            TestGroup: "DataBackedService"
+scenarioConfigs:
+- testType: TESTNG
+  remoteRepository: "https://github.com/Manuri/ballerina-scenario-tests.git"
+  remoteBranch: "rc-snapshot-build-issue"
+  name: "ballerinaScenarios"
+  description: "ballerina-scenarios"
+  file: test-grid-scripts/bbg/data/test-runner.sh
+  inputParameters:
+    isDebugEnabled: "true"
