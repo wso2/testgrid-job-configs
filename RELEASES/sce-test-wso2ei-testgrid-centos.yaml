@@ -8,7 +8,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
-    - MySQL-5.7
+#    - MySQL-5.7
     - Oracle-SE2-12.1   
     - SQLServer-SE-14.00
     - CorrettoJDK-8
