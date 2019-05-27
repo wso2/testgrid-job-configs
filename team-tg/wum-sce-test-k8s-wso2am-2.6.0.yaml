@@ -37,8 +37,10 @@ deploymentConfig:
             deployments: 'wso2apim-with-analytics-apim'
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
-    name: "ref-scenario"
-    description: "Test-Phase-1"
-    file: scenarioTestsRepository/ref-scenario/tests/test.sh
-
+    remoteRepository: "https://github.com/wso2/product-apim.git"
+    remoteBranch: "product-scenarios"
+    name: "apim-scenarios"
+    description: "apim-scenarios"
+    file: product-scenarios/test.sh
+    inputParameters:
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
