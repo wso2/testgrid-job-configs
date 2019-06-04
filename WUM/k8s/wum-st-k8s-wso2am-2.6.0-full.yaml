@@ -11,7 +11,8 @@ infrastructureConfig:
   provisioners:
     - name: kubernetes infra provision
       description: Provision Infra for running intg tests
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:kasunbg/testgrid-sample-workspace.git"
+      remoteBranch: k8s
       scripts:
         - name: 'Kubernetes-namespace-isolation-provisioner'
           type: KUBERNETES
@@ -22,7 +23,8 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:kasunbg/testgrid-sample-workspace.git"
+      remoteBranch: k8s
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'wso2am-k8s-yaml-generator'
