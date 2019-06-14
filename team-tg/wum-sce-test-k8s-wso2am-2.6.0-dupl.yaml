@@ -1,0 +1,46 @@
+# A testGrid Job 
+version: '0.9'
+emailToList: "kasung@wso2.com"
+infrastructureConfig:
+  iacProvider: KUBERNETES
+  infrastructureProvider: GKE
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - MySQL-5.7
+    - ADOPT_OPEN_JDK8
+  provisioners:
+    - name: kubernetes woring environment
+      description: Provision Infra for running intg tests
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: KUBERNETES
+          phase: CREATE
+        - name: 'kubernetes-destroy-environment'
+          type: KUBERNETES
+          phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:kasunbg/testgrid-sample-workspace.git"
+      description: 'deployment of the resources in the gke'
+      scripts:
+        - name: 'deploy1'
+          type: SHELL
+          file: deploymentRepository/wso2am.sh
+        - name: 'deploy'
+          type: KUBERNETES
+          inputParameters:
+            yamls: 'deployment.yaml'
+            deployments: 'wso2apim-with-analytics-apim'
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-apim.git"
+    remoteBranch: "product-scenarios"
+    name: "apim-scenarios"
+    description: "apim-scenarios"
+    file: product-scenarios/test.sh
+    inputParameters:
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
