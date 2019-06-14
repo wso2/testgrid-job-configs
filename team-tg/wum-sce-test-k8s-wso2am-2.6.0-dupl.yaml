@@ -25,6 +25,7 @@ deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
       remoteRepository: "git@github.com:kasunbg/testgrid-sample-workspace.git"
+      remoteRepository: k8s
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'deploy1'
