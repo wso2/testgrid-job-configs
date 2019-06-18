@@ -38,7 +38,7 @@ deploymentConfig:
             deployments: 'wso2apim-with-analytics-apim'
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/kasunbg/product-apim.git"
+    remoteRepository: "git@github.com:kasunbg/product-apim.git"
     remoteBranch: "product-scenarios"
     name: "apim-scenarios"
     description: "apim-scenarios"
