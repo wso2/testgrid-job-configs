@@ -36,7 +36,7 @@ scenarioConfig:
   scenarios:
     -
       name: integration-tests
-      description: "integration tests"
+      description: "integration tests"T
       dir: integration-tests
 
 deploymentConfig:
