@@ -1,21 +1,52 @@
-PRODUCT_CODE=ballerina
-PRODUCT_GIT_URL=https\://github.com/ballerina-platform/ballerina-lang.git
-INFRASTRUCTURE_REPOSITORY=https://github.com/wso2/testgrid
-DEPLOYMENT_REPOSITORY=https://github.com/wso2/testgrid
-SCENARIOS_REPOSITORY=https://github.com/KasunAratthanage/ballerina-test-integration
-INFRA_LOCATION=workspace/testgrid
-DEPLOYMENT_LOCATION=workspace/testgrid
-SCENARIOS_LOCATION=workspace//ballerina-test-integration
-REMOTE_WORKSPACE_DIR_UNIX=/opt/testgrid/workspace
-REMOTE_WORKSPACE_DIR_WINDOWS=c:/testgrid/workspace
-SQL_DRIVERS_LOCATION_UNIX=/opt/testgrid/sql-drivers/
-SQL_DRIVERS_LOCATION_WINDOWS=/testgrid/sql-drivers
-DBUsername=wso2carbon
-TEST_MODE=RELEASE
-EMAIL_TO_LIST=kasuna@wso2.com
-PRODUCT_GIT_BRANCH=master
-LATEST_PRODUCT_RELEASE_API="https\://wso2.org/jenkins/view/All%20Builds/job/ballerina-platform/job/ballerina/lastStableBuild/org.ballerinalang%20ballerina/api/"
-LATEST_PRODUCT_BUILD_ARTIFACTS_API=https\://wso2.org/jenkins/view/All%20Builds/job/ballerina-platform/job/ballerina/lastStableBuild/mavenArtifacts/api/
-EMAIL_BCC_LIST=kasuna@wso2.com
-PRODUCT_DIST_DOWNLOAD_API: "null"
-productDistDownloadApi: "null"
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+    - Windows
+    - mysql
+    - ORACLE_JDK8
+#  excludes:
+ #   - oracle-se2
+  #  - sqlserver-se
+   # - OPEN_JDK8
+  provisioners:
+    - name: ballerina-intg-deployment
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'ballerina-intg-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: jobs/intg-test-resources/ballerina-intg-test-cfn.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            region: us-east-1
+            DBPassword: "DB_Password"
+            EC2KeyPair: "deployment-dev"
+            ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
+            MavenVersion: 3.5.4
+
+scenarioConfig:
+  testType: INTEGRATION
+  scenarios:
+    -
+      name: integration-tests
+      description: "integration tests"
+      dir: integration-tests
+
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'integration-tests'
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deploy.sh
+          inputParameters:
+            parseInfrastructureScript: false
