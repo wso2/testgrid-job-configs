@@ -1,1 +1,99 @@
-testgridYamlURL: https://raw.githubusercontent.com/wso2/testgrid-job-configs/devenv/team-tg/reference-testgrid.yaml
+# A testGrid Job
+version: '0.9'
+emailToList: "kosala@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+     - CentOS-7.5
+     - MySQL-5.7
+     - Oracle-SE2-12.1
+     - OPEN_JDK8
+  provisioners:
+    - name: prod-wso2-ei-scenario-deployment
+      remoteRepository: "git@github.com:wso2/testgrid.git"
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: SHELL
+          phase: CREATE
+          file: infra.sh
+        - name: destroy
+          file: destroy.sh
+          type: SHELL
+          phase: DESTROY
+jobConfig:
+  builds:
+    - schedule: manual
+      combinationAlgorithm: exact
+      combinations:
+      - OS: Ubuntu-18.04
+        DBEngine: MySQL-5.7
+        JDK: OPEN_JDK8
+    - schedule: daily
+      combinationAlgorithm: exact
+      combinations:
+      - OS: CentOS-7.5
+        DBEngine: MySQL-5.7
+        JDK: OPEN_JDK8
+        LDAP: Default
+      - OS: Ubuntu-18.04
+        DBEngine: MySQL-5.7
+        JDK: OPEN_JDK8
+        LDAP: Default
+      - OS: Ubuntu-18.04
+        DBEngine: MySQL-5.7
+        JDK: OracleJDK-8
+        LDAP: Default
+      - OS: Ubuntu-18.04
+        DBEngine: SQLServer-SE-14.00
+        JDK: OracleJDK-8
+        LDAP: Default
+    - schedule: weekly
+      combinationAlgorithm: at_least_one
+      infraResources:
+      - OS:
+          - CentOS-7.5
+      - DBEngine:
+          - MySQL-5.7
+          - MySQL-5.6
+          - Oracle-SE2-12.1
+          - Postgres-10.5
+      - JDK:
+          - OPEN_JDK8
+          - OracleJDK-8
+      - LDAP:
+          - Default
+    - schedule: monthly
+      combinationAlgorithm: all
+      infraResources:
+      - OS:
+          - CentOS-7.5
+      - DBEngine:
+          - MySQL-5.7
+          - Oracle-SE2-12.1
+          - MySQL-5.6
+          - Postgres-10.5
+      - JDK:
+          - OPEN_JDK8
+          - OracleJDK-8
+      - LDAP:
+          - Default
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:wso2/testgrid.git"
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deploy.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:wso2/testgrid.git"
+    name: "ref-scenario"
+    description: "Test-Phase-1"
+    file: tests/test.sh
