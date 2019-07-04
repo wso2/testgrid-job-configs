@@ -5,25 +5,33 @@ infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
-  includes:
-     - CentOS-7.5
-     - MySQL-5.7
-     - Oracle-SE2-12.1
-     - OPEN_JDK8
   provisioners:
-    - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+    - name: two-node-deployment
+      remoteRepository: "git@github.com:wso2-support/aws-is.git"
+      remoteBranch: "5.7.0"
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'Test-Phase-1-Deployment'
+        - name: 'prod-wso2is-scenarios-deployment'
           description: ''
-          type: SHELL
-          phase: CREATE
-          file: infra.sh
-        - name: destroy
-          file: destroy.sh
-          type: SHELL
-          phase: DESTROY
+          type: CLOUDFORMATION
+          file: /is/Minimum-HA/identity.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            DBPassword: "DB_Password"
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2cert_us_east_2"
+            DBUsername: "wso2carbon"
+            ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
+            InternalPrepareForTest: "True"
+            region: "us-east-2"
+        - name: 'prod-wso2is-samples-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: is-samples/test-is-samples.yml
+          inputParameters:
+            AMI: "ami-01b72d1b13ca0b4bc"
+            KeyPairName: "deployment-prod"
+            ProductVersion: "5.7.0"
 jobConfig:
   builds:
     - schedule: manual
@@ -38,18 +46,6 @@ jobConfig:
       - OS: CentOS-7.5
         DBEngine: MySQL-5.7
         JDK: OpenJDK-8
-        LDAP: Default
-      - OS: Ubuntu-18.04
-        DBEngine: MySQL-5.7
-        JDK: OpenJDK-8
-        LDAP: Default
-      - OS: Ubuntu-18.04
-        DBEngine: MySQL-5.7
-        JDK: OracleJDK-8
-        LDAP: Default
-      - OS: Ubuntu-18.04
-        DBEngine: SQLServer-SE-14.00
-        JDK: OracleJDK-8
         LDAP: Default
     - schedule: weekly
       combinationAlgorithm: at_least_one
@@ -81,19 +77,12 @@ jobConfig:
           - OracleJDK-8
       - LDAP:
           - Default
-deploymentConfig:
-  deploymentPatterns:
-    - name: 'deployment'
-      remoteRepository: "git@github.com:wso2/testgrid.git"
-      description: 'dummy'
-      dir: .
-      scripts:
-        - name: 'default'
-          type: SHELL
-          file: deploy.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:wso2/testgrid.git"
-    name: "ref-scenario"
-    description: "Test-Phase-1"
-    file: tests/test.sh
+    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteBranch: "product-scenarios"
+    name: "2-single-sign-on"
+    description: "2-single-sign-on"
+    file: product-scenarios/test.sh
+    inputParameters:
+RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
