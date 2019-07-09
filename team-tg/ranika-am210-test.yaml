@@ -7,34 +7,40 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-    - CentOS-7.5
-    - MySQL-5.7
-    - Oracle-SE2-12.1
-    - ORACLE_JDK8
+     - CentOS-7.5
+     - MySQL-5.7
+     - Oracle-SE-12.1
+     - OracleJDK-8
   provisioners:
-    - name: single-node-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-apim.git"
-      remoteBranch: 2.1.0
-      remoteRepository: "git@github.com:wso2/aws-apim.git"
-      description: Provision Infra for running scenario tests
+    - name: prod-wso2-ei-scenario-deployment
+      remoteRepository: "git@github.com:wso2/testgrid.git"
+      description: Provision Infra for running intg tests
       scripts:
-        - name: 'prod-wso2-apim-scenario-deployment'
+        - name: 'Test-Phase-1-Deployment'
           description: ''
-          type: CLOUDFORMATION
-          file: apim/Minimum-HA/apim.yaml
-          inputParameters:
-            parseInfrastructureScript: false
-            KeyPairName: "deployment-prod"
-            CertificateName: "wso2cert"
-            DBUsername: "wso2carbon"
-            DBPassword: "DB_Password"
-            site: https://google.com
+          type: SHELL
+          phase: CREATE
+          file: infra.sh
+          inputParameters: 
+              someBoolean: true
+              someurl: https://google.com
+        - name: destroy
+          file: destroy.sh
+          type: SHELL
+          phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:wso2/testgrid.git"
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deploy.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-apim.git"
-    remoteBranch: "product-scenarios"
-    name: "apim-scenarios"
-    description: "apim-scenarios"
-    file: product-scenarios/test.sh
-    inputParameters:
-      RemoteProductDir: "/usr/lib/wso2/wso2am/2.1.0/wso2am-2.1.0"
+    remoteRepository: "git@github.com:wso2/testgrid.git"
+    name: "ref-scenario"
+    description: "Test-Phase-1"
+    file: tests/test.sh
