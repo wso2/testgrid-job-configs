@@ -5,6 +5,9 @@ infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
+  includes:
+    - MySQL-5.7
+    - Ubuntu-18.04
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-is.git"
