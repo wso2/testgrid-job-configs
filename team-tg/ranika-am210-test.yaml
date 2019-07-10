@@ -13,7 +13,7 @@ infrastructureConfig:
      - OracleJDK-8
   provisioners:
     - name: prod-wso2-ei-scenario-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "git@github.com:ranikamadurawe/TGTestDummyRepo.git"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'Test-Phase-1-Deployment'
@@ -22,8 +22,8 @@ infrastructureConfig:
           phase: CREATE
           file: infra.sh
           inputParameters: 
-              someBoolean: true
-              someurl: https://google.com
+             someBoolean: true
+             someurl: https://google.com
         - name: destroy
           file: destroy.sh
           type: SHELL
@@ -31,7 +31,7 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "git@github.com:ranikamadurawe/TGTestDummyRepo.git"
       description: 'dummy'
       dir: .
       scripts:
@@ -40,7 +40,7 @@ deploymentConfig:
           file: deploy.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:wso2/testgrid.git"
+    remoteRepository: "git@github.com:ranikamadurawe/TGTestDummyRepo.git"
     name: "ref-scenario"
     description: "Test-Phase-1"
     file: tests/test.sh
