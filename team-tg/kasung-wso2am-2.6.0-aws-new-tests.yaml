@@ -33,7 +33,7 @@ infrastructureConfig:
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:kasunbg/product-apim.git"
+    remoteRepository: "git@github.com:wso2/product-apim.git"
     remoteBranch: "product-scenarios"
     name: "apim-scenarios"
     description: "apim-scenarios"
