@@ -38,6 +38,12 @@ deploymentConfig:
         - name: 'default'
           type: SHELL
           file: deploy.sh
+          inputParameters:
+              someBoolean: true
+              anotherBoolean: false
+              someurl: https://google.com
+              anotherstringurl: "https://wso2.com"
+              randomstring: "okaya"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:ranikamadurawe/TGTestDummyRepo.git"
