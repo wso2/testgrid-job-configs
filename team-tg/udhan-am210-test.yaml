@@ -1,0 +1,43 @@
+# TestGrid job configuration
+
+version: '0.9'
+emailToList: "udhan@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+     - CentOS-7.5
+     - MySQL-5.7
+     - Oracle-SE-12.1
+     - OracleJDK-8
+  provisioners:
+    - name: prod-wso2-ei-scenario-deployment
+      remoteRepository: "git@github.com:udhanMti/TGDummyRepo.git"
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: SHELL
+          phase: CREATE
+          file: infra.sh
+        - name: destroy
+          file: destroy.sh
+          type: SHELL
+          phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:udhanMti/TGDummyRepo.git"
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: deploy.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:udhanMti/TGDummyRepo.git"
+    name: "ref-scenario"
+    description: "Test-Phase-1"
+    file: tests/test.sh
