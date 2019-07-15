@@ -23,7 +23,7 @@ deploymentConfig:
       scripts:
         - name: 'helm1'
           type: SHELL
-          file: helm_am.sh        
+          file: deploymentRepository/helm_am.sh        
         - name: 'deploy'
           type: HELM
           inputParameters:
@@ -31,7 +31,7 @@ deploymentConfig:
             deployments: 'wso2apim-with-analytics-apim-deployment-1'
         - name: 'output1'
           type: SHELL
-          file: outputs.sh
+          file: deploymentRepository/outputs.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2/testgrid.git"
