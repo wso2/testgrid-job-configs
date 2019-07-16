@@ -1,0 +1,49 @@
+# A testGrid Job 
+version: '0.9'
+emailToList: "kasung@wso2.com,edussuriyac@wso2.com,nishika@wso2.com"
+infrastructureConfig:
+  iacProvider: KUBERNETES
+  infrastructureProvider: GKE
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - MySQL-5.7
+    - OPEN_JDK8
+  provisioners:
+    - name: kubernetes woring environment
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: KUBERNETES
+          phase: CREATE
+        - name: 'kubernetes-destroy-environment'
+          type: KUBERNETES
+          phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      description: 'deployment of the resources in the gke'
+      scripts:
+        - name: 'deploy1'
+          type: SHELL
+          file: deploymentRepository/wso2is.sh
+        - name: 'deploy'
+          type: KUBERNETES
+          inputParameters:
+            yamls: 'deployment.yaml'
+            deployments: 'wso2is-is-deployment'
+        - name: 'output1'
+          type: SHELL
+          file: deploymentRepository/output_is.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteBranch: "product-scenarios"
+    name: "2-single-sign-on"
+    description: "2-single-sign-on"
+    file: product-scenarios/test.sh
+    inputParameters:
+      RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
+
