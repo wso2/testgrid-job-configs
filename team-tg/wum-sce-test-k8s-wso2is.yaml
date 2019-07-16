@@ -6,6 +6,9 @@ infrastructureConfig:
   infrastructureProvider: GKE
   containerOrchestrationEngine: None
   includes:
+    - CentOS-7.5
+    - MySQL-5.7
+    - OPEN_JDK8
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
@@ -29,7 +32,7 @@ deploymentConfig:
         - name: 'deploy'
           type: KUBERNETES
           inputParameters:
-            deploymentYamlFiles: 'deployment.yaml'
+            yamls: 'deployment.yaml'
             deployments: 'wso2is-is-deployment'
         - name: 'output1'
           type: SHELL
