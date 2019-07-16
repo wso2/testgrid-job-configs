@@ -33,7 +33,7 @@ deploymentConfig:
         - name: 'deploy'
           type: KUBERNETES
           inputParameters:
-            deploymentYamlFiles: 'deployment.yaml'
+            yamls: 'deployment.yaml'
             deployments: '"wso2ei-with-analytics-dashboard-deployment wso2ei-with-analytics-integrator-deployment"'
         - name: 'output1'
           type: SHELL
