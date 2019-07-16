@@ -23,7 +23,7 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'deploy1'
