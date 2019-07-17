@@ -16,35 +16,30 @@ infrastructureConfig:
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
-          type: KUBERNETES
+          type: HELM
           phase: CREATE
-        - name: 'kubernetes-destroy-environment'
-          type: KUBERNETES
-          phase: DESTROY
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
       remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
       description: 'deployment of the resources in the gke'
       scripts:
-        - name: 'deploy1'
+        - name: 'helm1'
           type: SHELL
-          file: deploymentRepository/wso2ei.sh
+          file: deploymentRepository/helm_am.sh        
         - name: 'deploy'
-          type: KUBERNETES
+          type: HELM
           inputParameters:
             yamls: 'deployment.yaml'
-            deployments: '"wso2ei-with-analytics-dashboard-deployment wso2ei-with-analytics-integrator-deployment"'
+            deployments: 'wso2apim-with-analytics-apim-deployment-1'
         - name: 'output1'
           type: SHELL
-          file: deploymentRepository/output-ei.sh
+          file: deploymentRepository/outputs.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-ei.git"
-    remoteBranch: "master"
-    name: "ei-scenarios"
-    description: "ei-scenarios"
-    file: product-scenarios/test.sh
+    remoteRepository: "git@github.com:wso2/testgrid.git"
+    name: "ref-scenario"
+    description: "Test-Phase-1"
+    file: tests/test.sh
     inputParameters:
-      ProductVersion: "EI-6.1.0"
-      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.1.0/wso2ei-6.1.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"

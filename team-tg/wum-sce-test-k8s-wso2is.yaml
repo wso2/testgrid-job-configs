@@ -1,6 +1,6 @@
 # A testGrid Job 
 version: '0.9'
-emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
+emailToList: "kasung@wso2.com,edussuriyac@wso2.com,nishika@wso2.com"
 infrastructureConfig:
   iacProvider: KUBERNETES
   infrastructureProvider: GKE
@@ -29,22 +29,22 @@ deploymentConfig:
       scripts:
         - name: 'deploy1'
           type: SHELL
-          file: deploymentRepository/wso2ei.sh
+          file: deploymentRepository/wso2is.sh
         - name: 'deploy'
           type: KUBERNETES
           inputParameters:
             yamls: 'deployment.yaml'
-            deployments: '"wso2ei-with-analytics-dashboard-deployment wso2ei-with-analytics-integrator-deployment"'
+            deployments: 'wso2is-is-deployment'
         - name: 'output1'
           type: SHELL
-          file: deploymentRepository/output-ei.sh
+          file: deploymentRepository/output_is.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-ei.git"
-    remoteBranch: "master"
-    name: "ei-scenarios"
-    description: "ei-scenarios"
+    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteBranch: "product-scenarios"
+    name: "2-single-sign-on"
+    description: "2-single-sign-on"
     file: product-scenarios/test.sh
     inputParameters:
-      ProductVersion: "EI-6.1.0"
-      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.1.0/wso2ei-6.1.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
+
