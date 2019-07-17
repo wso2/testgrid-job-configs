@@ -1,3 +1,5 @@
+# TestGrid job configuration
+
 version: '0.9'
 emailToList: "ranika@wso2.com"
 infrastructureConfig:
@@ -6,14 +8,16 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
+#     - SUSE-Linux-12
     - MySQL-5.7
     - Oracle-SE2-12.1
-    - ORACLE_JDK8
+    - SQLServer-SE-14.00
+    - Postgres-10.5
+    - OPEN_JDK8
   provisioners:
-    - name: single-node-deployment
+    - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
-      remoteBranch: 2.1.0
-      remoteRepository: "git@github.com:wso2/aws-apim.git"
+      remoteBranch: "2.6.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
@@ -23,9 +27,10 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "wso2cert"
+            CertificateName: "wso2cert_us_east_2"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
+            region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-apim.git"
@@ -34,4 +39,4 @@ scenarioConfigs:
     description: "apim-scenarios"
     file: product-scenarios/test.sh
     inputParameters:
-      RemoteProductDir: "/usr/lib/wso2/wso2am/2.1.0/wso2am-2.1.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
