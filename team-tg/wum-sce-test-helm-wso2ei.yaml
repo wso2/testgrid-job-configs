@@ -1,0 +1,47 @@
+# A testGrid Job 
+version: '0.9'
+emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
+infrastructureConfig:
+  iacProvider: KUBERNETES
+  infrastructureProvider: GKE
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - MySQL-5.7
+    - OPEN_JDK8
+  provisioners:
+    - name: kubernetes woring environment
+      description: Provision Infra for running intg tests
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: HELM
+          phase: CREATE
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:wso2-support/kubernetes-apim/tree/2.6.x/simplified/helm.git"
+      description: 'deployment of the resources in the gke'
+      scripts:
+        - name: 'helm1'
+          type: SHELL
+          file: deploymentRepository/helm_ei.sh        
+        - name: 'deploy'
+          type: HELM
+          inputParameters:
+            helmDeployScript: 'deploymentRepository/wso2_helm.sh'
+            deployments: 'wso2ei-integrator-deployment'
+        - name: 'output1'
+          type: SHELL
+          file: output_ei.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-ei.git"
+    remoteBranch: "master"
+    name: "ei-scenarios"
+    description: "ei-scenarios"
+    file: product-scenarios/test.sh
+    inputParameters:
+      ProductVersion: "EI-6.1.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.1.0/wso2ei-6.1.0"
