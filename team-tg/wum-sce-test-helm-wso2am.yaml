@@ -30,6 +30,7 @@ deploymentConfig:
         - name: 'deploy'
           type: HELM
           inputParameters:
+            helmDeployScript: 'deploymentRepository/wso2_helm.sh'
             yamls: 'deployment.yaml'
             deployments: 'wso2apim-with-analytics-apim-deployment-1'
         - name: 'output1'
