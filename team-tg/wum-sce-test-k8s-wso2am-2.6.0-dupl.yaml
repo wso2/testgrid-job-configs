@@ -1,6 +1,6 @@
 # A testGrid Job 
 version: '0.9'
-emailToList: "kasung@wso2.com,chathurangie@wso2.com,nishika@wso2.com"
+emailToList: "kasung@wso2.com"
 infrastructureConfig:
   iacProvider: KUBERNETES
   infrastructureProvider: GKE
@@ -12,8 +12,7 @@ infrastructureConfig:
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
-      remoteRepository: "git@github.com:kasunbg/testgrid-sample-workspace.git"
-      remoteBranch: "k8s"      
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
@@ -25,8 +24,7 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:kasunbg/testgrid-sample-workspace.git"
-      remoteBranch: "k8s"
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'deploy1'
@@ -37,9 +35,12 @@ deploymentConfig:
           inputParameters:
             yamls: 'deployment.yaml'
             deployments: 'wso2apim-with-analytics-apim'
+        - name: 'output1'
+          type: SHELL
+          file: deploymentRepository/kubernetes_outputs.sh 
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:kasunbg/product-apim.git"
+    remoteRepository: "git@github.com:kasunbg/product-apim-1.git"
     remoteBranch: "product-scenarios"
     name: "apim-scenarios"
     description: "apim-scenarios"
