@@ -33,8 +33,8 @@ deploymentConfig:
         - name: 'deploy'
           type: KUBERNETES
           inputParameters:
-            yamls: 'deployment.yaml'
-            deployments: 'wso2is-is-deployment'
+            deploymentYamlFiles: 'deployment.yaml'
+            exposedDeployments: 'wso2is-is-deployment'
         - name: 'output1'
           type: SHELL
           file: deploymentRepository/output_is.sh

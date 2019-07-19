@@ -31,8 +31,7 @@ deploymentConfig:
           type: HELM
           inputParameters:
             helmDeployScript: 'deploymentRepository/wso2_helm.sh'
-            yamls: 'deployment.yaml'
-            deployments: 'wso2is-deployment'
+            exposedDeployments: 'wso2is-deployment'
         - name: 'output1'
           type: SHELL
           file: output_is.sh
@@ -43,6 +42,6 @@ scenarioConfigs:
     name: "2-single-sign-on"
     description: "2-single-sign-on"
     file: product-scenarios/test.sh
-    inputParameters:
+   inputParameters:
       RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
 
