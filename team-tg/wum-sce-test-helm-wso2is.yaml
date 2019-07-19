@@ -31,8 +31,7 @@ deploymentConfig:
           type: HELM
           inputParameters:
             helmDeployScript: 'deploymentRepository/wso2_helm.sh'
-            yamls: 'deployment.yaml'
-            deployments: 'wso2is-deployment'
+            exposedDeployments: 'wso2is-deployment'
         - name: 'output1'
           type: SHELL
           file: output_is.sh
