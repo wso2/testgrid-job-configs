@@ -30,7 +30,7 @@ deploymentConfig:
         - name: 'deploy'
           type: HELM
           inputParameters:
-            helmDeployScript: 'deploymentRepository/wso2_helm.sh'
+            helmDeployScript: 'deploymentRepository/wso2_helm_is.sh'
             exposedDeployments: 'wso2is-deployment'
         - name: 'output1'
           type: SHELL
