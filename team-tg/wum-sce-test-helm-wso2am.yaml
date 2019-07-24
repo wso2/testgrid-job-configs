@@ -1,4 +1,4 @@
-# A testGrid Job 
+# A testGrid Job
 version: '0.9'
 emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
 infrastructureConfig:
@@ -8,6 +8,7 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
     - MySQL-5.7
+    - Postgres-9.3
     - OPEN_JDK8
   provisioners:
     - name: kubernetes woring environment
@@ -21,12 +22,12 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'helm1'
           type: SHELL
-          file: deploymentRepository/helm_am.sh        
+          file: deploymentRepository/helm_am.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
