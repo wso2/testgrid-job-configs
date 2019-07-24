@@ -36,9 +36,10 @@ infrastructureConfig:
           type: CLOUDFORMATION
           file: is-samples/test-is-samples.yml
           inputParameters:
-            AMI: "ami-01b72d1b13ca0b4bc"
+            AMI: "ami-0b707e6db70f15f97"
             KeyPairName: "deployment-prod"
             ProductVersion: "5.3.0"
+            region: "us-east-1"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-support/product-is.git"
