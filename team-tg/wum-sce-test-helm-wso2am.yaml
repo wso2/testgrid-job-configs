@@ -8,7 +8,7 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
     - MySQL-5.7
-    - Postgres-9.3
+    - Postgres-9.6
     - ADOPT_OPEN_JDK8
   provisioners:
     - name: kubernetes woring environment
