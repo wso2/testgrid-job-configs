@@ -8,7 +8,7 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
     - MySQL-5.7
-    - OPEN_JDK8
+    - ADOPT_OPEN_JDK8
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
