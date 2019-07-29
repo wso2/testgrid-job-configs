@@ -1,4 +1,4 @@
-# A testGrid Job 
+# A testGrid Job
 version: '0.9'
 emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
 infrastructureConfig:
@@ -22,12 +22,12 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'deploy1'
           type: SHELL
-          file: deploymentRepository/helm_is.sh 
+          file: deploymentRepository/helm_is.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
@@ -45,4 +45,3 @@ scenarioConfigs:
     file: product-scenarios/test.sh
     inputParameters:
       RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
-
