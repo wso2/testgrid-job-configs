@@ -33,9 +33,9 @@ deploymentConfig:
           inputParameters:
             helmDeployScript: 'deploymentRepository/wso2_helm_is.sh'
             exposedDeployments: 'wso2is-deployment'
-        - name: 'output1'
+        - name: 'generate-deployment-properties-outputs'
           type: SHELL
-          file: output_is.sh
+          file: deploymentRepository/output_is.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-is.git"
