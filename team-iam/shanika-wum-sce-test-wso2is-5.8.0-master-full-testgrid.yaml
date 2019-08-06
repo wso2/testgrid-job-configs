@@ -1,19 +1,19 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "builder@wso2.org,maduranga@wso2.com,thanuja@wso2.com,malithim@wso2.com,hasanthi@wso2.com,kasung@wso2.com,shanikaw@wso2.com,niluka@wso2.com,achinij@wso2.com"
+emailToList: "builder@wso2.org,shanikaw@wso2.com,niluka@wso2.com,achinij@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-      - CentOS-7.5
-  #     - SUSE-Linux-12
-      - MySQL-5.7
-      - Oracle-SE2-12.1
-      - SQLServer-SE-14.00
-      - Postgres-10.5
-      - OPEN_JDK8
+    - CentOS-7.5
+#     - SUSE-Linux-12
+    - MySQL-5.7
+    - Oracle-SE2-12.1
+    - SQLServer-SE-14.00
+    - Postgres-10.5
+    - OPEN_JDK8
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-is.git"
@@ -32,7 +32,6 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
             InternalPrepareForTest: "True"
-            ProductLocation: "https://github.com/wso2/product-is/releases/download/v5.8.0-rc3/wso2is-5.8.0-rc3.zip"
             region: "us-east-2"
         - name: 'prod-wso2is-samples-deployment'
           description: ''
