@@ -1,1 +1,1 @@
-testgridYamlURL: https://raw.githubusercontent.com/aashikam/ballerina-scenario-tests/scenarios-rabbitmq/.testgrid-rabbitmq.yaml
+testgridYamlURL: https://raw.githubusercontent.com/aashikam/ballerina-scenario-tests/rabbit-test/.testgrid-rabbitmq.yaml
