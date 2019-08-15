@@ -1,1 +1,2 @@
-testgridYamlURL: https://raw.githubusercontent.com/malshaniS/testgrid-job-configs/testM/team-ob/test-dev-sce-wso2ob-1.3.0-full-testgrid.yaml
+testgridYamlURL: https://raw.githubusercontent.com/wso2/testgrid-job-configs/devenv/team-ob/test-dev-sce-wso2ob-1.3.0-full-testgrid.yaml
+
