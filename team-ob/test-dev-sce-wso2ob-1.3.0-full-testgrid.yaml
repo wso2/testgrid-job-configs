@@ -1,5 +1,4 @@
 # TestGrid Test Configuration Parameters
-# TestGrid Test Configuration Parameters
 version: '0.9'
 emailToList: "malshani@wso2.com, amalka@wso2.com"
 infrastructureConfig:
@@ -29,8 +28,8 @@ infrastructureConfig:
             DeploymentSpec: "UK"
 scenarioConfigs:
   - testType: JMETER
-    remoteRepository: "git@github.com:wso2/financial-open-banking.git"
-    remoteBranch: "master"
+    remoteRepository: "git@github.com:amalkasubasinghe/financial-open-banking.git"
+    remoteBranch: "testgrid"
     name: "ob-scenarios"
     description: "ob-scenarios-devtest"
     file: product-scenarios/test.sh
