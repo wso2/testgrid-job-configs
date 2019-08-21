@@ -1,1 +1,1 @@
-testgridYamlURL: https://raw.githubusercontent.com/ThishaniLucas/testgrid-job-configs/tgyaml/team-tg/kasunA-ballerina-integrator-k8s.yaml
+testgridYamlURL: https://raw.githubusercontent.com/ThishaniLucas/ballerina-integrator-testgrid-scenarios/final-test/testgrid-scripts/s3/s3-testgrid.yaml
