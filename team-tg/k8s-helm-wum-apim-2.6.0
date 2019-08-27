@@ -1,0 +1,47 @@
+# A testGrid Job
+version: '0.9'
+emailToList: "kasung@wso2.com"
+infrastructureConfig:
+  iacProvider: KUBERNETES
+  infrastructureProvider: GKE
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - MySQL-5.7
+    - Postgres-9.4
+    - ADOPT_OPEN_JDK8
+  provisioners:
+    - name: kubernetes woring environment
+      description: Provision Infra for running intg tests
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: HELM
+          phase: CREATE
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      description: 'deployment of the resources in the gke'
+      scripts:
+        - name: 'helm1'
+          type: SHELL
+          file: deploymentRepository/helm_am.sh
+        - name: 'deploy'
+          type: HELM
+          inputParameters:
+            helmDeployScript: 'deploymentRepository/wso2_helm_am.sh'
+            exposedDeployments: 'wso2apim-with-analytics-apim-deployment-1'
+        - name: 'generate-deployment-properties-outputs'
+          type: SHELL
+          file: deploymentRepository/outputs.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:kasunbg/product-apim-1.git"
+    remoteBranch: "product-scenarios"
+    name: "apim-scenarios"
+    description: "apim-scenarios"
+    file: product-scenarios/test.sh
+    inputParameters:
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
