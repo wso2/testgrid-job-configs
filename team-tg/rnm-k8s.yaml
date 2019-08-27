@@ -1,6 +1,6 @@
 # A testGrid Job 
 version: '0.9'
-emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
+emailToList: "ranika@wso2.com,kasung@wso2.com"
 infrastructureConfig:
   iacProvider: KUBERNETES
   infrastructureProvider: GKE
@@ -34,9 +34,10 @@ deploymentConfig:
           type: KUBERNETES
           inputParameters:
             LogFileLocations:
-            - { deploymentname: wso2apim-with-analytics-apim , containername: wso2apim-with-analytics-apim-worker , path: /home/wso2carbon/wso2am-2.6.0/repository/logs }
+            - { deploymentname: wso2apim-with-analytics-apim , 
+                containername: wso2apim-with-analytics-apim-worker , 
+                path: /home/wso2carbon/wso2am-2.6.0/repository/logs }
             deploymentYamlFiles: 'deployment.yaml'
-            deployments: 'wso2apim-with-analytics-apim'
             exposedDeployments : wso2apim-with-analytics-apim
         - name: 'outputs'
           type: SHELL
