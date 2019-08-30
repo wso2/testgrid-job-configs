@@ -13,7 +13,7 @@ infrastructureConfig:
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
-      remoteRepository: "git@github.com:NishikaDeSilva/Dummy.git"
+#      remoteRepository: "git@github.com:NishikaDeSilva/Dummy.git"
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
