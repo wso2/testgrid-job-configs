@@ -35,7 +35,7 @@ deploymentConfig:
             exposedDeployments: 'wso2is-deployment'
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
-          file: advanced/helm/testgrid-resources/readInfraProps.sh
+          file: advanced/helm/testgrid-resources/setEndPoints.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-is.git"
