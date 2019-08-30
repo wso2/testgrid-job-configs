@@ -1,6 +1,6 @@
 # A testGrid Job
 version: '0.9'
-emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
+emailToList: "kasung@wso2.com,nishika@wso2.com"
 infrastructureConfig:
   iacProvider: KUBERNETES
   infrastructureProvider: GKE
@@ -13,7 +13,7 @@ infrastructureConfig:
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/Dummy.git"
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
@@ -22,20 +22,20 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:wso2-support/kubernetes-apim.git"
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'helm1'
           type: SHELL
-          file: deploymentRepository/helm_am.sh
+          file: testgrid-scripts/readInfraProps.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
-            helmDeployScript: 'deploymentRepository/wso2_helm_am.sh'
+            helmDeployScript: 'testgrid-scripts/deploy.sh'
             exposedDeployments: 'wso2apim-with-analytics-apim-deployment-1'
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
-          file: deploymentRepository/outputs.sh
+          file: testgrid-scripts/setEndPoints.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:kasunbg/product-apim-1.git"
