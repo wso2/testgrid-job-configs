@@ -10,9 +10,7 @@ infrastructureConfig:
     - CentOS-7.5
 #     - SUSE-Linux-12
     - MySQL-5.7
-#    - Oracle-SE2-12.1
-#    - SQLServer-SE-14.00
-#    - Postgres-10.5
+    - Oracle-SE2-12.1
     - OPEN_JDK8
   provisioners:
     - name: two-node-deployment
@@ -33,7 +31,7 @@ infrastructureConfig:
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:wso2/product-apim.git"
+    remoteRepository: "https://github.com/kasunbg/product-apim-1.git"
     remoteBranch: "product-scenarios"
     name: "apim-scenarios"
     description: "apim-scenarios"
