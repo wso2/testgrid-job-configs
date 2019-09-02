@@ -25,7 +25,12 @@ infrastructureConfig:
           file: test/integration-tests/src/test/resources/test-phase1/infra.sh
           inputParameters:
             SampleInfraParam: "Infra Param 1"
-            FTPUserName: "wso2user"          
+            FTPUserName: "wso2user"
+          testgridProvidedParameters:
+            - user_access_key
+            - user_secret_access_key
+            - customParamDep
+            - customParam
         - name: destroy
           file: test/integration-tests/src/test/resources/test-phase1/destroy.sh
           type: SHELL
