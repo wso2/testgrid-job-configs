@@ -48,6 +48,11 @@ deploymentConfig:
           file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
           inputParameters:
             MyInputParam: "Deploy Param 1"
+          testgridProvidedParameters:
+            - user_access_key
+            - user_secret_access_key
+            - customParamDep
+            - customParam          
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:kasunbg/testgrid.git"
