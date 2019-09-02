@@ -29,8 +29,8 @@ infrastructureConfig:
           file: distribution/target/cloudformation/run-performance-test.sh
           inputParameters:
             user_email: janeth@wso2.com
-            user_access_key: AKIA3Y6K3UQFV6JSMB6I
-            user_secret_access_key: 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
+            user_access_key: 
+            user_secret_access_key: 
             key_name: janeth-key
             stack_name_prefix: "wso2-apim-test-"
             s3_bucket_name: performance-test-archives
