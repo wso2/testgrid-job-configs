@@ -47,8 +47,8 @@ deploymentConfig:
           inputParameters:
             MyInputParam: "Deploy Param 1"
           testgridProvidedParameters:
-#            - customParamDep
-#            - customParam          
+            - customParamDep
+            - customParam          
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:kasunbg/testgrid.git"
