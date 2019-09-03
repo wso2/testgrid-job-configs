@@ -26,7 +26,7 @@ infrastructureConfig:
         - name: 'prod-wso2-apim-scenario-deployment'
           description: ''
           type: SHELL
-          file: distribution/target/cloudformation/run-performance-test.sh
+          file: distribution/target/cloudformation/run-performance-tests.sh
           inputParameters:
             user_email: janeth@wso2.com
             key_name: janeth-key
