@@ -13,12 +13,26 @@ infrastructureConfig:
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
           type: HELM
           phase: CREATE
+        - name: 'prod-wso2-ei-scenario-vfs-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deploymentRepository/helm_ei/sample-backends/vfs-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
+            FTPUserName: "wso2user"
+            FTPUserPassword: "FTPUserPassword"
+        - name: 'prod-wso2-ei-scenario-activemq-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deploymentRepository/helm_ei/sample-backends/activemq-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
