@@ -1,0 +1,61 @@
+# A reference TestGrid job configuration. This uses shell scripts all the way.
+
+version: '0.9'
+emailToList: "kasung@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  parameters:
+    - JDK : ORACLE_JDK8
+  includes:
+     - Ubuntu-18.04
+     - MySQL-5.7
+     - OracleJDK-8
+  provisioners:
+    - name: prod-wso2-ei-scenario-deployment
+      remoteRepository: "git@github.com:kasunbg/testgrid.git"
+      remoteBranch: testgrid-job
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: SHELL
+          phase: CREATE
+          file: test/integration-tests/src/test/resources/test-phase1/infra.sh
+          inputParameters:
+            SampleInfraParam: "Infra Param 1"
+            FTPUserName: "wso2user"
+          testgridProvidedParameters:
+            - user_access_key
+            - user_secret_access_key
+        - name: destroy
+          file: test/integration-tests/src/test/resources/test-phase1/destroy.sh
+          type: SHELL
+          phase: DESTROY
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:kasunbg/testgrid.git"
+      remoteBranch: testgrid-job
+      description: 'dummy'
+      dir: .
+      scripts:
+        - name: 'default'
+          type: SHELL
+          file: test/integration-tests/src/test/resources/test-phase1/deploy.sh
+          inputParameters:
+            MyInputParam: "Deploy Param 1"
+          testgridProvidedParameters:
+            - customParamDep
+            - customParam          
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:kasunbg/testgrid.git"
+    remoteBranch: testgrid-job
+    name: "Test-Phase-1"
+    description: "Test-Phase-1"
+    file: test/integration-tests/src/test/resources/test-phase1/test.sh
+    inputParameters:
+      ProductVersion: "ei-6.4.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0"
