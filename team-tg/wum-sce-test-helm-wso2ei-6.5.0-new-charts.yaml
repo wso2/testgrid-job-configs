@@ -1,0 +1,63 @@
+# A testGrid Job
+version: '0.9'
+emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
+infrastructureConfig:
+  iacProvider: KUBERNETES
+  infrastructureProvider: GKE
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - MySQL-5.7
+    - Postgres-9.4
+    - ADOPT_OPEN_JDK8
+  provisioners:
+    - name: kubernetes woring environment
+      description: Provision Infra for running intg tests
+      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: HELM
+          phase: CREATE
+        - name: 'prod-wso2-ei-scenario-vfs-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deploymentRepository/helm_ei/sample-backends/vfs-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
+            FTPUserName: "wso2user"
+            FTPUserPassword: "FTPUserPassword"
+        - name: 'prod-wso2-ei-scenario-activemq-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deploymentRepository/helm_ei/sample-backends/activemq-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:NishikaDeSilva/kubernetes-ei-support.git"
+      remoteBranch: "6.5.0-newchart"
+      description: 'deployment of the resources in the gke'
+      scripts:
+        - name: 'helm1'
+          type: SHELL
+          file: advanced/helm/testgrid-resources/readInfraProps.sh
+        - name: 'deploy'
+          type: HELM
+          inputParameters:
+            helmDeployScript: advanced/helm/testgrid-resources/deploy.sh
+            exposedDeployments: 'wso2ei-integrator-deployment'
+        - name: 'populate-outputs-in-deployment-properties'
+          type: SHELL
+          file: advanced/helm/testgrid-resources/setEndPoints.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-ei.git"
+    remoteBranch: "master"
+    name: "ei-scenarios"
+    description: "ei-scenarios"
+    file: product-scenarios/test.sh
+    inputParameters:
+      ProductVersion: "EI-6.1.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.1.0/wso2ei-6.1.0"
