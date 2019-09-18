@@ -53,11 +53,11 @@ deploymentConfig:
 
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-ei.git"
+    remoteRepository: "https://github.com/kasunbg/testgrid-sample-workspace.git"
     remoteBranch: "master"
     name: "ei-scenarios"
     description: "ei-scenarios"
-    file: product-scenarios/test.sh
+    file: scenarioTestsRepository/ref-scenario/tests/test-sleep-6h.sh
     inputParameters:
-      ProductVersion: "EI-6.1.0"
-      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.1.0/wso2ei-6.1.0"
+      ProductVersion: "EI-6.5.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.5.0/wso2ei-6.5.0"
