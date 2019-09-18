@@ -37,3 +37,5 @@ scenarioConfigs:
       ProductVersion: "1.3.0"
       VAR_SPEC_NAME: "uk"
       VAR_SPEC_VERSION: "v301"
+      BrowserAutomation.HeadlessEnabled: "true"
+    
