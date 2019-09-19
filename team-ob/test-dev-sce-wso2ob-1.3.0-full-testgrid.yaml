@@ -20,6 +20,7 @@ infrastructureConfig:
           type: CLOUDFORMATION
           file: obam-with-obkm.yaml
           inputParameters:
+            InternalPrepareForTest : true
             parseInfrastructureScript: false
             KeyPairName: "deployment-dev"
             CertificateName: "wso2cert"
