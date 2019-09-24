@@ -33,7 +33,10 @@ infrastructureConfig:
             stack_name_prefix: "wso2-apim-test-"
             s3_bucket_name: performance-test-archives
             s3_bucket_region: "us-east-2"
+            # If the concurrent users are > 500 you need to have distributed_jmeter_deployment
+            distributed_jmeter_deployment: true
             jmeter_client_ec2: t3.micro
+            jmeter_server_ec2: t3.micro
             netty_ec2: t3.micro
             wso2am_ec2: t3.small
             rds_ec2: db.t3.micro
@@ -48,7 +51,7 @@ scenarioConfigs:
     file: distribution/scripts/scenario-test.sh
     inputParameters:
       heap_memory_app: 1G
-      con_users: "100,200"
+      con_users: "400,500"
       msg_size: "50,1024"
       backend_sleep: 0
       test_duration: 120
