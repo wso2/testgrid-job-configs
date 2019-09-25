@@ -34,6 +34,7 @@ infrastructureConfig:
             s3_bucket_name: performance-test-archives
             s3_bucket_region: "us-east-2"
             # If concurrent users > 500 please have a distributed jmeter deployment
+            distributed_jmeter_deployment: true
             jmeter_server_ec2: t3.micro
             jmeter_client_ec2: t3.micro
             netty_ec2: t3.micro
