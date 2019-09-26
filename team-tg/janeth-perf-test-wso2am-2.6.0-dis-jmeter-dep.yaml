@@ -44,7 +44,7 @@ infrastructureConfig:
             - user_access_key
             - user_secret_access_key
 scenarioConfigs:
-  - testType: TESTNG
+  - testType: JMETER
     remoteRepository: "git@github.com:janethavi/performance-apim.git"
     name: "apim-perf-test-scenarios"
     description: "apim-scenarios"
