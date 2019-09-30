@@ -33,7 +33,7 @@ deploymentConfig:
           type: HELM
           inputParameters:
             helmDeployScript: advanced/helm/testgrid-resources/deploy.sh
-            exposedDeployments: "'wso2am-pattern-1-am-1-deployment' 'wso2am-pattern-1-am-2-deployment' 'wso2am-pattern-1-analytics-worker-deployment'"
+            exposedDeployments: ["'wso2am-pattern-1-am-1-deployment' 'wso2am-pattern-1-am-2-deployment' 'wso2am-pattern-1-analytics-worker-deployment'"]
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
           file: advanced/helm/testgrid-resources/setEndPoints.sh
