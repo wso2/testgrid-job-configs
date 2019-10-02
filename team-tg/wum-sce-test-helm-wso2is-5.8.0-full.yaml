@@ -36,6 +36,9 @@ deploymentConfig:
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
           file: deploymentRepository/output_is.sh
+        - name: 'deploy and set test dependencies'
+          type: SHELL
+          file: deploymentRepository/is_addDependencies.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-is.git"
