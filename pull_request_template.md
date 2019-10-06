@@ -13,7 +13,11 @@
 <!-- 
 - [x] Example ticked box -->
 
-NOTE:
+NOTE 1:
+Current repo owners: @msmshariq, @ThilinaManamgoda, @VimukthiPerera, @chamithkumarage, @kasunbg
+Ex repo owners: @yasassri, @sameerawickramasekara, @azinneera, @pasindujw
+
+NOTE 2:
 For your job, you can either point to an external testgrid yaml configuration or keep the actual testgrid yaml here within this repo. Usually, people like to keep the testgrid yaml config within their own team repos because its easier to do changes.
 
 You can point to an external testgrid yaml by having the job configration as follows:
