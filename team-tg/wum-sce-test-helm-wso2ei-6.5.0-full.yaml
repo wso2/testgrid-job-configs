@@ -25,16 +25,13 @@ deploymentConfig:
       remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
       description: 'deployment of the resources in the gke'
       scripts:
-        - name: 'sample-backends-deployment'
-          type: SHELL
-          file: deploymentRepository/ei_addDependencies.sh
         - name: 'helm1'
           type: SHELL
           file: deploymentRepository/helm_ei.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
-            helmDeployScript: 'deploymentRepository/wso2_helm_ei.sh'
+            helmDeployScript: ["'deploymentRepository/ei_addDependencies.sh' 'deploymentRepository/wso2_helm_ei.sh'"]
             exposedDeployments: 'wso2ei-integrator-deployment'
         - name: 'populate-outputs-in-deployment-properties'
           type: SHELL
