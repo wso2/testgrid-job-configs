@@ -37,6 +37,9 @@ deploymentConfig:
         - name: 'vfs-backend-configure'
           type: SHELL
           file: deploymentRepository/ei_backends/config_ftp.sh
+          inputParameters:
+            FTPUserName: "wso2user"
+            FTPUserPassword: "FTPUserPassword"
         - name: 'helm1'
           type: SHELL
           file: deploymentRepository/helm_ei.sh
