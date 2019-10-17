@@ -29,6 +29,7 @@ deploymentConfig:
           type: HELM
           inputParameters:
             helmDeployScript: deploymentRepository/ei_backends/intall_mb.sh
+            exposedDeployments: '"wso2-active-activemq-artemis-master wso2-active-activemq-artemis-slave"'
         - name: 'vfs-backend-deployment'
           type: KUBERNETES
           inputParameters:
