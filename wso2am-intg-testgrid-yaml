@@ -1,7 +1,7 @@
 # TestGrid Test Configuration Parameters
 # TODO use dash as the separator instead of camelCase.
 version: '0.9'
-emailToList: "yasassri@wso2.com, pasinduj@wso2.com"
+emailToList: "harshak@wso2.com,tharindua@wso2.com,bhathiya@wso2.com,samitha@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
@@ -40,7 +40,7 @@ scenarioConfigs:
     inputParameters:
       PRODUCT_CODE: wso2am
       PRODUCT_GIT_URL: "https://github.com/wso2/product-apim"
-      PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
+      PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid"
       DEPLOYMENT_LOCATION: workspace/testgrid
       SCENARIOS_LOCATION: workspace/apim-test-integration
@@ -51,10 +51,9 @@ scenarioConfigs:
       DBUsername: wso2carbon
       TEST_MODE: RELEASE
       USE_CUSTOM_TESTNG: "FALSE"
-      WUM_PRODUCT_VERSION: 2.6
+      WUM_PRODUCT_VERSION: 3.0
       WUM_CHANNEL: full
-      PRODUCT_GIT_BRANCH: "2.x"
-      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
-      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim_2.x/lastStableBuild/mavenArtifacts/api/
+      PRODUCT_GIT_BRANCH: "master"
+      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim/lastRelease/api/
+      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim/lastStableBuild/mavenArtifacts/api/
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-
