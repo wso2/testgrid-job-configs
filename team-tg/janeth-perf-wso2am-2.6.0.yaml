@@ -1,0 +1,57 @@
+version: '0.9'
+emailToList: "janeth@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+    - Ubuntu-18.04
+    - MySQL-5.7
+    - ORACLE_JDK8
+  provisioners:
+    - name: single-node-deployment
+      remoteRepository: "git@github.com:janethavi/aws-apim.git"
+      remoteBranch: "performance"
+      description: Provision Infra for running scenario tests
+      scripts:
+        # Deployment of apim pattern-1
+        - name: 'prod-wso2-apim-scenario-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: pattern-1/pattern-1.yaml
+          inputParameters:
+            KeyPairName: "janeth-key"
+            WSO2InstanceType: "t2.medium"
+            CertificateName: "self-signed-cert"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+            ProductVersion: "2.6.0"
+            DBInstanceType:  "db.t2.medium"
+        # Deployment of the JMeter distribution
+        - name: 'jmeter-perf-deployement'
+          description: ''
+          type: CLOUDFORMATION
+          file: jmeter-deployment.yaml
+            inputParameters:
+             KeyPairName: "janeth-key"
+             BackendInstanceType: "t3.small"
+             JmeterClientInstanceType: "t3.small"
+             JmeterServerInstanceType: "t3.small"
+             # Please use 2 Jmeter-servers if concurrency > 500 users
+             NumberOfJmeterServers: "0"
+scenarioConfigs:
+  - testType: JMETER
+    remoteRepository: "git@github.com:janethavi/performance-apim.git"
+    name: "apim-perf-test"
+    description: "apim-scenarios"
+    file: distribution/scripts/scenario-test.sh
+    inputParameters:
+      heap_memory_app: 1G
+      con_users: "400,500"
+      msg_size: "50,1024"
+      backend_sleep: 0
+      test_duration: 120
+      warmup_time: 60
+      heap_memory_jmeter_s: 512M
+      heap_memory_jmeter_c: 512M
+      heap_memory_netty: 515M
