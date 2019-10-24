@@ -32,13 +32,13 @@ infrastructureConfig:
           description: ''
           type: CLOUDFORMATION
           file: jmeter-deployment.yaml
-            inputParameters:
-             KeyPairName: "janeth-key"
-             BackendInstanceType: "t3.small"
-             JmeterClientInstanceType: "t3.small"
-             JmeterServerInstanceType: "t3.small"
-             # Please use 2 Jmeter-servers if concurrency > 500 users
-             NumberOfJmeterServers: "0"
+          inputParameters:
+            KeyPairName: "janeth-key"
+            BackendInstanceType: "t3.small"
+            JmeterClientInstanceType: "t3.small"
+            JmeterServerInstanceType: "t3.small"
+            # Please use 2 Jmeter-servers if concurrency > 500 users
+            NumberOfJmeterServers: "0"
 scenarioConfigs:
   - testType: JMETER
     remoteRepository: "git@github.com:janethavi/performance-apim.git"
