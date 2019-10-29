@@ -11,8 +11,8 @@ infrastructureConfig:
      - OPEN_JDK8
   provisioners:
     - name: distributed-single-node-deployment
-      remoteRepository: "git@github.com:amalkasubasinghe/aws-ob.git"
-      remoteBranch: "master"
+      remoteRepository: "git@github.com:wso2-support/aws-ob.git"
+      remoteBranch: "support-1.3.0"
       description: Provide Infra for running scenario tests
       scripts:
         - name: 'test-dev-sce-wso2ob-130-deployment'
@@ -20,7 +20,7 @@ infrastructureConfig:
           type: CLOUDFORMATION
           file: obam-with-obkm.yaml
           inputParameters:
-            InternalPrepareForTest : true
+            InternalPrepareForTest : false
             parseInfrastructureScript: false
             KeyPairName: "deployment-dev"
             CertificateName: "wso2cert"
