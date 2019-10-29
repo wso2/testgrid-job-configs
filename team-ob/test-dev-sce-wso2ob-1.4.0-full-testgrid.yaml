@@ -12,7 +12,7 @@ infrastructureConfig:
   provisioners:
     - name: distributed-single-node-deployment
       remoteRepository: "git@github.com:amalkasubasinghe/aws-ob.git"
-      remoteBranch: "support-1.4.0"
+      remoteBranch: "master"
       description: Provide Infra for running scenario tests
       scripts:
         - name: 'test-dev-sce-wso2ob-140-deployment'
