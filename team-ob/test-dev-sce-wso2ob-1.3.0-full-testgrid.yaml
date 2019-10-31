@@ -35,6 +35,7 @@ scenarioConfigs:
     description: "ob-scenarios-devtest"
     file: product-scenarios/test-grid-jobs/test_uk/test.sh
     inputParameters:
+      ProductVersion: "1.3.0"
       SolutionVersion: "1.3.0"
       DeploymentSpec: "UK"
       OperatingSystem: "Linux"
