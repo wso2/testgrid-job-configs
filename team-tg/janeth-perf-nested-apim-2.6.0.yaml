@@ -11,7 +11,7 @@ infrastructureConfig:
   provisioners:
     - name: single-node-deployment
       remoteRepository: "git@github.com:janethavi/aws-apim.git"
-      remoteBranch: "performance"
+      remoteBranch: "performance-testgrid"
       description: Provision Infra for running scenario tests
       scripts:
         # Deployment of apim pattern-1 + JMeter 
@@ -22,9 +22,11 @@ infrastructureConfig:
           inputParameters:
             ProductDeploymentURL: "https://performance-test-archives.s3.us-east-2.amazonaws.com/pattern-1.yaml"
             ProductInstanceType: "t2.medium"
+            ProductDBType: "db.t2.medium"
             CertificateName: "self-signed-cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
+            region: "us-east-2"
             BackendInstanceType: "t3.small"
             JmeterClientInstanceType: "t3.small"
             JmeterServerInstanceType: "t3.small"
