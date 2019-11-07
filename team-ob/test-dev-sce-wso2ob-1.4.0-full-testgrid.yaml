@@ -11,7 +11,7 @@ infrastructureConfig:
      - OPEN_JDK8
   provisioners:
     - name: distributed-single-node-deployment
-      remoteRepository: "git@github.com:amalkasubasinghe/aws-ob.git"
+      remoteRepository: "git@github.com:wso2/aws-open-banking.git"
       remoteBranch: "master"
       description: Provide Infra for running scenario tests
       scripts:
