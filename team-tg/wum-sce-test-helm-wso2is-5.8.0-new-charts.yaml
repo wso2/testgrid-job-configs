@@ -22,23 +22,21 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/kubernetes-is-support.git"
+      remoteBranch: "5.8.0-newchart"
       description: 'deployment of the resources in the gke'
       scripts:
         - name: 'deploy1'
           type: SHELL
-          file: deploymentRepository/helm_is.sh
+          file: advanced/helm/testgrid-resources/readInfraProps.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
-            helmDeployScript: 'deploymentRepository/wso2_helm_is.sh'
+            helmDeployScript: 'advanced/helm/testgrid-resources/deploy.sh'
             exposedDeployments: 'wso2is-deployment'
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
-          file: deploymentRepository/output_is.sh
-        - name: 'deploy and set test dependencies'
-          type: SHELL
-          file: deploymentRepository/is_addDependencies.sh
+          file: advanced/helm/testgrid-resources/setEndPoints.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-is.git"

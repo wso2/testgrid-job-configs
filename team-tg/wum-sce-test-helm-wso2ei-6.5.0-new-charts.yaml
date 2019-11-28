@@ -19,39 +19,38 @@ infrastructureConfig:
           description: ''
           type: HELM
           phase: CREATE
+        - name: 'prod-wso2-ei-scenario-vfs-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deploymentRepository/helm_ei/sample-backends/vfs-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
+            FTPUserName: "wso2user"
+            FTPUserPassword: "FTPUserPassword"
+        - name: 'prod-wso2-ei-scenario-activemq-be-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: deploymentRepository/helm_ei/sample-backends/activemq-be.yaml
+          inputParameters:
+            KeyPairName: "deployment-prod"
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/kubernetes-ei-support.git"
+      remoteBranch: "6.5.0-newchart"
       description: 'deployment of the resources in the gke'
       scripts:
-        - name: 'message-broker-backends'
-          type: HELM
-          inputParameters:
-            helmDeployScript: deploymentRepository/ei_backends/intall_mb.sh
-            exposedDeployments: '"wso2-active-activemq-artemis-master wso2-active-activemq-artemis-slave"'
-        - name: 'vfs-backend-deployment'
-          type: KUBERNETES
-          inputParameters:
-            yamlFilesLocation: deploymentRepository/ei_backends/kubernetes-ftp
-            deploymentYamlFiles: '"ftp-deployment.yaml ftp-ingress.yaml ftp-service.yaml task-pv-claim.yaml task-pv-volume.yaml"'
-        - name: 'vfs-backend-configure'
-          type: SHELL
-          file: deploymentRepository/ei_backends/config_ftp.sh
-          inputParameters:
-            FTPUserName: "wso2user"
-            FTPUserPassword: "FTPUserPassword"
         - name: 'helm1'
           type: SHELL
-          file: deploymentRepository/helm_ei.sh
+          file: advanced/helm/testgrid-resources/readInfraProps.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
-            helmDeployScript: 'deploymentRepository/wso2_helm_ei.sh'
+            helmDeployScript: advanced/helm/testgrid-resources/deploy.sh
             exposedDeployments: 'wso2ei-integrator-deployment'
         - name: 'populate-outputs-in-deployment-properties'
           type: SHELL
-          file: deploymentRepository/output-ei.sh
+          file: advanced/helm/testgrid-resources/setEndPoints.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-ei.git"

@@ -1,6 +1,6 @@
 # A testGrid Job
 version: '0.9'
-emailToList: "kasung@wso2.com,edussuriyac@wso2.am,nishika@wso2.com"
+emailToList: "kasung@wso2.com,nishika@wso2.com"
 infrastructureConfig:
   iacProvider: KUBERNETES
   infrastructureProvider: GKE
@@ -13,7 +13,7 @@ infrastructureConfig:
   provisioners:
     - name: kubernetes woring environment
       description: Provision Infra for running intg tests
-      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/Dummy.git"
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
@@ -22,29 +22,27 @@ infrastructureConfig:
 deploymentConfig:
   deploymentPatterns:
     - name: 'deployment'
-      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      remoteRepository: "git@github.com:NishikaDeSilva/kubernetes-apim-support.git"
+      remoteBranch: "2.6.0-newchart"
       description: 'deployment of the resources in the gke'
       scripts:
-        - name: 'deploy1'
+        - name: 'helm1'
           type: SHELL
-          file: deploymentRepository/helm_is.sh
+          file: advanced/helm/testgrid-resources/readInfraProps.sh
         - name: 'deploy'
           type: HELM
           inputParameters:
-            helmDeployScript: 'deploymentRepository/wso2_helm_is.sh'
-            exposedDeployments: 'wso2is-deployment'
+            helmDeployScript: advanced/helm/testgrid-resources/deploy.sh
+            exposedDeployments: ["'wso2am-pattern-1-am-1-deployment' 'wso2am-pattern-1-am-2-deployment' 'wso2am-pattern-1-analytics-worker-deployment'"]
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
-          file: deploymentRepository/output_is.sh
-        - name: 'deploy and set test dependencies'
-          type: SHELL
-          file: deploymentRepository/is_addDependencies.sh
+          file: advanced/helm/testgrid-resources/setEndPoints.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteRepository: "git@github.com:kasunbg/product-apim-1.git"
     remoteBranch: "product-scenarios"
-    name: "2-single-sign-on"
-    description: "2-single-sign-on"
+    name: "apim-scenarios"
+    description: "apim-scenarios"
     file: product-scenarios/test.sh
     inputParameters:
-      RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"

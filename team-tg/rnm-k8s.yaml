@@ -1,6 +1,6 @@
 # A testGrid Job 
 version: '0.9'
-emailToList: "ranika@wso2.com,kasung@wso2.com"
+emailToList: "ranika@wso2.com"
 infrastructureConfig:
   iacProvider: KUBERNETES
   infrastructureProvider: GKE

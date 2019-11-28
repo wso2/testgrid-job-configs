@@ -11,11 +11,11 @@ infrastructureConfig:
      - OPEN_JDK8
   provisioners:
     - name: distributed-single-node-deployment
-      remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
-      remoteBranch: "support-1.3.0"
+      remoteRepository: "git@github.com:wso2/aws-open-banking.git"
+      remoteBranch: "master"
       description: Provide Infra for running scenario tests
       scripts:
-        - name: 'test-dev-sce-wso2ob-130-deployment'
+        - name: 'test-dev-sce-wso2ob-140-deployment'
           description: ''
           type: CLOUDFORMATION
           file: obam-with-obkm.yaml
@@ -27,6 +27,7 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             DeploymentSpec: "UK"
+            ElasticSearchRegion: "us-east-1"
 scenarioConfigs:
   - testType: JAVA
     remoteRepository: "git@github.com:amalkasubasinghe/financial-open-banking.git"
@@ -35,8 +36,9 @@ scenarioConfigs:
     description: "ob-scenarios-devtest"
     file: product-scenarios/test-grid-jobs/test_uk/test.sh
     inputParameters:
-      SolutionVersion: "1.3.0"
+      SolutionVersion: "1.4.0"
       DeploymentSpec: "UK"
       OperatingSystem: "Linux"
       BrowserAutomation.HeadlessEnabled: true
       InstallGeckodriver: true
+

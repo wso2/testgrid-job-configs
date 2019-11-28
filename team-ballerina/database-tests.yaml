@@ -1,1 +1,1 @@
-testgridYamlURL: https://raw.githubusercontent.com/Manuri/ballerina-scenario-tests/scenario-tests-database/.testgrid-database.yaml
+testgridYamlURL: https://raw.githubusercontent.com/Manuri/ballerina-scenario-tests/scenario-tests-database-jballerina/.testgrid-database.yaml
