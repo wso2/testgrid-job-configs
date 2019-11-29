@@ -12,7 +12,7 @@ infrastructureConfig:
   provisioners:
     - name: 'kubernetes woring environment'
       description: 'Provision Infra for running intg tests'
-      remoteRepository: "git@github.com:ranikamadurawe/wso2_helm_extraction.git"
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
       scripts:
         - name: 'Test-Phase-1-Deployment'
           description: ''
