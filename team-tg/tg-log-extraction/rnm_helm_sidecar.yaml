@@ -38,7 +38,7 @@ deploymentConfig:
                   path: /home/wso2carbon/wso2ei-6.5.0/repository/logs/
                 - deploymentName: wso2ei-pattern-1-analytics-worker-deployment-1
                   containerName: wso2ei-analytics-worker
-                  path: /home/wso2carbon/wso2ei-6.5.0/wso2/analytics/wso2/worker/logs       
+                  path: /home/wso2carbon/wso2ei-6.5.0/wso2/analytics/wso2/worker/logs
             rootProjLocations: "deploymentRepository/helm_ei/product"
             DBEngine: mysql
             OS: centos
