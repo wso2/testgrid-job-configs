@@ -30,7 +30,7 @@ deploymentConfig:
         - name: 'deploy'
           type: HELM
           inputParameters:
-            log-Options: 
+            log-Options:
                 logRequirement: log_endPoints_Required
                 valuesYamlLocation: values.yaml
                 replaceableVals:
@@ -38,7 +38,7 @@ deploymentConfig:
                     location: wso2/centralizedLogging/logstash/elasticsearch/host
                   - type: "elasticsearchPort"
                     location: wso2/centralizedLogging/logstash/elasticsearch/port
-            rootProjLocations: "deploymentRepository/helm_ei/product"
+            rootProjLocations: "deploymentRepository2/helm_ei/product"
             DBEngine: mysql
             OS: centos
             JDK: openjdk
@@ -46,7 +46,7 @@ deploymentConfig:
             exposedDeployments: 'wso2ei-pattern-1-integrator-deployment'
         - name: 'generate-deployment-properties-outputs'
           type: SHELL
-          file: deploymentRepository/outputs.sh
+          file: deploymentRepository2/outputs.sh
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:ranikamadurawe/wso2-helm-mwh.git"
