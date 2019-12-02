@@ -33,8 +33,12 @@ deploymentConfig:
             logOptions: 
                 logRequirement: Sidecar_Required
                 logFileLocations:
-                - { deploymentName: wso2ei-pattern-1-integrator-deployment , containerName: wso2ei-integrator , path: /home/wso2carbon/wso2ei-6.5.0/repository/logs/ }
-                - { deploymentName: wso2ei-pattern-1-analytics-worker-deployment-1 , containerName: wso2ei-analytics-worker , path: /home/wso2carbon/wso2ei-6.5.0/wso2/analytics/wso2/worker/logs }         
+                - deploymentName: wso2ei-pattern-1-integrator-deployment
+                  containerName: wso2ei-integrator
+                  path: /home/wso2carbon/wso2ei-6.5.0/repository/logs/
+                - deploymentName: wso2ei-pattern-1-analytics-worker-deployment-1
+                  containerName: wso2ei-analytics-worker
+                  path: /home/wso2carbon/wso2ei-6.5.0/wso2/analytics/wso2/worker/logs }         
             rootProjLocations: "deploymentRepository/helm_ei/product"
             DBEngine: mysql
             OS: centos
@@ -46,10 +50,10 @@ deploymentConfig:
           file: deploymentRepository/outputs.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:kasunbg/product-apim-1.git"
-    remoteBranch: "product-scenarios"
+    remoteRepository: "git@github.com:ranikamadurawe/wso2-helm-mwh.git"
+    remoteBranch: "master"
     name: "apim-scenarios"
     description: "apim-scenarios"
-    file: product-scenarios/test.sh
+    file: testRepository/dummytest.sh
     inputParameters:
       RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"

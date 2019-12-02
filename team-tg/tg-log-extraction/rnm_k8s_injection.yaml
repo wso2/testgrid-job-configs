@@ -46,10 +46,10 @@ deploymentConfig:
           file: deploymentRepository/kubernetes_outputs.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:kasunbg/product-apim-1.git"
-    remoteBranch: "product-scenarios"
+    remoteRepository: "git@github.com:ranikamadurawe/wso2-helm-mwh.git"
+    remoteBranch: "master"
     name: "apim-scenarios"
     description: "apim-scenarios"
-    file: product-scenarios/test.sh
+    file: testRepository/dummytest.sh
     inputParameters:
       RemoteProductDir: "/usr/lib/wso2/wso2am/2.6.0/wso2am-2.6.0"
