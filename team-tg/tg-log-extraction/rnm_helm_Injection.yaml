@@ -30,11 +30,7 @@ deploymentConfig:
         - name: 'deploy'
           type: HELM
           inputParameters:
-<<<<<<< HEAD
-            log-Options:
-=======
-            logOptions: 
->>>>>>> Update input Param for helm injection test
+            logOptions:
                 logRequirement: log_endPoints_Required
                 valuesYamlLocation: values.yaml
                 replaceableVals:
