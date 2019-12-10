@@ -49,7 +49,6 @@ scenarioConfigs:
       SQL_DRIVERS_LOCATION_UNIX: /opt/testgrid/sql-drivers/
       SQL_DRIVERS_LOCATION_WINDOWS: /testgrid/sql-drivers
       DBUsername: wso2carbon
-      PRODUCT_GIT_BRANCH: support-5.7.0
       LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
       LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-is/lastStableBuild/mavenArtifacts/api/
       USE_CUSTOM_TESTNG: FALSE
