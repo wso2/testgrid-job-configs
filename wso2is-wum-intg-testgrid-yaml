@@ -38,7 +38,7 @@ scenarioConfigs:
     inputParameters:
       PRODUCT_CODE: wso2is
       PRODUCT_GIT_URL: "git@github.com:wso2-support/product-is.git"
-      PRODUCT_GIT_BRANCH: support-5.7.0
+      PRODUCT_GIT_BRANCH: 5.7.0-tg
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-is/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid
       DEPLOYMENT_LOCATION: workspace/testgrid
