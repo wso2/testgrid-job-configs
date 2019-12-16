@@ -30,7 +30,7 @@ infrastructureConfig:
             ElasticSearchRegion: "us-east-1"
 scenarioConfigs:
   - testType: JAVA
-    remoteRepository: "git@github.com:amalkasubasinghe/financial-open-banking.git"
+    remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
     remoteBranch: "testgrid"
     name: "ob-scenarios"
     description: "ob-scenarios-devtest"
