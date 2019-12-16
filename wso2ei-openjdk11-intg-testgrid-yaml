@@ -9,7 +9,7 @@ infrastructureConfig:
   parameters:
     - JDK: OPEN_JDK11
   includes:
-    - Ubuntu-18.04 
+    - CentOS-7.5
     - MySQL-5.7
   provisioners:
     - name: prod-wso2ei-intg-deployment
