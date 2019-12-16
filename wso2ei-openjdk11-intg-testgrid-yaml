@@ -7,10 +7,9 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   parameters:
-    - JDK : OPEN_JDK11
+    - JDK: OPEN_JDK11
   includes:
-    - OPEN_JDK11
-    - CentOS-7.5
+    - Ubuntu-18.04 
     - MySQL-5.7
   provisioners:
     - name: prod-wso2ei-intg-deployment
