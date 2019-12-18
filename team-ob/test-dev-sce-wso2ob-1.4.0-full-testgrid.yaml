@@ -29,7 +29,7 @@ infrastructureConfig:
             DeploymentSpec: "UK"
             ElasticSearchRegion: "us-east-1"
 scenarioConfigs:
-  - testType: JAVA
+  - testType: TESTNG
     remoteRepository: "git@github.com:amalkasubasinghe/financial-open-banking.git"
     remoteBranch: "testgrid"
     name: "ob-scenarios"
