@@ -1,1 +1,1 @@
-testgridYamlURL: https://raw.githubusercontent.com/ThisaruGuruge/ballerina-lang/ballerina-scenarios-kafka/.testgrid-kafka.yaml
+testgridYamlURL: https://raw.githubusercontent.com/ThisaruGuruge/ballerina-scenario-tests/update-kafka-test/.testgrid-kafka.yaml
