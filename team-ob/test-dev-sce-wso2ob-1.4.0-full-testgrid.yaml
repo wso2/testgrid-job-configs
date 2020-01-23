@@ -11,8 +11,8 @@ infrastructureConfig:
      - OPEN_JDK8
   provisioners:
     - name: distributed-single-node-deployment
-      remoteRepository: "git@github.com:amalkasubasinghe/aws-ob.git"
-      remoteBranch: "master"
+      remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
+      remoteBranch: "support-1.4.0"
       description: Provide Infra for running scenario tests
       scripts:
         - name: 'test-dev-sce-wso2ob-140-deployment'
@@ -30,9 +30,9 @@ infrastructureConfig:
             ElasticSearchRegion: "us-east-1"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:amalkasubasinghe/financial-open-banking.git"
-    remoteBranch: "testgrid"
-    name: "ob-scenarios"
+    remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
+    remoteBranch: "master"
+    name: "ob-uk-scenarios"
     description: "ob-scenarios-devtest"
     file: product-scenarios/test-grid-jobs/test_uk/test.sh
     inputParameters:
