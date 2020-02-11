@@ -31,7 +31,7 @@ infrastructureConfig:
             JmeterClientInstanceType: "t3.small"
             JmeterServerInstanceType: "t3.small"
             # Please use 2 Jmeter-servers if concurrency > 500 users
-            NumberOfJmeterServers: 2
+            NumberOfJMeterServers: "2"
 scenarioConfigs:
   - testType: JMETER
     remoteRepository: "git@github.com:janethavi/performance-apim.git"
