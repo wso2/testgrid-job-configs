@@ -29,12 +29,14 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             FTPUserName: "wso2user"
             FTPUserPassword: "FTPUserPassword"
+            region: "us-east-2"
         - name: 'prod-wso2-ei-scenario-activemq-be-deployment'
           description: ''
           type: CLOUDFORMATION
           file: integrator/Sample-Backends/activemq-be.yaml
           inputParameters:
             KeyPairName: "deployment-prod"
+            region: "us-east-2"
         - name: 'prod-wso2-ei-scenario-deployment'
           description: ''
           type: CLOUDFORMATION
@@ -48,7 +50,7 @@ infrastructureConfig:
             ProductVersion: "6.5.0"
             ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
             InternalPrepareForTest: "True"
-            region: "us-east-2"
+            region: "us-west-2"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-ei.git"
