@@ -21,17 +21,17 @@ infrastructureConfig:
           file: jmeter-deployment-nested.yaml
           inputParameters:
             ProductDeploymentURL: "https://performance-test-archives.s3.us-east-2.amazonaws.com/pattern-1.yaml"
-            ProductInstanceType: "t2.medium"
-            ProductDBType: "db.t2.medium"
+            ProductInstanceType: "c5.large"
+            ProductDBType: "db.m5.large"
             CertificateName: "self-signed-cert"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             region: "us-east-2"
-            BackendInstanceType: "t3.small"
-            JmeterClientInstanceType: "t3.small"
-            JmeterServerInstanceType: "t3.small"
+            BackendInstanceType: "c5.xlarge"
+            JmeterClientInstanceType: "c5.large"
+            JmeterServerInstanceType: "c5.large"
             # Please use 2 Jmeter-servers if concurrency > 500 users
-            NumberOfJMeterServers: 2
+            NumberOfJMeterServers: "2"
 scenarioConfigs:
   - testType: JMETER
     remoteRepository: "git@github.com:janethavi/performance-apim.git"
@@ -40,12 +40,12 @@ scenarioConfigs:
     description: "apim-scenarios"
     file: distribution/scripts/scenario-test.sh
     inputParameters:
-      heap_memory_app: 1G
-      con_users: "500,600"
+      heap_memory_app: 2G
+      con_users: "100,250,500,750,1000"
       msg_size: "50,1024"
       backend_sleep: 0
-      test_duration: 120
-      warmup_time: 60
-      heap_memory_jmeter_s: 512M
-      heap_memory_jmeter_c: 512M
-      heap_memory_netty: 515M
+      test_duration: 360
+      warmup_time: 180
+      heap_memory_jmeter_s: 2G
+      heap_memory_jmeter_c: 2G
+      heap_memory_netty: 2G
