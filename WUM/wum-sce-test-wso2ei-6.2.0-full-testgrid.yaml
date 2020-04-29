@@ -1,7 +1,7 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "builder@wso2.org,kasung@wso2.com,chaminda@wso2.com,isuruu@wso2.com,nandika@wso2.com,
+emailToList: "builder@wso2.org,chaminda@wso2.com,isuruu@wso2.com,nandika@wso2.com,
               milindap@wso2.com,dulanjali@wso2.com,sasikala@wso2.com,isuruuy@wso2.com,ridmi@wso2.com,integration-builder@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
@@ -9,7 +9,6 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
   - CentOS-7.5
-#  - SUSE-Linux-12
   - MySQL-5.7
   - Oracle-SE2-12.1
   - SQLServer-SE-14.00
@@ -46,7 +45,6 @@ infrastructureConfig:
         DBUsername: "wso2carbon"
         DBPassword: "DB_Password"
         ProductVersion: "6.2.0"
-        ElasticSearchEndpoint: "https://search-testgrid-prod-hn2zfvehc7i2edigkxnfjljc6y.us-east-1.es.amazonaws.com"
         InternalPrepareForTest: "True"
         region: "us-east-2"
 scenarioConfigs:
