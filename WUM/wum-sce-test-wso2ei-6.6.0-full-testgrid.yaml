@@ -58,4 +58,4 @@ scenarioConfigs:
     file: product-scenarios/test.sh
     inputParameters:
       ProductVersion: "EI-6.6.0"
-      RemoteProductDir: "/usr/local/wso2/wso2ei/6.6.0/wso2ei-6.6.0"
+      RemoteProductDir: "/usr/lib/wso2/wso2ei/6.6.0/wso2ei-6.6.0"
