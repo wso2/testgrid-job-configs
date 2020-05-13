@@ -14,6 +14,7 @@ infrastructureConfig:
     - SQLServer-SE-14.00
     - Postgres-10.5
     - OPEN_JDK8
+    - ADOPT_OPEN_JDK11
   provisioners:
     - name: single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-ei.git"
