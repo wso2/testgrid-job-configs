@@ -1,0 +1,43 @@
+# TestGrid Test Configuration Parameters
+version: '0.9'
+emailToList: "financial-solutions-group@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+     - Ubuntu-18.04
+     - SQLServer-SE-13.00
+     - OPEN_JDK8
+  provisioners:
+    - name: distributed-single-node-deployment
+      remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
+      remoteBranch: "support-1.5.0"
+      description: Provide Infra for running scenario tests
+      scripts:
+        - name: 'prod-wso2ob-150-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: obam-with-obkm.yaml
+          inputParameters:
+            InternalPrepareForTest : false
+            parseInfrastructureScript: false
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2user"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+            DeploymentSpec: "UK"
+            ElasticSearchRegion: "us-east-1"
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
+    remoteBranch: "master"
+    name: "ob-uk-scenarios"
+    description: "ob-scenarios-devtest"
+    file: product-scenarios/test-grid-jobs/test_uk/test.sh
+    inputParameters:
+      SolutionVersion: "1.5.0"
+      DeploymentSpec: "UK"
+      OperatingSystem: "Linux"
+      BrowserAutomation.HeadlessEnabled: true
+      InstallGeckodriver: true
