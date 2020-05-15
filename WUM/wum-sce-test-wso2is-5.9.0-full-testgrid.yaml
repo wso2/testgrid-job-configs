@@ -8,7 +8,6 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
-#     - SUSE-Linux-12
     - MySQL-5.7
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
@@ -43,6 +42,21 @@ infrastructureConfig:
             KeyPairName: "deployment-prod"
             ProductVersion: "5.9.0"
             region: "us-east-1"            
+jobConfig:
+  builds:
+    - schedule: manual
+      combinationAlgorithm: at_least_one
+      infraResources:
+      - OS:
+          - CentOS-7.5
+      - DBEngine:
+          - MySQL-5.7
+          - Oracle-SE2-12.1
+          - SQLServer-SE-14.00
+          - Postgres-10.5
+      - JDK:
+          - OPEN_JDK8
+          - ADOPT_OPEN_JDK11
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-support/product-is.git"
