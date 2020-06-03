@@ -14,7 +14,7 @@ infrastructureConfig:
     - ADOPT_OPEN_JDK11
   provisioners:
     - name: micro-integrator-deployment
-      remoteRepository: "git@github.com:wso2-enterprise/aws-micro-integrator.git"
+      remoteRepository: "https://NishikaDeSilva:4138bdab0f2b0446c64bc418f4fb0d859cd4631f@github.com/NishikaDeSilva/aws-micro-integrator.git"
       remoteBranch: "1.2.0"
       description: Provision Infra for running scenario tests
       scripts:
@@ -31,7 +31,7 @@ infrastructureConfig:
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-ei.git"
+    remoteRepository: "https://github.com/NishikaDeSilva/product-ei.git"
     remoteBranch: "mi_scenarios"
     name: "micro-integrator-scenarios"
     description: "micro-integrator-scenarios"
