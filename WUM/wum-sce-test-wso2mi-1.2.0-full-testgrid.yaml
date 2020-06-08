@@ -31,8 +31,8 @@ infrastructureConfig:
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-ei.git"
-    remoteBranch: "mi_scenarios"
+    remoteRepository: "https://github.com/wso2/micro-integrator.git"
+    remoteBranch: "master"
     name: "micro-integrator-scenarios"
     description: "micro-integrator-scenarios"
     file: product-scenarios/test.sh
