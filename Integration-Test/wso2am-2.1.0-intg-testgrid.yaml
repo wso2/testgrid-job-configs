@@ -10,37 +10,39 @@ infrastructureConfig:
     - ADOPT_OPEN_JDK8
 #    - OracleJDK-8
     - Ubuntu-16.04
-    - MySQL-5.7
+    # - MySQL-5.7
 #    - SQLServer-SE-13.00
-#    - Oracle-SE2-12.1
+    # - Oracle-SE2-12.1
+    - Oracle-SE2-19.0
   provisioners:
     - name: prod-wso2am-intg-deployment
-      remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
+      remoteRepository: "https://github.com/wso2/testgrid"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2am-intg-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: jobs/intg-test-resources/wso2-intg-test-cfn-copy.yaml
+          file: jobs/intg-test-resources/ansible-deployment/wso2-intg-test-cfn-apim.yaml
           inputParameters:
             parseInfrastructureScript: false
-            KeyPairName: "deployment-prod"
             region: us-east-1
             DBPassword: "DB_Password"
             DBClass: "db.m4.large"
-            EC2KeyPair: "deployment-prod"
+            EC2KeyPair: "testgrid-key"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2am"
             ProductVersion: "2.1.0"
+            AMI: ami-04c21ca1facb0d911
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "ttps://github.com/NishikaDeSilva/testgrid"
+    remoteRepository: "https://github.com/wso2/testgrid"
     name: integrationtests
     description: "integration tests"
-    file: jobs/intg-test-resources/scripts/copy_script.sh
+    file: jobs/intg-test-resources/ansible-deployment/copy_script.sh
     inputParameters:
-      PRODUCT_GIT_URL: "https://github.com/wso2/product-apim"
+      WSO2_PRODUCT: "wso2am-2.1.0"
+      PRODUCT_GIT_URL: "https://github.com/wso2-support/product-apim.git"
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
-      PRODUCT_GIT_BRANCH: "2.x"
+      PRODUCT_GIT_BRANCH: "support-2.1.0"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
 
