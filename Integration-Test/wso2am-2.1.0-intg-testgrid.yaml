@@ -46,7 +46,7 @@ scenarioConfigs:
     remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
     name: integrationtests
     description: "integration tests"
-    file: jobs/intg-test-resources/ansible-deployment/copy_script.sh
+    file: jobs/intg-test-resources/latest/copy_script.sh
     inputParameters:
       WSO2_PRODUCT: "wso2am-2.1.0"
       PRODUCT_GIT_URL: "https://github.com/wso2-support/product-apim.git"
