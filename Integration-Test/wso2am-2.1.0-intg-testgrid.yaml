@@ -26,6 +26,7 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
+            DBName: "WSO2AMDB"
             DBPassword: "DB_Password"
             DBClass: "db.m4.large"
             EC2KeyPair: "testgrid-key"
