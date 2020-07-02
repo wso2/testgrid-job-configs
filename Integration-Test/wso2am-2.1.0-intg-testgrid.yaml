@@ -16,13 +16,13 @@ infrastructureConfig:
     - Oracle-SE2-19.0
   provisioners:
     - name: prod-wso2am-intg-deployment
-      remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
+      remoteRepository: "https://github.com/wso2/testgrid"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2am-intg-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: jobs/intg-test-resources/latest/wso2-intg-test-cfn-apim.yaml
+          file: jobs/intg-test-resources/latest/wso2-intg-test-cfn.yaml
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
@@ -39,11 +39,11 @@ infrastructureConfig:
           type: SHELL
           file: jobs/intg-test-resources/latest/ansible-deployment/copy_deploy_script.sh
           inputParameters:
-            ANSIBLE_GIT_URL: https://github.com/NishikaDeSilva/ansible-apim-testgrid
+            ANSIBLE_GIT_URL: https://github.com/wso2-enterprise/ansible-apim
             ANSIBLE_GIT_BRANCH: 2.1.0
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
+    remoteRepository: "https://github.com/wso2/testgrid"
     name: integrationtests
     description: "integration tests"
     file: jobs/intg-test-resources/latest/copy_script.sh
