@@ -22,7 +22,7 @@ infrastructureConfig:
         - name: 'prod-wso2am-intg-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: jobs/intg-test-resources/ansible-deployment/wso2-intg-test-cfn-apim.yaml
+          file: jobs/intg-test-resources/latest/wso2-intg-test-cfn-apim.yaml
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
