@@ -38,6 +38,9 @@ infrastructureConfig:
           description: 'Add ansible deployment'
           type: SHELL
           file: jobs/intg-test-resources/latest/ansible-deployment/copy_deploy_script.sh
+          inputParameters:
+            ANSIBLE_GIT_URL: https://github.com/NishikaDeSilva/ansible-apim-testgrid
+            ANSIBLE_GIT_BRANCH: 2.1.0
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
