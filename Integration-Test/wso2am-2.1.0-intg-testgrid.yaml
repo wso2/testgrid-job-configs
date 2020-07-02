@@ -16,7 +16,7 @@ infrastructureConfig:
     - Oracle-SE2-19.0
   provisioners:
     - name: prod-wso2am-intg-deployment
-      remoteRepository: "https://github.com/wso2/testgrid"
+      remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2am-intg-deployment'
@@ -33,9 +33,13 @@ infrastructureConfig:
             ProductName: "wso2am"
             ProductVersion: "2.1.0"
             AMI: ami-04c21ca1facb0d911
+        - name: 'Ansible deployment'
+          description: 'Add ansible deployment'
+          type: SHELL
+          file: jobs/intg-test-resources/latest/ansible-deployment/copy_deploy_script.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/testgrid"
+    remoteRepository: "https://github.com/NishikaDeSilva/testgrid"
     name: integrationtests
     description: "integration tests"
     file: jobs/intg-test-resources/ansible-deployment/copy_script.sh
@@ -45,4 +49,3 @@ scenarioConfigs:
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
       PRODUCT_GIT_BRANCH: "support-2.1.0"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-
