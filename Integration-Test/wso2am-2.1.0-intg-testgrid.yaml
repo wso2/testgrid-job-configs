@@ -8,11 +8,10 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - ADOPT_OPEN_JDK8
-#    - OracleJDK-8
     - Ubuntu-16.04
-    # - MySQL-5.7
-#    - SQLServer-SE-13.00
-    # - Oracle-SE2-12.1
+    - MySQL-5.7
+    - SQLServer-SE-13.00
+    - Oracle-SE2-12.1
     - Oracle-SE2-19.0
   provisioners:
     - name: prod-wso2am-intg-deployment
