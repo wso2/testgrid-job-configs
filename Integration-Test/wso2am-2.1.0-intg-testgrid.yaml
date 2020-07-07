@@ -52,3 +52,4 @@ scenarioConfigs:
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
       PRODUCT_GIT_BRANCH: "support-2.1.0"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
+      test_script_url: "https://raw.githubusercontent.com/wso2/apim-test-integration/master/run-int-test.sh"
