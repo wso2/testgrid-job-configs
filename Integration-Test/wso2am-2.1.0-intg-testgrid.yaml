@@ -10,8 +10,6 @@ infrastructureConfig:
     - ADOPT_OPEN_JDK8
     - Ubuntu-16.04
     - MySQL-5.7
-    - SQLServer-SE-13.00
-    - Oracle-SE2-12.1
     - Oracle-SE2-19.0
   provisioners:
     - name: prod-wso2am-intg-deployment
@@ -32,7 +30,7 @@ infrastructureConfig:
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2am"
             ProductVersion: "2.1.0"
-            AMI: ami-04c21ca1facb0d911
+            AMI: ami-0a242909f837c2156
         - name: 'Ansible deployment'
           description: 'Add ansible deployment'
           type: SHELL
@@ -52,4 +50,4 @@ scenarioConfigs:
       PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
       PRODUCT_GIT_BRANCH: "support-2.1.0"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-      test_script_url: "https://raw.githubusercontent.com/wso2/apim-test-integration/master/run-int-test.sh"
+      test_script_url: "https://raw.githubusercontent.com/wso2/apim-test-integration/2.1.0/run-int-test.sh"
