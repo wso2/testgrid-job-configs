@@ -16,11 +16,11 @@ infrastructureConfig:
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
-      remoteBranch: "3.2.0"
+      remoteBranch: "master"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
-          description: ''
+          description: 'APIM 3.2.0 snapshot'
           type: CLOUDFORMATION
           file: apim/Minimum-HA/apim.yaml
           inputParameters:
