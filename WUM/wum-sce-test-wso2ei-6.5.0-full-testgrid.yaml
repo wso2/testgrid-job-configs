@@ -48,7 +48,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             ProductVersion: "6.5.0"
             InternalPrepareForTest: "True"
-            region: "us-west-2"
+            region: "us-east-1"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/product-ei.git"
