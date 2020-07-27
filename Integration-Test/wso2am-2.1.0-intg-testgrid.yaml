@@ -19,7 +19,7 @@ infrastructureConfig:
         - name: 'prod-wso2am-intg-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: jobs/intg-test-resources/latest/wso2-intg-test-cfn.yaml
+          file: jobs/intg-test-resources/wum-releases/wso2-wum-intg-test-cfn.yaml
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
@@ -34,7 +34,7 @@ infrastructureConfig:
         - name: 'Ansible deployment'
           description: 'Add ansible deployment'
           type: SHELL
-          file: jobs/intg-test-resources/latest/ansible-deployment/copy_deploy_script.sh
+          file: jobs/intg-test-resources/wum-releases/ansible-deployment/run-deploy-script.sh
           inputParameters:
             ANSIBLE_GIT_URL: https://github.com/wso2-enterprise/ansible-apim
             ANSIBLE_GIT_BRANCH: 2.1.0
@@ -43,7 +43,7 @@ scenarioConfigs:
     remoteRepository: "https://github.com/wso2/testgrid"
     name: integrationtests
     description: "integration tests"
-    file: jobs/intg-test-resources/latest/copy_script.sh
+    file: jobs/intg-test-resources/wum-releases/run-test.sh
     inputParameters:
       WSO2_PRODUCT: "wso2am-2.1.0"
       PRODUCT_GIT_URL: "https://github.com/wso2-support/product-apim.git"
