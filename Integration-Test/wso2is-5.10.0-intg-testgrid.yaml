@@ -8,6 +8,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - ADOPT_OPEN_JDK11
+    - Ubuntu-16.04
     - CentOS-7.5
     - Oracle-SE1-11.2
   provisioners:
