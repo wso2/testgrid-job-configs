@@ -51,3 +51,4 @@ scenarioConfigs:
       PRODUCT_GIT_BRANCH: "support-2.1.0"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
       test_script_url: "https://raw.githubusercontent.com/wso2/apim-test-integration/2.1.0/run-int-test.sh"
+      surefire_report_dir: "modules/integration/tests-integration/tests-backend/target"
