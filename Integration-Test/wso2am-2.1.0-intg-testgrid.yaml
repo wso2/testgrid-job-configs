@@ -41,7 +41,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/testgrid"
-    name: integrationtests
+    name: integration-tests
     description: "integration tests"
     file: jobs/intg-test-resources/wum-releases/run-test.sh
     inputParameters:

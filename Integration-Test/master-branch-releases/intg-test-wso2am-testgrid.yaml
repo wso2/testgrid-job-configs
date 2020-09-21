@@ -12,6 +12,7 @@ infrastructureConfig:
     - OracleJDK-8
     - CorrettoJDK-8
     - CentOS-7.5
+    - Postgres-10.5
     - RHEL-7.4
     - Ubuntu-16.04
     - SUSE-Linux-12
