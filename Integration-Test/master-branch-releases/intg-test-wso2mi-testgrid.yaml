@@ -51,3 +51,4 @@ scenarioConfigs:
       PRODUCT_GIT_BRANCH: "master"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
       TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/ei-test-integration/master/run-int-test.sh"
+      surefire_report_dir: "integration/mediation-tests/tests-transport/target"
