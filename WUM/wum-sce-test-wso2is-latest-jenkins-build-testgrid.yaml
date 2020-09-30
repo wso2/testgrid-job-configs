@@ -1,7 +1,9 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "integration-builder@wso2.com,buddhimau@wso2.com,PulasthiM@wso2.com,thanuja@wso2.com,jayangak@wso2.com,isura@wso2.com,sahang@wso2.com,achinij@wso2.com"
+emailToList: "builder@wso2.org,shanikaw@wso2.com,niluka@wso2.com,achinij@wso2.com,
+                           kanapriya@wso2.com,iam-builder@wso2.com,integration-builder@wso2.com,
+                           ashen@wso2.com,jayangak@wso2.com,buddhimau@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
@@ -22,7 +24,7 @@ infrastructureConfig:
         - name: 'prod-wso2-is-scenario-deployment'
           description: 'IS 5.11.0 snapshot'
           type: CLOUDFORMATION
-          file: apim/Minimum-HA/identity.yaml
+          file: /is/Minimum-HA/identity.yaml
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
