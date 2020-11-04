@@ -11,6 +11,7 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
     - MySQL-5.7
+    - MariaDB-10.4
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
     - Postgres-10.5
