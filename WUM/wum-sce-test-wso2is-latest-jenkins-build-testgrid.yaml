@@ -10,7 +10,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
-    - MySQL-5.7
+    - MySQL-8.0
     - MariaDB-10.4
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
