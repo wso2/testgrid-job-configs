@@ -33,6 +33,15 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             region: "us-east-2"
+        - name: 'prod-wso2is-samples-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: is-samples/test-is-samples.yml
+          inputParameters:
+            AMI: "ami-0b707e6db70f15f97"
+            KeyPairName: "deployment-prod"
+            ProductVersion: "5.10.0"
+            region: "us-east-1"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-support/product-is.git"
