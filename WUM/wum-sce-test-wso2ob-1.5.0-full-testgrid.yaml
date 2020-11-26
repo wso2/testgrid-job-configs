@@ -31,7 +31,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
-    remoteBranch: "master"
+    remoteBranch: "OB-2.0.0"
     name: "ob-uk-scenarios"
     description: "ob-scenarios-devtest"
     file: product-scenarios/test-grid-jobs/test_uk/test.sh
