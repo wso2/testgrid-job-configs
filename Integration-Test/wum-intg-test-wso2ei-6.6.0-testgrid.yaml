@@ -7,29 +7,29 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-    - ORACLE_JDK11
+    - CORRETTO_JDK11
     - Ubuntu-16.04
     - MySQL-5.7
   provisioners:
-    - name: prod-wso2mi-intg-deployment
+    - name: prod-wso2ei-intg-deployment
       remoteRepository: "https://github.com/wso2/testgrid"
       remoteBranch: master
       description: Provision Infra for running intg tests
       scripts:
-        - name: 'prod-wso2mi-intg-deployment'
+        - name: 'prod-wso2ei-intg-deployment'
           description: ''
           type: CLOUDFORMATION
           file: jobs/intg-test-resources/wum-releases/wso2-wum-intg-test-cfn.yaml
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
-            DBName: "WSO2MIDB"
+            DBName: "WSO2EIDB"
             DBPassword: "DB_Password"
             DBClass: "db.m4.large"
             EC2KeyPair: "testgrid-key"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
-            ProductName: "wso2mi"
-            ProductVersion: "1.2.0"
+            ProductName: "wso2ei"
+            ProductVersion: "6.6.0"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/testgrid"
@@ -38,9 +38,9 @@ scenarioConfigs:
     description: "integration tests"
     file: jobs/intg-test-resources/wum-releases/run-test.sh
     inputParameters:
-      WSO2_PRODUCT: "wso2mi-1.2.0"
-      PRODUCT_GIT_URL: "https://github.com/wso2-support/micro-integrator.git"
-      PRODUCT_GIT_BRANCH: "support-1.2.0"
+      WSO2_PRODUCT: "wso2ei-6.6.0"
+      PRODUCT_GIT_URL: "https://github.com/wso2-support/product-ei.git"
+      PRODUCT_GIT_BRANCH: "support-6.6.0"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/ei-test-integration/mi-1.2.0/wum-releases/run-int-test.sh"
+      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/ei-test-integration/ei-6.6.0/wum-releases/run-int-test.sh"
       surefire_report_dir: "integration/mediation-tests/tests-transport/target"
