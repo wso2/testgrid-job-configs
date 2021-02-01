@@ -41,7 +41,7 @@ scenarioConfigs:
     inputParameters:
       WSO2_PRODUCT: "wso2ei-6.6.0"
       PRODUCT_GIT_URL: "https://github.com/wso2-support/product-ei.git"
-      PRODUCT_GIT_BRANCH: "support-6.6.0"
+      PRODUCT_GIT_BRANCH: "EIINTERNAL-679"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
       TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/ei-test-integration/ei-6.6.0/wum-releases/run-int-test.sh"
       surefire_report_dir: "integration/mediation-tests/tests-transport/target"
