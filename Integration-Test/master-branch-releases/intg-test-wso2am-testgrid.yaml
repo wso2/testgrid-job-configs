@@ -40,7 +40,7 @@ infrastructureConfig:
             ProductName: "wso2am"
             ProductVersion: "4.0.0"
             ProductPackLocation: "https://wso2.org/jenkins/view/products/job/products/job/product-apim/lastStableBuild/org.wso2.am$wso2am/artifact/org.wso2.am/wso2am/4.0.0-SNAPSHOT/wso2am-4.0.0-SNAPSHOT.zip"
-            WSO2InstanceType: "c3.xlarge"
+            WSO2InstanceType: "c4.xlarge"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/testgrid"
