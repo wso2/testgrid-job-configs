@@ -20,7 +20,7 @@ infrastructureConfig:
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-is.git"
-      remoteBranch: "5.3.0"
+      remoteBranch: "5.2.0"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-is-scenario-deployment'
