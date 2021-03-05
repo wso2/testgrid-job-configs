@@ -26,7 +26,7 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "apim"
+            CertificateName: "wso2_testgrid"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             region: "us-east-2"
