@@ -40,7 +40,7 @@ infrastructureConfig:
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2am"
             ProductVersion: "4.0.0"
-            ProductPackLocation: "https://wso2.org/jenkins/view/products/job/products/job/product-apim/lastStableBuild/org.wso2.am$wso2am/artifact/org.wso2.am/wso2am/4.0.0-SNAPSHOT/wso2am-4.0.0-SNAPSHOT.zip"
+            ProductPackLocation: "https://wso2.org/jenkins/view/products/job/products/job/product-apim/lastBuild/org.wso2.am$wso2am/artifact/org.wso2.am/wso2am/4.0.0-SNAPSHOT/wso2am-4.0.0-SNAPSHOT.zip"
             WSO2InstanceType: "c3.xlarge"
 scenarioConfigs:
   - testType: TESTNG
