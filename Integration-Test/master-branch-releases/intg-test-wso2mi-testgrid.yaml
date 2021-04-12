@@ -50,5 +50,5 @@ scenarioConfigs:
       PRODUCT_GIT_URL: "https://github.com/wso2/micro-integrator.git"
       PRODUCT_GIT_BRANCH: "master"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/ei-test-integration/master/run-int-test.sh"
+      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/ei-test-integration/mi-4.0.0/wum-releases/run-int-test.sh"
       surefire_report_dir: "integration/mediation-tests/tests-transport/target"
