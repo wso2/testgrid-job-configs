@@ -9,8 +9,6 @@ infrastructureConfig:
      - Ubuntu-18.04
      - Oracle-SE2-12.1
      - SQLServer-SE-14.00
-     - Postgres-10.5
-     - Postgres-12.3
      - ADOPT_OPEN_JDK11
   provisioners:
     - name: distributed-single-node-deployment
