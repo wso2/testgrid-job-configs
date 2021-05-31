@@ -10,7 +10,7 @@ infrastructureConfig:
      - Oracle-SE2-12.1
      - SQLServer-SE-14.00
      - OPEN_JDK8
-     - UAT
+     - Staging
   provisioners:
     - name: distributed-single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
