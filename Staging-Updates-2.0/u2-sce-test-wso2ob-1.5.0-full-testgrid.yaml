@@ -10,7 +10,6 @@ infrastructureConfig:
      - Oracle-SE2-12.1
      - SQLServer-SE-14.00
      - OPEN_JDK8
-     - Staging
   provisioners:
     - name: distributed-single-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
@@ -30,6 +29,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             DeploymentSpec: "UK"
             ElasticSearchRegion: "us-east-1"
+            U2Environment: "Staging"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
