@@ -23,7 +23,7 @@ infrastructureConfig:
             InternalPrepareForTest : false
             parseInfrastructureScript: false
             KeyPairName: "deployment-prod"
-            CertificateName: "wso2user"
+            CertificateName: "wso2_testgrid"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             DeploymentSpec: "UK"
