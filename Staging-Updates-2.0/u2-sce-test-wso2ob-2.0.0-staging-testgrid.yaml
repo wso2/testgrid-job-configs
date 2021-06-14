@@ -28,7 +28,7 @@ infrastructureConfig:
             DBPassword: "DB_Password"
             DeploymentSpec: "UK"
             ElasticSearchRegion: "us-east-1"
-            U2Environment: "UAT"
+            U2Environment: "Staging"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
@@ -42,4 +42,4 @@ scenarioConfigs:
       OperatingSystem: "Linux"
       BrowserAutomation.HeadlessEnabled: true
       InstallGeckodriver: true
-      ApiVersion: "3.1.1"
+      ApiVersion: "3.1.5"
