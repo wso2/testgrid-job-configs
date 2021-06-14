@@ -43,4 +43,4 @@ scenarioConfigs:
       OperatingSystem: "Linux"
       BrowserAutomation.HeadlessEnabled: true
       InstallGeckodriver: true
-      ApiVersion: "3.1.1"
+      ApiVersion: "3.1.5"
