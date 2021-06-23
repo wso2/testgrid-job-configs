@@ -1,7 +1,7 @@
 # TestGrid job configuration
 
 version: '0.9'
-emailToList: "integration-builder@wso2.com,rosen@wso2.com,prasanna@wso2.com,
+emailToList: "integration-builder@wso2.com,rosens@wso2.com,prasanna@wso2.com,
               nandika@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
