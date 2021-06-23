@@ -14,7 +14,7 @@ infrastructureConfig:
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
-      remoteBranch: "3.2.0-u2"
+      remoteBranch: "3.2.0-u2-staging"
       description: Provision Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-apim-scenario-deployment'
