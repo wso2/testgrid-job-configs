@@ -17,7 +17,7 @@ infrastructureConfig:
       description: Provide Infra for running scenario tests
       scripts:
         - name: 'prod-wso2-ob-scenario-deployment'
-          description: 'OB 3.0.0 snapshot'
+          description: 'OB 3.0.0'
           type: CLOUDFORMATION
           file: obam-with-obkm.yaml
           inputParameters:
