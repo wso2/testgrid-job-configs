@@ -1,0 +1,45 @@
+# TestGrid job configuration
+
+version: '0.9'
+emailToList: "bfsi-group@wso2.com,divya@wso2.com,malshani@wso2.com,verushka@wso2.com,kasundh@wso2.com,charithad@wso2.com,akilaa@wso2.com,rivindu@wso2.com,thiloshon@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+     - Ubuntu-18.04
+     - SQLServer-SE-13.00
+     - OPEN_JDK8
+  provisioners:
+    - name: distributed-single-node-deployment
+      remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
+      remoteBranch: "master"
+      description: Provide Infra for running scenario tests
+      scripts:
+        - name: 'prod-wso2-ob-scenario-deployment'
+          description: 'OB 3.0.0'
+          type: CLOUDFORMATION
+          file: obam-with-obkm.yaml
+          inputParameters:
+            InternalPrepareForTest : false
+            parseInfrastructureScript: false
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2_testgrid"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+            ElasticSearchRegion: "us-east-1"
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
+    remoteBranch: "master"
+    name: "ob-scenarios"
+    description: "ob-scenarios-devtest"
+    file: open-banking-test-suite/test-grid-jobs/test.sh
+    inputParameters:
+      SolutionVersion: "3.0.0"
+      DeploymentSpec: "UK"
+      OperatingSystem: "Linux"
+      BrowserAutomation.HeadlessEnabled: true
+      InstallGeckodriver: true
+      ApiVersion: "3.1.5"
+      BrowserAutomation.BrowserPreference: "firefox"
