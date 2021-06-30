@@ -37,7 +37,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:wso2-support/product-is.git"
-    remoteBranch: "support-5.2.0"
+    remoteBranch: "support-5.2.0.x-full"
     name: "1-manage-users-roles"
     description: "1-manage-users-roles"
     file: product-scenarios/test.sh
