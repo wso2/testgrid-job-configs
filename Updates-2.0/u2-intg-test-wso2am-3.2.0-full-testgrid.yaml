@@ -41,6 +41,7 @@ scenarioConfigs:
       WSO2_PRODUCT: "wso2am-3.2.0"
       PRODUCT_GIT_URL: "https://github.com/wso2-support/product-apim.git"
       PRODUCT_GIT_BRANCH: "support-3.2.0.x-full"
+      TEST_MODE: WUM
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
       TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/apim-test-integration/3.2.0/run-int-test.sh"
       surefire_report_dir: "modules/integration/tests-integration/tests-backend/target"
