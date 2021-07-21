@@ -1,0 +1,50 @@
+# TestGrid Test Configuration Parameters
+# TODO use dash as the separator instead of camelCase.
+version: '0.9'
+emailToList: "tharindua@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+    - ADOPT_OPEN_JDK8
+    - CentOS-7.5
+    - MySQL-5.7
+    - Oracle-SE2-12.1
+    - Postgres-10.5
+    - SQLServer-SE-14.00
+  provisioners:
+    - name: prod-wso2am-intg-deployment
+      remoteRepository: "https://github.com/wso2/testgrid"
+      remoteBranch: master
+      description: Provision Infra for running intg tests
+      scripts:
+        - name: 'prod-wso2am-intg-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: jobs/intg-test-resources/update2-releases/wso2-u2-intg-test-cfn.yaml
+          inputParameters:
+            parseInfrastructureScript: false
+            region: us-east-1
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+            EC2KeyPair: "testgrid-key"
+            ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
+            ProductName: "wso2am"
+            ProductVersion: "4.0.0"
+            WSO2InstanceType: "c3.xlarge"
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/testgrid"
+    remoteBranch: master
+    name: integration-tests
+    description: "integration tests"
+    file: jobs/intg-test-resources/update2-releases/run-test.sh
+    inputParameters:
+      WSO2_PRODUCT: "wso2am-4.0.0"
+      PRODUCT_GIT_URL: "https://github.com/wso2-support/product-apim.git"
+      PRODUCT_GIT_BRANCH: "support-4.0.0.x-full"
+      TEST_MODE: WUM
+      keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
+      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/apim-test-integration/4.0.0/run-int-test.sh"
+      surefire_report_dir: "modules/integration/tests-integration/tests-backend/target"
