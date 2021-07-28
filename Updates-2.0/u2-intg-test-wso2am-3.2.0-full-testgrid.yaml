@@ -26,6 +26,7 @@ infrastructureConfig:
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
+            DBName: "WSO2AMDB"
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             EC2KeyPair: "testgrid-key"
