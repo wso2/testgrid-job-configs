@@ -36,8 +36,8 @@ infrastructureConfig:
             EC2KeyPair: "testgrid-key"
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2mi"
-            ProductVersion: "4.0.0"
-            ProductPackLocation: "https://wso2.org/jenkins/job/products/job/micro-integrator/lastSuccessfulBuild/artifact/distribution/target/wso2mi-4.0.0-SNAPSHOT.zip"
+            ProductVersion: "4.1.0"
+            ProductPackLocation: "https://wso2.org/jenkins/job/products/job/micro-integrator/lastSuccessfulBuild/artifact/distribution/target/wso2mi-4.1.0-SNAPSHOT.zip"
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/testgrid"
@@ -46,7 +46,7 @@ scenarioConfigs:
     description: "integration tests"
     file: jobs/intg-test-resources/master-branch-releases/run-test.sh
     inputParameters:
-      WSO2_PRODUCT: "wso2mi-4.0.0"
+      WSO2_PRODUCT: "wso2mi-4.1.0"
       PRODUCT_GIT_URL: "https://github.com/wso2/micro-integrator.git"
       PRODUCT_GIT_BRANCH: "master"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
