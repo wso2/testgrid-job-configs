@@ -8,8 +8,18 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - ADOPT_OPEN_JDK11
+    - ADOPT_OPEN_JDK8
+    - OracleJDK-8
+    - CorrettoJDK-8
+    - CentOS-7.5
+    - Postgres-10.5
+    - RHEL-7.4
     - Ubuntu-16.04
+    - SUSE-Linux-12
     - MySQL-5.7
+    - Oracle-SE2-19.0
+    - SQLServer-SE-14.00
+    - SQLServer-SE-15.00
   provisioners:
     - name: prod-wso2am-intg-deployment
       remoteRepository: "https://github.com/wso2/testgrid"
