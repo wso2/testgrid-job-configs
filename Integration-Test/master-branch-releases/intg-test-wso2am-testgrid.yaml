@@ -47,5 +47,6 @@ scenarioConfigs:
       PRODUCT_GIT_URL: "https://github.com/wso2/product-apim.git"
       PRODUCT_GIT_BRANCH: "master"
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
-      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/apim-test-integration/4.1.0/run-int-test.sh"
+      TEST_SCRIPT_URL: "https://raw.githubusercontent.com/wso2/apim-test-integration/4.1.0-patch/run-int-test.sh"
+      TEST_MODE: "SNAPSHOT"
       surefire_report_dir: "modules/integration/tests-integration/tests-backend/target"
