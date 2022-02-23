@@ -10,12 +10,8 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
     - MySQL-5.7
-    - Oracle-SE2-12.1
-    - SQLServer-SE-14.00
-    - Postgres-10.5
-    - Postgres-12.3
-    - Postgres-13.2
-    - ADOPT_OPEN_JDK11
+    - TEMURIN_OPEN_JDK8
+    - TEMURIN_OPEN_JDK11
   provisioners:
     - name: two-node-deployment
       remoteRepository: "git@github.com:wso2-support/aws-apim.git"
