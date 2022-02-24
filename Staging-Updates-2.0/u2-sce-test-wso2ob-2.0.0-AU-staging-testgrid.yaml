@@ -1,0 +1,46 @@
+# TestGrid Test Configuration Parameters
+version: '0.9'
+emailToList: "bfsi-group@wso2.com,divya@wso2.com,malshani@wso2.com,verushka@wso2.com,kasundh@wso2.com,charithad@wso2.com,akilaa@wso2.com,rivindu@wso2.com,thiloshon@wso2.com"
+infrastructureConfig:
+  iacProvider: CLOUDFORMATION
+  infrastructureProvider: AWS
+  containerOrchestrationEngine: None
+  includes:
+    - Ubuntu-18.04
+    - SQLServer-SE-13.00
+    - OPEN_JDK8
+  provisioners:
+    - name: distributed-single-node-deployment
+      remoteRepository: "git@github.com:wso2-support/aws-open-banking.git"
+      remoteBranch: "support-2.0.0"
+      description: Provide Infra for running scenario tests
+      scripts:
+        - name: 'prod-wso2ob-200-deployment'
+          description: ''
+          type: CLOUDFORMATION
+          file: obam-with-obkm-au.yaml
+          inputParameters:
+            InternalPrepareForTest : false
+            parseInfrastructureScript: false
+            KeyPairName: "deployment-prod"
+            CertificateName: "wso2_testgrid"
+            DBUsername: "wso2carbon"
+            DBPassword: "DB_Password"
+            DeploymentSpec: "AU"
+            ElasticSearchRegion: "us-east-1"
+            U2Environment: "Staging"
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "git@github.com:wso2-enterprise/financial-open-banking.git"
+    remoteBranch: "OB-2.0.0"
+    name: "ob-au-scenarios"
+    description: "ob-scenarios-devtest"
+    file: product-scenarios/test-grid-jobs/test_au/test.sh
+    inputParameters:
+      SolutionVersion: "2.0.0"
+      DeploymentSpec: "AU"
+      OperatingSystem: "Linux"
+      BrowserAutomation.HeadlessEnabled: true
+      InstallGeckodriver: true
+      ApiVersion: "1.3.0"
+      BrowserAutomation.BrowserPreference: "firefox"
