@@ -18,7 +18,7 @@ infrastructureConfig:
         - name: 'prod-wso2ob-200-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: obam-with-obkm-au.yaml
+          file: obam-with-obkm.yaml
           inputParameters:
             InternalPrepareForTest : false
             parseInfrastructureScript: false
