@@ -1,6 +1,6 @@
 # TestGrid Test Configuration Parameters
 version: '0.9'
-emailToList: "bfsi-group@wso2.com,divya@wso2.com,malshani@wso2.com,verushka@wso2.com,kasundh@wso2.com,charithad@wso2.com,akilaa@wso2.com,rivindu@wso2.com,thiloshon@wso2.com"
+emailToList: "bfsi-group@wso2.com,divya@wso2.com,malshani@wso2.com,verushka@wso2.com,charithad@wso2.com,akilaa@wso2.com,rivindu@wso2.com"
 infrastructureConfig:
   iacProvider: CLOUDFORMATION
   infrastructureProvider: AWS
