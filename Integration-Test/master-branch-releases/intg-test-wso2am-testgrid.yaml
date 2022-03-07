@@ -11,6 +11,7 @@ infrastructureConfig:
     - Postgres-13.2
     - CentOS-7.5
     - MySQL-8.0
+    - MySQL-5.7
     - Oracle-SE2-19.0
     - SQLServer-SE-15.00
   provisioners:
