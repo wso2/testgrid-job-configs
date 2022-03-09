@@ -9,7 +9,7 @@ infrastructureConfig:
   includes:
     - ADOPT_OPEN_JDK11
     - ADOPT_OPEN_JDK8
-    - Postgres-13.2
+    - Postgres-13.5
     - CentOS-7.5
     - MySQL-8.0
     - MySQL-5.7
