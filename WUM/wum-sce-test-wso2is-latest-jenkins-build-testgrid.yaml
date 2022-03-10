@@ -14,7 +14,7 @@ infrastructureConfig:
     - MariaDB-10.4
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
-    - Postgres-10.5
+    - Postgres-10.19
     - ADOPT_OPEN_JDK11
   provisioners:
     - name: two-node-deployment
