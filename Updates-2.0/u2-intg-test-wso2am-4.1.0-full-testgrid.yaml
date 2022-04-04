@@ -11,7 +11,7 @@ infrastructureConfig:
     - CentOS-7.5
     - MySQL-5.7
     - Oracle-SE2-12.1
-    - Postgres-10.9
+    - Postgres-10.19
     - SQLServer-SE-14.00
   provisioners:
     - name: prod-wso2am-intg-deployment
@@ -42,7 +42,7 @@ scenarioConfigs:
     description: "integration tests"
     file: jobs/intg-test-resources/update2-releases/run-test.sh
     inputParameters:
-      WSO2_PRODUCT: "wso2am-4.0.0"
+      WSO2_PRODUCT: "wso2am-4.1.0"
       PRODUCT_GIT_URL: "https://github.com/wso2-support/product-apim.git"
       PRODUCT_GIT_BRANCH: "support-4.1.0.x-full"
       TEST_MODE: WUM
