@@ -12,6 +12,7 @@ infrastructureConfig:
     - MySQL-5.7
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
+    - SQLServer-SE-15.00
     - Postgres-10.19
     - Postgres-12.9
     - Postgres-13.2

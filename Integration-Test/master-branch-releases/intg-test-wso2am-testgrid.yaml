@@ -13,6 +13,7 @@ infrastructureConfig:
     - MySQL-5.7
     - Oracle-SE2-19.0
     - SQLServer-SE-14.00
+    - SQLServer-SE-15.00
   provisioners:
     - name: prod-wso2am-intg-deployment
       remoteRepository: "https://github.com/wso2/testgrid"
