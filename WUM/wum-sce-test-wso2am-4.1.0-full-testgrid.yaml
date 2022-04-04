@@ -13,7 +13,7 @@ infrastructureConfig:
     - Oracle-SE2-12.1
     - SQLServer-SE-14.00
     - Postgres-10.9
-    - Postgres-12.3
+    - Postgres-12.9
     - Postgres-13.2
     - ADOPT_OPEN_JDK11
   provisioners:
