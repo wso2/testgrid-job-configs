@@ -15,7 +15,6 @@ infrastructureConfig:
     - SQLServer-SE-15.00
     - Postgres-10.19
     - Postgres-12.9
-    - Postgres-13.2
     - ADOPT_OPEN_JDK11
   provisioners:
     - name: two-node-deployment
