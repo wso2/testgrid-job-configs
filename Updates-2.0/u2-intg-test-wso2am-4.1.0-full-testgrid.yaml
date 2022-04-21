@@ -7,12 +7,11 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-    - ADOPT_OPEN_JDK8
-    - CentOS-7.5
-    - MySQL-5.7
-    - Oracle-SE2-12.1
-    - Postgres-10.19
-    - SQLServer-SE-14.00
+    - ADOPT_OPEN_JDK11
+    - Postgres-13.5
+    - Ubuntu-16.04
+    - MySQL-8.0
+    - Oracle-SE2-19.0
     - SQLServer-SE-15.00
   provisioners:
     - name: prod-wso2am-intg-deployment
