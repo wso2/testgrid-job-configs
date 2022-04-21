@@ -7,9 +7,9 @@ infrastructureConfig:
   infrastructureProvider: AWS
   containerOrchestrationEngine: None
   includes:
-    - ADOPT_OPEN_JDK8
+    - ADOPT_OPEN_JDK11
     - CentOS-7.5
-    - MySQL-5.7
+    - MySQL-8.0
     - Oracle-SE2-12.1
     - Postgres-10.19
     - SQLServer-SE-14.00
