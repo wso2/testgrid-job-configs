@@ -30,8 +30,8 @@ infrastructureConfig:
             region: "us-east-2"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/apim-apps.git"
-    remoteBranch: "4.1.0"
+    remoteRepository: "https://github.com/wso2-support/apim-apps.git"
+    remoteBranch: "support-9.0.311.x-full"
     name: "apim-ui"
     description: "apim-ui"
     file: tests/test.sh
