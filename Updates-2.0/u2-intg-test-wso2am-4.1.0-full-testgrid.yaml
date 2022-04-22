@@ -15,8 +15,8 @@ infrastructureConfig:
     - SQLServer-SE-15.00
   provisioners:
     - name: prod-wso2am-intg-deployment
-      remoteRepository: "https://github.com/wso2/testgrid"
-      remoteBranch: master
+      remoteRepository: "https://github.com/tharindu1st/testgrid"
+      remoteBranch: patch-3
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2am-intg-deployment'
