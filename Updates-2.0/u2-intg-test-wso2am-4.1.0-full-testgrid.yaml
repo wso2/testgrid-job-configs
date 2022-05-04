@@ -30,7 +30,7 @@ infrastructureConfig:
             DBUsername: "wso2carbon"
             DBPassword: "DB_Password"
             EC2KeyPair: "testgrid-key"
-            ALBCertificateARN: "arn:aws:iam::809489900555:server-certificate/useast2_2022"
+            ALBCertificateARN: "arn:aws:iam::809489900555:server-certificate/wso2_testgrid"
             ProductName: "wso2am"
             ProductVersion: "4.1.0"
             WSO2InstanceType: "c3.xlarge"
