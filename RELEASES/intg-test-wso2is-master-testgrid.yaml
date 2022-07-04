@@ -30,7 +30,7 @@ infrastructureConfig:
         - name: 'prod-wso2is-intg-deployment'
           description: ''
           type: CLOUDFORMATION
-          file: jobs/intg-test-resources/wso2-intg-test-cfn.yaml
+          file: jobs/intg-test-resources/master-branch-releases/wso2-master-intg-test-cfn.yaml
           inputParameters:
             parseInfrastructureScript: false
             region: us-east-1
