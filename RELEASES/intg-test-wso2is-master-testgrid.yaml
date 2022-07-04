@@ -18,8 +18,8 @@ infrastructureConfig:
     #- Postgres-9.6
     #- ADOPT_OPEN_JDK8
     #- CorrettoJDK-8
-    #- OracleJDK-8
-    - OpenJDK-8
+    - OracleJDK-8
+    #- OpenJDK-8
   provisioners:
     - name: prod-wso2is-intg-deployment
       remoteRepository: "git@github.com:wso2/testgrid.git"
@@ -40,7 +40,7 @@ infrastructureConfig:
             ProductName: "wso2-is"
             ProductVersion: "6.0.0"
             ProductPackLocation: "https://wso2.org/jenkins/job/products/job/product-is/lastSuccessfulBuild/artifact/modules/distribution/target/wso2is-6.0.0-alpha3-SNAPSHOT.zip"
-            WSO2InstanceType: "c3.4xlarge"
+            WSO2InstanceType: "c3.xlarge"
 scenarioConfigs:
   - remoteRepository: "git@github.com:wso2/identity-test-integration.git"
     testType: TESTNG
