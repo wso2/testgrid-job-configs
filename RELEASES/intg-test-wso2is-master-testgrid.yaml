@@ -22,7 +22,7 @@ infrastructureConfig:
     #- OpenJDK-8
   provisioners:
     - name: prod-wso2is-intg-deployment
-      remoteRepository: "git@github.com:wso2/testgrid.git"
+      remoteRepository: "https://github.com/wso2/testgrid"
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2is-intg-deployment'
@@ -42,7 +42,7 @@ infrastructureConfig:
             ProductPackLocation: "https://wso2.org/jenkins/job/products/job/product-is/lastSuccessfulBuild/artifact/modules/distribution/target/wso2is-6.0.0-alpha3-SNAPSHOT.zip"
             WSO2InstanceType: "c3.xlarge"
 scenarioConfigs:
-  - remoteRepository: "git@github.com:wso2/identity-test-integration.git"
+  - remoteRepository: "https://github.com/wso2/identity-test-integration"
     testType: TESTNG
     name: integration-tests
     description: "integration tests"
