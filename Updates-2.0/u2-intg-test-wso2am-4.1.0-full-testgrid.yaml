@@ -15,8 +15,8 @@ infrastructureConfig:
     - SQLServer-SE-15.00
   provisioners:
     - name: prod-wso2am-intg-deployment
-      remoteRepository: "https://github.com/wso2/testgrid"
-      remoteBranch: master
+      remoteRepository: "https://github.com/tharindu1st/testgrid"
+      remoteBranch: patch-4
       description: Provision Infra for running intg tests
       scripts:
         - name: 'prod-wso2am-intg-deployment'
@@ -36,8 +36,8 @@ infrastructureConfig:
             WSO2InstanceType: "c4.2xlarge"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/testgrid"
-    remoteBranch: master
+    remoteRepository: "https://github.com/tharindu1st/testgrid"
+    remoteBranch: patch-4
     name: integration-tests
     description: "integration tests"
     file: jobs/intg-test-resources/update2-releases/run-test.sh
