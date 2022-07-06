@@ -10,7 +10,7 @@ infrastructureConfig:
     - ADOPT_OPEN_JDK11
     - CentOS-7.5
     - MySQL-8.0
-    - Oracle-SE2-12.1
+    - Oracle-SE2-19.0
     - Postgres-10.19
     - SQLServer-SE-14.00
   provisioners:
