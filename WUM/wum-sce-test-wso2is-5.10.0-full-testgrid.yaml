@@ -46,7 +46,7 @@ infrastructureConfig:
             region: "us-east-1"
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "git@github.com:sandushi/product-is-1.git"
+    remoteRepository: "git@github.com:wso2-support/product-is.git"
     remoteBranch: "support-5.10.0"
     name: "2-single-sign-on"
     description: "2-single-sign-on"
