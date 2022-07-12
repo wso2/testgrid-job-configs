@@ -47,7 +47,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "git@github.com:sandushi/product-is-1.git"
-    remoteBranch: "support-5.10.0"
+    remoteBranch: "support-5.10.0.x-full"
     name: "2-single-sign-on"
     description: "2-single-sign-on"
     file: product-scenarios/test.sh
