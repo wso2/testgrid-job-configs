@@ -8,7 +8,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - ADOPT_OPEN_JDK11
-    - postgres_12.15
+    - Postgres_12.15
     - Ubuntu-16.04
     - MySQL-5.7
     - Oracle-SE2-19.0

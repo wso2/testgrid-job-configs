@@ -11,7 +11,7 @@ infrastructureConfig:
     - CentOS-7.5
     - MySQL-5.7
     - Oracle-SE2-12.1
-    - postgres_12.15
+    - Postgres_12.15
     - SQLServer-SE-14.00
   provisioners:
     - name: prod-wso2am-intg-deployment
